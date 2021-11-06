@@ -6,6 +6,10 @@ public class FatBirdController : MonoBehaviour
 {
     Animator anim;
     Rigidbody2D rbody;
+    public AudioSource AudioSourceLeftWing;
+    public AudioSource AudioSourceRightWing;
+    public AudioClip AudioClipLeftWing;
+    public AudioClip AudioClipRightWing;
     public static FatBirdController main;
     private void Awake()
     {
@@ -50,6 +54,12 @@ public class FatBirdController : MonoBehaviour
             }
         }
         anim.SetTrigger("Flap" + (  right ? "Right" : "Left"));
+		
+		if (right){
+        AudioSourceRightWing.PlayOneShot(AudioClipRightWing);
+		} else {
+        AudioSourceLeftWing.PlayOneShot(AudioClipLeftWing);
+		}
     }
     float[] wingflap = new float[] { 0, 0 };
 
