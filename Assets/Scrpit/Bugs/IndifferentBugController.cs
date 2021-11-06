@@ -4,19 +4,12 @@ using UnityEngine;
 
 public class IndifferentBugController : BugController
 {
-    bool moveRight = false;
     public float StopDistance = 5;
     public float HoverTime = 15;
     public override void OnSpawn()
     {
-        moveRight = Random.value < .5f;
-        transform.position = new Vector3(
-            -(Camera.main.aspect * Camera.main.orthographicSize + 1) * (moveRight ? 1 : -1),
-            Random.value * 6 - 2,
-            1
-           );
-
         AiState = BugState.comein;
+        base.OnSpawn();
     }
     public override void OnMovement()
     {

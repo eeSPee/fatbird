@@ -9,6 +9,7 @@ public abstract class BugController : MonoBehaviour
     public float OrbitRange = 1;
     public int ScoreValue = 100;
     protected float Variation = 1f;
+    protected bool moveRight = false;
     private void Awake()
     {
         renderer = GetComponent<Renderer>();
@@ -16,7 +17,6 @@ public abstract class BugController : MonoBehaviour
     void OnEnable()
     {
         OnSpawn();
-        Variation = Random.value;
     }
     public void FixedUpdate()
     {
@@ -30,6 +30,13 @@ public abstract class BugController : MonoBehaviour
 
     public virtual void OnSpawn()
     {
+        Variation = Random.value;
+        moveRight = FatBirdController.main.transform.position.x > 0;
+        transform.position = new Vector3(
+            -(Camera.main.aspect * Camera.main.orthographicSize + 1) * (moveRight ? 1 : -1),
+            Random.value * 5 - 3,
+            1
+           );
     }
     public virtual void OnMovement()
     {
@@ -55,7 +62,7 @@ public abstract class BugController : MonoBehaviour
     }
     public bool IsOutsideGameBounds()
     {
-        return !renderer.isVisible;
+        return Mathf.Abs(transform.position.x)> Camera.main.aspect * Camera.main.orthographicSize + 2;
     }
     public virtual Vector3 HandleOrbit()
     {

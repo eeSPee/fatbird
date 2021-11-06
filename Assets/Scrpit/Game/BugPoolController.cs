@@ -4,16 +4,33 @@ using UnityEngine;
 
 public class BugPoolController : MonoBehaviour
 {
-    float NextBugSpawnTime = 0;
     public float BugStartTime = 5;
     public float BugSpawnTime = 10;
-    private void OnEnable()
+    public static BugPoolController main;
+    private void Awake()
     {
-        NextBugSpawnTime = BugSpawnTime;
+        main = this;
     }
-    private void FixedUpdate()
+
+    Coroutine spawnCoroutine;
+    public void StartSpawning()
     {
-        if (Time.time > NextBugSpawnTime)
+        StopSpawning();
+        spawnCoroutine = StartCoroutine(SpawnBugs());
+    }
+    public void StopSpawning()
+    {
+        if (IsSpawning())
+            StopCoroutine(spawnCoroutine);
+    }
+    public bool IsSpawning()
+    {
+        return (spawnCoroutine != null);
+    }
+    public IEnumerator SpawnBugs()
+    {
+        yield return new WaitForSeconds(BugStartTime);
+        spawn_start:
         {
             if (GetBugsOnScreen() < MaxBugsOnScreen)
             {
@@ -24,12 +41,13 @@ public class BugPoolController : MonoBehaviour
                     SpawnNewBug("Smart Bug");
                 else
                     SpawnNewBug("Indifferent Bug");
-                NextBugSpawnTime = Time.time + BugSpawnTime;
+                yield return new WaitForSeconds(BugSpawnTime);
             }
             else
             {
-                NextBugSpawnTime = Time.time + .5f;
+                yield return new WaitForSeconds(.5f);
             }
+            goto spawn_start;
         }
     }
 

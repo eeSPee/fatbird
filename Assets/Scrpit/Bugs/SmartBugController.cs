@@ -8,16 +8,10 @@ public class SmartBugController : BugController
     public float AweTime = 12f;
 
 
-    bool moveRight = false;
     public override void OnSpawn()
     {
         AiState = BugState.wander;
-        moveRight = Random.value < .5f;
-        transform.position = new Vector3(
-            -(Camera.main.aspect * Camera.main.orthographicSize + 1) * (moveRight ? 1 : -1),
-            Random.value * 6 - 2,
-            1
-           );
+        base.OnSpawn();
     }
     public override void OnMovement()
     {

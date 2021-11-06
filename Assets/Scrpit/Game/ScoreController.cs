@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScoreController : MonoBehaviour
 {
     public int ScorePerSecond = 100;
-    int Combo = 0;
+    public int Combo = 0;
     public int Score = 0;
     public static ScoreController main;
     private void Awake()
@@ -13,10 +13,6 @@ public class ScoreController : MonoBehaviour
         main = this;
     }
 
-    void Start()
-    {
-        StartRecording();
-    }
 
     Coroutine scoreCoroutine;
     public void StartRecording()
@@ -26,23 +22,31 @@ public class ScoreController : MonoBehaviour
     }
     public void StopRecording()
     {
-        if (scoreCoroutine!=null)
+        if (IsScoring())
             StopCoroutine(scoreCoroutine);
+    }
+    public bool IsScoring()
+    {
+        return (scoreCoroutine != null);
     }
     public IEnumerator RecordGameCoroutine()
     {
+        Score = 0;
+        UIController.main.UpdateScore();
         score_start:
         {
             yield return new WaitForSeconds(1);
             Score += ScorePerSecond;
+            UIController.main.UpdateScore();
             goto score_start;
         }
     }
     public void ScorePoints(int points, bool combo)
     {
-        Score += points * Combo;
         if (combo)
             Combo++;
+        Score += points * Combo;
+        UIController.main.UpdateScore();
     }
     public void ResetCombo()
     {

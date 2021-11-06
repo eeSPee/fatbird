@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScorePerSecond: 100
+  Combo: 0
   Score: 0
 --- !u!114 &2043282149866112354
 MonoBehaviour:
@@ -59,5 +60,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BugStartTime: 2
-  BugSpawnTime: 5
+  BugSpawnTime: 10
   pickupList: []
+  MaxBugsOnScreen: 1

@@ -17,31 +17,41 @@ public class FatBirdController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            FlapLeftWing();
+            FlapWing(false);
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            FlapRightWing();
+            FlapWing(true);
         }
     }
+    public float FlapSpeedInitial = 200;
     public float FlapSpeed = 50;
     public float FlapTorque = 33;
     public float FlapStamina = 20;
     public float FlapWeak = .33f;
-    void FlapLeftWing()
+    void FlapWing(bool right)
     {
-        float fMult = ChargeStamina(FlapStamina) ? 1 : FlapWeak;
-        rbody.AddForce(transform.up * FlapSpeed * fMult);
-        rbody.AddTorque(FlapTorque * fMult);
-        anim.SetTrigger("FlapLeft");
+        if (ScoreController.main.IsScoring())
+        {
+            float fMult = ChargeStamina(FlapStamina) ? 1 : FlapWeak;
+        if (transform.up.y > 0)
+            rbody.AddForce(transform.up * FlapSpeed * fMult);
+        rbody.AddTorque(FlapTorque * fMult * (right ? -1 : 1));
+        }
+        else
+        {
+            wingflap[right ? 0 : 1] = Time.time;
+            if (Mathf.Abs(wingflap[0] - wingflap[1])<.1f)
+            {
+                ScoreController.main.StartRecording();
+                BugPoolController.main.StartSpawning();
+                rbody.AddForce(transform.up * FlapSpeedInitial);
+                UIController.main.DisableTutorial();
+            }
+        }
+        anim.SetTrigger("Flap" + (  right ? "Right" : "Left"));
     }
-    void FlapRightWing()
-    {
-        float fMult = ChargeStamina(FlapStamina) ?1: FlapWeak;
-        rbody.AddForce(transform.up * FlapSpeed * fMult);
-        rbody.AddTorque(-FlapTorque * fMult);
-        anim.SetTrigger("FlapRight");
-    }
+    float[] wingflap = new float[] { 0, 0 };
 
     public float Stamina = 100;
     public float StaminaRegen = 75;

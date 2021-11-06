@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class SimpleBug : BugController
 {
-    bool moveRight = false;
     public override void OnSpawn()
     {
         LastAiThinkTime = Time.time + 2f / Speed;
-        moveRight = Random.value < .5f;
-        transform.position = new Vector3(
-            -(Camera.main.aspect * Camera.main.orthographicSize + 1) * (moveRight ? 1 : -1),
-            Random.value * 6 - 2,
-            1
-           );
+        base.OnSpawn();
     }
     public override void OnMovement()
     {
