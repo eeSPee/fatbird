@@ -6,6 +6,10 @@ public class FatBirdController : MonoBehaviour
 {
     Animator anim;
     Rigidbody2D rbody;
+    public AudioSource AudioSourceLeftWing;
+    public AudioSource AudioSourceRightWing;
+    public AudioClip AudioClipLeftWing;
+    public AudioClip AudioClipRightWing;
     public static FatBirdController main;
     private void Awake()
     {
@@ -34,6 +38,7 @@ public class FatBirdController : MonoBehaviour
         rbody.AddForce(transform.up * FlapSpeed * fMult);
         rbody.AddTorque(FlapTorque * fMult);
         anim.SetTrigger("FlapLeft");
+        AudioSourceLeftWing.PlayOneShot(AudioClipLeftWing);
     }
     void FlapRightWing()
     {
@@ -41,6 +46,7 @@ public class FatBirdController : MonoBehaviour
         rbody.AddForce(transform.up * FlapSpeed * fMult);
         rbody.AddTorque(-FlapTorque * fMult);
         anim.SetTrigger("FlapRight");
+        AudioSourceRightWing.PlayOneShot(AudioClipRightWing);
     }
 
     public float Stamina = 100;
