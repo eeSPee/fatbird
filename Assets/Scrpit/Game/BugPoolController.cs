@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BugPoolController : MonoBehaviour
 {
- float NextBugSpawnTime = 0;
+    float NextBugSpawnTime = 0;
     public float BugStartTime = 5;
     public float BugSpawnTime = 10;
     private void OnEnable()
@@ -13,10 +13,23 @@ public class BugPoolController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (Time.time> NextBugSpawnTime)
+        if (Time.time > NextBugSpawnTime)
         {
-            SpawnNewBug("Bug");
-            NextBugSpawnTime = Time.time + BugSpawnTime;
+            if (GetBugsOnScreen() < MaxBugsOnScreen)
+            {
+                float SpawnChacne = (float)Random.value;
+                if (SpawnChacne < .33f)
+                    SpawnNewBug("Simple Bug");
+                else if (SpawnChacne < .66f)
+                    SpawnNewBug("Smart Bug");
+                else
+                    SpawnNewBug("Indifferent Bug");
+                NextBugSpawnTime = Time.time + BugSpawnTime;
+            }
+            else
+            {
+                NextBugSpawnTime = Time.time + .5f;
+            }
         }
     }
 
@@ -42,5 +55,19 @@ public class BugPoolController : MonoBehaviour
     {
         BugController newBug = PoolBug(bug);
         newBug.gameObject.SetActive(true);
+    }
+    public int MaxBugsOnScreen = 1;
+    public int GetBugsOnScreen()
+    {
+        int nBugs = 0;
+        for (int child = 0; child < transform.childCount; child++)
+        {
+            Transform childTransform = transform.GetChild(child);
+            if (childTransform.gameObject.activeInHierarchy)
+            {
+                nBugs++;
+            }
+        }
+        return nBugs;
     }
 }
