@@ -6,8 +6,10 @@ public class FatBirdController : MonoBehaviour
 {
     Animator anim;
     Rigidbody2D rbody;
+    public static FatBirdController main;
     private void Awake()
     {
+        main = this;
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -22,18 +24,40 @@ public class FatBirdController : MonoBehaviour
             FlapRightWing();
         }
     }
-    float FlapSpeed = 50;
-    float FlapTorque = 33;
+    public float FlapSpeed = 50;
+    public float FlapTorque = 33;
+    public float FlapStamina = 20;
+    public float FlapWeak = .33f;
     void FlapLeftWing()
     {
-        rbody.AddForce(transform.up * FlapSpeed);
-        rbody.AddTorque(FlapTorque);
+        float fMult = ChargeStamina(FlapStamina) ? 1 : FlapWeak;
+        rbody.AddForce(transform.up * FlapSpeed * fMult);
+        rbody.AddTorque(FlapTorque * fMult);
         anim.SetTrigger("FlapLeft");
     }
     void FlapRightWing()
     {
-        rbody.AddForce(transform.up * FlapSpeed);
-        rbody.AddTorque(-FlapTorque);
+        float fMult = ChargeStamina(FlapStamina) ?1: FlapWeak;
+        rbody.AddForce(transform.up * FlapSpeed * fMult);
+        rbody.AddTorque(-FlapTorque * fMult);
         anim.SetTrigger("FlapRight");
+    }
+
+    public float Stamina = 100;
+    public float StaminaRegen = 75;
+
+    public bool ChargeStamina(float amount)
+    {
+        if (Stamina<amount)
+        {
+            Stamina = 0;
+            return false;
+        }
+        Stamina -= amount;
+        return true;
+    }
+    private void FixedUpdate()
+    {
+        Stamina = Mathf.Min(Stamina + StaminaRegen * Time.deltaTime,100);
     }
 }
