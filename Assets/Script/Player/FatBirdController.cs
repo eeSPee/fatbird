@@ -83,17 +83,23 @@ public class FatBirdController : MonoBehaviour
     private void FixedUpdate()
     {
         Stamina = Mathf.Min(Stamina + StaminaRegen * Time.deltaTime,100);
+        anim.SetBool("IsTired", Stamina< FlapStamina);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
         {
             ScoreController.main.ResetCombo();
-        }            
-                if (collision.gameObject.tag == "Spike")
+        }
+        if (collision.gameObject.tag == "Spike")
         {
             GameController.main.EndTheGame();
         }
+    }
+    public void EatBug()
+    {
+            anim.SetTrigger("EatBug");
+        
     }
     public void Reset()
     {

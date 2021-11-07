@@ -29,10 +29,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: 421b1997070caee4b9db20a2b4a537e9, type: 2}
     - target: {fileID: 290822073370714002, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 290822073370714002, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -60,18 +56,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 290822073370714002, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 290822073370714002, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 290822073370714002, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 1343843461937300185, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 390177481000874177, guid: fbb095f9cdaa305478939f1db095c0ea, type: 3}
     - target: {fileID: 3888271627842841046, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
       propertyPath: m_Name
       value: DragonFly

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class BugController : MonoBehaviour
 {
-    Renderer renderer;
+    SpriteRenderer renderer;
     public float Speed = .33f;
     public float OrbitRange = 1;
     public int ScoreValue = 100;
@@ -12,7 +12,7 @@ public abstract class BugController : MonoBehaviour
     protected bool moveRight = false;
     private void Awake()
     {
-        renderer = GetComponent<Renderer>();
+        renderer = GetComponent<SpriteRenderer>();
     }
     void OnEnable()
     {
@@ -32,6 +32,7 @@ public abstract class BugController : MonoBehaviour
     {
         Variation = Random.value;
         moveRight = FatBirdController.main.transform.position.x > 0;
+        renderer.flipX = moveRight;
         transform.position = new Vector3(
             -(Camera.main.aspect * Camera.main.orthographicSize + 1) * (moveRight ? 1 : -1),
             Random.value * 5 - 3,
@@ -49,6 +50,7 @@ public abstract class BugController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && !GameController.main.IsGameOver())
         {
+            FatBirdController.main.EatBug();
             Kill(true);
         }
     }

@@ -37,11 +37,11 @@ public class BugPoolController : MonoBehaviour
             {
                 float SpawnChacne = (float)Random.value;
                 if (ScoreController.main.Score > 15000)
-                    SpawnNewBug("Smart Bug");
+                    SpawnNewBug("DragonFly");
                 else if (SpawnChacne > .25f)
-                    SpawnNewBug("Simple Bug");
+                    SpawnNewBug("FruitFly");
                 else
-                    SpawnNewBug("Indifferent Bug");
+                    SpawnNewBug("ButterFly");
                 yield return new WaitForSeconds(BugSpawnTime);
             }
             else

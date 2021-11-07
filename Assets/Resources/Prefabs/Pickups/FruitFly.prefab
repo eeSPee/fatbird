@@ -22,6 +22,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3900291241014244617, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 20a77e2466d788c4697babfa53e59c5f, type: 2}
     - target: {fileID: 290822073370714002, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -66,9 +70,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1343843461937300185, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1343843461937300185, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1343843461937300185, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3888271627842841046, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
       propertyPath: m_Name
-      value: Simple Bug
+      value: FruitFly
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}

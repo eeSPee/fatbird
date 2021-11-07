@@ -72,6 +72,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1343843461937300185, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8528633356201447765, guid: 0c19e9e6a4846064794a985f3c61dccd, type: 3}
     - target: {fileID: 3888271627842841046, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
       propertyPath: m_Name
       value: ButterFly
