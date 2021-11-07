@@ -9,7 +9,6 @@ public abstract class BugController : MonoBehaviour
     public float OrbitRange = 1;
     public int ScoreValue = 100;
 
-    protected FatBirdController BirdController;
     protected AudioSource audioSource_eat;
     protected AudioClip audioClip_eat;
 
@@ -18,9 +17,11 @@ public abstract class BugController : MonoBehaviour
     private void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();
-        BirdController = GameObject.Find("Fatbird").GetComponent<FatBirdController>();
-        audioSource_eat = BirdController.AudioSourceEat;
-        audioClip_eat = BirdController.AudioClipEat;
+    }
+    private void Start()
+    {
+        audioSource_eat = FatBirdController.main.AudioSourceEat;
+        audioClip_eat = FatBirdController.main.AudioClipEat;
     }
     void OnEnable()
     {
