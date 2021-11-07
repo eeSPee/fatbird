@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 3
   OrbitRange: 3
-  ScoreValue: 100
+  ScoreValue: 50
 --- !u!1001 &1221827637798247922
 PrefabInstance:
   m_ObjectHideFlags: 0

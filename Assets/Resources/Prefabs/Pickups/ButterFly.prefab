@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 3
   OrbitRange: 1.66
-  ScoreValue: 100
-  StopDistance: 5
+  ScoreValue: 50
+  StopDistance: 4
   HoverTime: 5
 --- !u!1001 &7545980067203784242
 PrefabInstance:

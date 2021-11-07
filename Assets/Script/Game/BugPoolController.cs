@@ -35,10 +35,10 @@ public class BugPoolController : MonoBehaviour
         {
             if (GetBugsOnScreen() < MaxBugsOnScreen)
             {
-                float SpawnChacne = (float)Random.value;
-                if (ScoreController.main.Score > 15000)
+                float SpawnChacne = (float)Random.value * 100f;
+                if (SpawnChacne < 15)
                     SpawnNewBug("DragonFly");
-                else if (SpawnChacne > .25f)
+                else if (SpawnChacne > 50)
                     SpawnNewBug("FruitFly");
                 else
                     SpawnNewBug("ButterFly");

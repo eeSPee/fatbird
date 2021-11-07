@@ -47,8 +47,8 @@ public class UIController : MonoBehaviour
     {
         ScoreCounter.text = ScoreController.main.Score.ToString();
 
-        ComboCounter.gameObject.SetActive(ScoreController.main.Combo>1);
-        ComboHelp.gameObject.SetActive(ScoreController.main.Combo>1);
+        ComboCounter.gameObject.SetActive(ScoreController.main.Combo>0);
+        ComboHelp.gameObject.SetActive(ScoreController.main.Combo>0);
         ComboCounter.text = "x"+ScoreController.main.Combo;
     }
 }

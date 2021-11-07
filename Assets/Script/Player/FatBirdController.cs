@@ -96,7 +96,7 @@ public class FatBirdController : MonoBehaviour
         {
             ScoreController.main.ResetCombo();
         }
-        if (collision.gameObject.tag == "Spike")
+        if (collision.gameObject.tag == "Spike" && !GameController.main.IsGameOver())
         {
             AudioSourceSpike.PlayOneShot(AudioClipSpike);
             GameController.main.EndTheGame();

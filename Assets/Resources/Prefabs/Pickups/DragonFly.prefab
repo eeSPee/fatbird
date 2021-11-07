@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 3
   OrbitRange: 1
-  ScoreValue: 100
-  SightRange: 5
+  ScoreValue: 75
+  SightRange: 7
   AweTime: 3
 --- !u!1001 &3305185474300220044
 PrefabInstance:

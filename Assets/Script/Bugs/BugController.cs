@@ -44,7 +44,7 @@ public abstract class BugController : MonoBehaviour
         renderer.flipX = moveRight;
         transform.position = new Vector3(
             -(Camera.main.aspect * Camera.main.orthographicSize + 1) * (moveRight ? 1 : -1),
-            Random.value * 4 - 2,
+            Random.value * 4 - 1,
             1
            );
     }
