@@ -52,6 +52,7 @@ public class FatBirdController : MonoBehaviour
             {
                 GameController.main.StartTheGame();
                 rbody.AddForce(transform.up * FlapSpeedInitial);
+                transform.Find("Launch Particle").gameObject.SetActive(true);
             }
         }
         anim.SetTrigger("Flap" + (right ? "Right" : "Left"));
@@ -94,6 +95,7 @@ public class FatBirdController : MonoBehaviour
         if (collision.gameObject.tag == "Spike")
         {
             GameController.main.EndTheGame();
+            transform.Find("Hurt Particle").gameObject.SetActive(true);
         }
     }
     public void EatBug()
