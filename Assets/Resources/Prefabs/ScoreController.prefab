@@ -119,6 +119,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ComboParticle
       objectReference: {fileID: 0}
+    - target: {fileID: 8759379051580054691, guid: a61ee1fbf04146d47a5344d6ee3fb30e, type: 3}
+      propertyPath: stopAction
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a61ee1fbf04146d47a5344d6ee3fb30e, type: 3}
 --- !u!4 &7124362057692715163 stripped

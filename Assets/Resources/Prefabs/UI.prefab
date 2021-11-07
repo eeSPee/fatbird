@@ -547,7 +547,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'A
+  m_Text: 'A, J, Left
 
     Flap Left Wing'
 --- !u!1 &2433179948181436917
@@ -628,7 +628,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'D
+  m_Text: 'D, L, Right
 
     Flap Right Wing'
 --- !u!1 &2433179948215118863
