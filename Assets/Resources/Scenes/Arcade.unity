@@ -505,6 +505,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fatbird
       objectReference: {fileID: 0}
+    - target: {fileID: 8346635284147438047, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346635284147438047, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].probability
+      value: 0.03
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
 --- !u!1001 &7622960236410472477

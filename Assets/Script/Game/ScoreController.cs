@@ -46,8 +46,12 @@ public class ScoreController : MonoBehaviour
     public void ScorePoints(int points, bool combo)
     {
         if (combo)
+
+        {
+            transform.Find("ComboParticle").gameObject.SetActive(true);
             Combo++;
-        Score += points * Combo;
+        }
+            Score += points * Combo;
         UIController.main.UpdateScore();
     }
     public void ResetCombo()
