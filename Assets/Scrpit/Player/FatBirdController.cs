@@ -8,8 +8,12 @@ public class FatBirdController : MonoBehaviour
     Rigidbody2D rbody;
     public AudioSource AudioSourceLeftWing;
     public AudioSource AudioSourceRightWing;
+    public AudioSource AudioSourceEat;
+    public AudioSource AudioSourceSpike;
     public AudioClip AudioClipLeftWing;
     public AudioClip AudioClipRightWing;
+    public AudioClip AudioClipEat;
+    public AudioClip AudioClipSpike;
     public static FatBirdController main;
     private void Awake()
     {
@@ -89,9 +93,10 @@ public class FatBirdController : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             ScoreController.main.ResetCombo();
-        }            
+        }
                 if (collision.gameObject.tag == "Spike")
         {
+            AudioSourceSpike.PlayOneShot(AudioClipSpike);
             GameController.main.EndTheGame();
         }
     }
