@@ -635,8 +635,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fatbird
       objectReference: {fileID: 0}
+    - target: {fileID: 5686518098449362758, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: AudioClipEat
+      value: 
+      objectReference: {fileID: 8300000, guid: 80096aba59dedcb43bca245d5708d1fa, type: 3}
+    - target: {fileID: 5686518098449362758, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: AudioSourceEat
+      value: 
+      objectReference: {fileID: 5686518099210211838}
+    - target: {fileID: 5686518098449362758, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: AudioSourceSpike
+      value: 
+      objectReference: {fileID: 5686518099210211838}
+    - target: {fileID: 5686518098449362758, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: AudioSourceLeftWing
+      value: 
+      objectReference: {fileID: 5686518099210211838}
+    - target: {fileID: 5686518098449362758, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: AudioSourceRightWing
+      value: 
+      objectReference: {fileID: 5686518099210211838}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+--- !u!82 &5686518099210211838 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6144333574944685886, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+  m_PrefabInstance: {fileID: 5686518099210211837}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7622960236410472477
 PrefabInstance:
   m_ObjectHideFlags: 0
