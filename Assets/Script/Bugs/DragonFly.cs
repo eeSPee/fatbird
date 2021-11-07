@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SmartBugController : BugController
+public class DragonFly : BugController
 {
     public float SightRange = 2f;
     public float AweTime = 12f;

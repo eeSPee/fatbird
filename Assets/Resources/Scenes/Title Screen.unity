@@ -601,8 +601,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2364789590399482041, guid: 9fa81dbfd4f846d489a4334b336f551f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1512638698869654112, guid: 9fa81dbfd4f846d489a4334b336f551f, type: 3}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512638698869654112, guid: 9fa81dbfd4f846d489a4334b336f551f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512638698869654112, guid: 9fa81dbfd4f846d489a4334b336f551f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512638698869654112, guid: 9fa81dbfd4f846d489a4334b336f551f, type: 3}
+      propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1512638698869654112, guid: 9fa81dbfd4f846d489a4334b336f551f, type: 3}
@@ -648,6 +664,10 @@ PrefabInstance:
     - target: {fileID: 2666456102395540516, guid: 9fa81dbfd4f846d489a4334b336f551f, type: 3}
       propertyPath: m_Name
       value: FruitFly
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936930191025337268, guid: 9fa81dbfd4f846d489a4334b336f551f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fa81dbfd4f846d489a4334b336f551f, type: 3}
