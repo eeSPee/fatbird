@@ -35,7 +35,7 @@ public abstract class BugController : MonoBehaviour
         renderer.flipX = moveRight;
         transform.position = new Vector3(
             -(Camera.main.aspect * Camera.main.orthographicSize + 1) * (moveRight ? 1 : -1),
-            Random.value * 5 - 3,
+            Random.value * 4 - 2,
             1
            );
     }
@@ -50,6 +50,7 @@ public abstract class BugController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && !GameController.main.IsGameOver())
         {
+            SpecialEffectPooler.main.SpawnNewBug("BugPickup", transform.position);
             FatBirdController.main.EatBug();
             Kill(true);
         }

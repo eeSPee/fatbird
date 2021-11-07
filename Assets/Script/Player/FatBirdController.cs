@@ -96,6 +96,7 @@ public class FatBirdController : MonoBehaviour
         {
             GameController.main.EndTheGame();
             transform.Find("Hurt Particle").gameObject.SetActive(true);
+            anim.SetBool("Hurt", true);
         }
     }
     public void EatBug()
@@ -109,5 +110,6 @@ public class FatBirdController : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, 0);
         rbody.velocity = Vector2.zero;
         rbody.angularVelocity = 0;
+        anim.SetBool("Hurt", false);
     }
 }

@@ -82,7 +82,7 @@ public class BugPoolController : MonoBehaviour
         for (int child = 0; child < transform.childCount; child++)
         {
             Transform childTransform = transform.GetChild(child);
-            if (childTransform.gameObject.activeInHierarchy)
+            if (childTransform.gameObject.activeInHierarchy && childTransform.GetComponent<BugController>()!=null)
             {
                 nBugs++;
             }

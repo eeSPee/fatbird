@@ -327,6 +327,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3855841124599186517, guid: e2c7d8fc745d9224cbe858dcc8b7545d, type: 3}
+      propertyPath: stopAction
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2c7d8fc745d9224cbe858dcc8b7545d, type: 3}
 --- !u!1001 &2433179946775479073
@@ -504,14 +508,6 @@ PrefabInstance:
     - target: {fileID: 5686518098449362757, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
       propertyPath: m_Name
       value: Fatbird
-      objectReference: {fileID: 0}
-    - target: {fileID: 8346635284147438047, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
-      propertyPath: EmissionModule.rateOverDistance.scalar
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 8346635284147438047, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].probability
-      value: 0.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
