@@ -86,7 +86,11 @@ public class FatBirdController : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if ((collision.gameObject.tag == "Ground" && ScoreController.main.IsScoring()) || collision.gameObject.tag == "Spike")
+        if (collision.gameObject.tag == "Ground")
+        {
+            ScoreController.main.ResetCombo();
+        }            
+                if (collision.gameObject.tag == "Spike")
         {
             GameController.main.EndTheGame();
         }
