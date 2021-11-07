@@ -8,11 +8,19 @@ public abstract class BugController : MonoBehaviour
     public float Speed = .33f;
     public float OrbitRange = 1;
     public int ScoreValue = 100;
+
+    protected FatBirdController BirdController;
+    protected AudioSource audioSource_eat;
+    protected AudioClip audioClip_eat;
+
     protected float Variation = 1f;
     protected bool moveRight = false;
     private void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();
+        BirdController = GameObject.Find("Fatbird").GetComponent<FatBirdController>();
+        audioSource_eat = BirdController.AudioSourceEat;
+        audioClip_eat = BirdController.AudioClipEat;
     }
     void OnEnable()
     {
@@ -52,6 +60,7 @@ public abstract class BugController : MonoBehaviour
         {
             SpecialEffectPooler.main.SpawnNewBug("BugPickup", transform.position);
             FatBirdController.main.EatBug();
+            audioSource_eat.PlayOneShot(audioClip_eat);
             Kill(true);
         }
     }
