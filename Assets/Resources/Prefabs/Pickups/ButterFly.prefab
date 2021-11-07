@@ -120,6 +120,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3900291241014244617, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 74c3ab7bd61a7074e8b0c6f08a3cb58c, type: 2}
     - target: {fileID: 290822073370714002, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -170,7 +174,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: b4732e9aeba94c64eb7714778a80dbb2, type: 3}
     - target: {fileID: 3888271627842841046, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
       propertyPath: m_Name
-      value: Indifferent Bug
+      value: ButterFly
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}

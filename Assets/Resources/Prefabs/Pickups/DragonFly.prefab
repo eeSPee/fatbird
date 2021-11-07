@@ -120,6 +120,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3900291241014244617, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 421b1997070caee4b9db20a2b4a537e9, type: 2}
     - target: {fileID: 290822073370714002, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -174,7 +178,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 4cb4279fa9cdd71459dea64444ca8130, type: 3}
     - target: {fileID: 3888271627842841046, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
       propertyPath: m_Name
-      value: Smart Bug
+      value: DragonFly
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
