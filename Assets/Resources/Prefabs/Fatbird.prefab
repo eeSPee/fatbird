@@ -57,10 +57,10 @@ MonoBehaviour:
   FlapSpeedInitial: 200
   FlapSpeed: 60
   FlapTorque: 33
-  FlapStamina: 20
+  FlapStamina: 25
   FlapWeak: 0.33
   Stamina: 100
-  StaminaRegen: 80
+  StaminaRegen: 110
 --- !u!50 &5686518098449362759
 Rigidbody2D:
   serializedVersion: 4

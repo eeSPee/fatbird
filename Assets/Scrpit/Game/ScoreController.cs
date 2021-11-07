@@ -53,6 +53,7 @@ public class ScoreController : MonoBehaviour
     public void ResetCombo()
     {
         Combo = 0;
+        UIController.main.UpdateScore();
     }
 }
     

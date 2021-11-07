@@ -35,6 +35,8 @@ public class GameController : MonoBehaviour
     {
         ScoreController.main.StopRecording();
         BugPoolController.main.StopSpawning();
+        ScoreController.main.ResetCombo();
+        UIController.main.EnableGameOverScreen();
         GameOver = true;
     }
     public void ResetGame()
@@ -43,6 +45,7 @@ public class GameController : MonoBehaviour
         GameOver = false;
         BugPoolController.main.ClearBugs();
         FatBirdController.main.Reset();
+        UIController.main.DisableGameOverScreen();
     }
     bool GameOver = false;
     public bool IsGameOver()

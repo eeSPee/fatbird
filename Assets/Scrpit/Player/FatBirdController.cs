@@ -21,11 +21,11 @@ public class FatBirdController : MonoBehaviour
     {
         if (!GameController.main.IsGameOver())
         {
-            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.Mouse0))
             {
                 FlapWing(false);
             }
-            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.Mouse1))
+            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.Mouse1))
             {
                 FlapWing(true);
             }
@@ -86,7 +86,7 @@ public class FatBirdController : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if ((collision.gameObject.tag == "Ground" && ScoreController.main.Score > 500) || collision.gameObject.tag == "Spike")
+        if ((collision.gameObject.tag == "Ground" && ScoreController.main.IsScoring()) || collision.gameObject.tag == "Spike")
         {
             GameController.main.EndTheGame();
         }

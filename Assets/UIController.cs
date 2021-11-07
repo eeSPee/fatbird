@@ -8,7 +8,8 @@ public class UIController : MonoBehaviour
     Text ScoreCounter;
     Text ComboCounter;
     GameObject ComboHelp;
-    List<GameObject> Tutorial = new List<GameObject>();
+    GameObject Tutorial;
+    GameObject GameOverScreen;
 
     public static UIController main;
     private void Awake()
@@ -18,21 +19,29 @@ public class UIController : MonoBehaviour
         ComboCounter = transform.Find("Combo Counter").GetComponent<Text>();
         ComboHelp = transform.Find("Combo Title").gameObject;
 
-        Tutorial.Add(transform.Find("Tutorial 1").gameObject);
-        Tutorial.Add(transform.Find("Tutorial 2").gameObject);
-        Tutorial.Add(transform.Find("Tutorial 3").gameObject);
+        Tutorial = transform.Find("Tutorial").gameObject;
+        GameOverScreen = transform.Find("Game Over").gameObject;
     }
     private void Start()
     {
         UpdateScore();
+        DisableGameOverScreen();
     }
 
     public void DisableTutorial()
     {
-        foreach (GameObject tutorial in Tutorial)
-        {
-            tutorial.SetActive(false);
-        }
+        Tutorial.SetActive(false);
+    }
+    float HighScore = 0;
+    public void EnableGameOverScreen()
+    {
+        GameOverScreen.SetActive(true);
+        HighScore = Mathf.Max(HighScore, ScoreController.main.Score);
+        GameOverScreen.transform.Find("Hiscore Counter").GetComponent<Text>().text = HighScore+"!";
+    }
+    public void DisableGameOverScreen()
+    {
+        GameOverScreen.SetActive(false);
     }
     public void UpdateScore()
     {
@@ -40,6 +49,6 @@ public class UIController : MonoBehaviour
 
         ComboCounter.gameObject.SetActive(ScoreController.main.Combo>0);
         ComboHelp.gameObject.SetActive(ScoreController.main.Combo>0);
-        ComboCounter.text = ScoreController.main.Combo.ToString();
+        ComboCounter.text = "x"+ScoreController.main.Combo;
     }
 }
