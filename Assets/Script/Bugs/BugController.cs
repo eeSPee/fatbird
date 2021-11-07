@@ -69,8 +69,8 @@ public abstract class BugController : MonoBehaviour
     {
         if (playerscore)
             ScoreController.main.ScorePoints(ScoreValue, true);
-        else
-            ScoreController.main.ResetCombo();
+        //else
+       //     ScoreController.main.ResetCombo();
         gameObject.SetActive(false);
     }
     public bool IsOutsideGameBounds()

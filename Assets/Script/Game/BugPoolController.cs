@@ -38,10 +38,10 @@ public class BugPoolController : MonoBehaviour
                 float SpawnChacne = (float)Random.value * 100f;
                 if (SpawnChacne < 15)
                     SpawnNewBug("DragonFly");
-                else if (SpawnChacne > 50)
-                    SpawnNewBug("FruitFly");
-                else
+                else if (SpawnChacne < 50)
                     SpawnNewBug("ButterFly");
+                else
+                    SpawnNewBug("FruitFly");
                 yield return new WaitForSeconds(BugSpawnTime);
             }
             else

@@ -6,6 +6,7 @@ public class ScoreController : MonoBehaviour
 {
     public int ScorePerSecond = 100;
     public int Combo = 0;
+    public float ComboResetTime = 10;
     public int Score = 0;
     public static ScoreController main;
     private void Awake()
@@ -30,6 +31,7 @@ public class ScoreController : MonoBehaviour
     {
         return (scoreCoroutine != null);
     }
+    float comboResetTime = 0;
     public IEnumerator RecordGameCoroutine()
     {
         Score = 0;
@@ -37,6 +39,10 @@ public class ScoreController : MonoBehaviour
         UIController.main.UpdateScore();
         score_start:
         {
+            if (Combo > 0 && comboResetTime < Time.time)
+            {
+                ResetCombo();
+            }
             yield return new WaitForSeconds(1);
             Score += ScorePerSecond;
             UIController.main.UpdateScore();
@@ -50,6 +56,7 @@ public class ScoreController : MonoBehaviour
         {
             transform.Find("ComboParticle").gameObject.SetActive(true);
             Combo++;
+            comboResetTime = Time.time + ComboResetTime;
         }
             Score += points * Combo;
         UIController.main.UpdateScore();
