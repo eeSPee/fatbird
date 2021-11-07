@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IndifferentBugController : BugController
+public class ButterFly : BugController
 {
     public float StopDistance = 5;
     public float HoverTime = 15;
