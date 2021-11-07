@@ -22,6 +22,7 @@ public class BugPoolController : MonoBehaviour
     {
         if (IsSpawning())
             StopCoroutine(spawnCoroutine);
+        spawnCoroutine = null;
     }
     public bool IsSpawning()
     {
@@ -35,10 +36,10 @@ public class BugPoolController : MonoBehaviour
             if (GetBugsOnScreen() < MaxBugsOnScreen)
             {
                 float SpawnChacne = (float)Random.value;
-                if (SpawnChacne < .33f)
-                    SpawnNewBug("Simple Bug");
-                else if (SpawnChacne < .66f)
+                if (ScoreController.main.Score > 15000)
                     SpawnNewBug("Smart Bug");
+                else if (SpawnChacne > .25f)
+                    SpawnNewBug("Simple Bug");
                 else
                     SpawnNewBug("Indifferent Bug");
                 yield return new WaitForSeconds(BugSpawnTime);
@@ -87,5 +88,16 @@ public class BugPoolController : MonoBehaviour
             }
         }
         return nBugs;
+    }
+    public void ClearBugs()
+    {
+        for (int child = 0; child < transform.childCount; child++)
+        {
+            Transform childTransform = transform.GetChild(child);
+            if (childTransform.gameObject.activeInHierarchy)
+            {
+                childTransform.gameObject.SetActive(false);
+            }
+        }
     }
 }

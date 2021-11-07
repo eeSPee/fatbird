@@ -21,6 +21,9 @@ public class SmartBugController : BugController
             case BugState.wander:
                 transform.position += (Vector3.right * (moveRight ? 1 : -1) * Speed + orbit) * Time.deltaTime;
                 break;
+            case BugState.curious:
+                transform.position += orbit * Time.deltaTime;
+                break;
             case BugState.fleeing:
                 transform.position -= (Vector3.right * (moveRight ? 1 : -1) * Speed + orbit)  * Time.deltaTime * 1.25f;
                 break;
@@ -55,5 +58,12 @@ public class SmartBugController : BugController
                 }
                 break;
         }
+    }
+    public override Vector3 HandleOrbit()
+    {
+        if (AiState != BugState.curious)
+            return base.HandleOrbit();
+        float timedelta = (Time.time + Variation) % 2 * Mathf.PI;
+        return new Vector2(Mathf.Sin(timedelta), Mathf.Cos(timedelta)) * OrbitRange;
     }
 }

@@ -28,6 +28,8 @@ public class IndifferentBugController : BugController
     }
     public override Vector3 HandleOrbit()
     {
+        if (AiState!=BugState.hover)
+            return base.HandleOrbit();
         float timedelta = (Time.time + Variation) % 2 * Mathf.PI;
         return new Vector2(Mathf.Sin(timedelta), Mathf.Cos(timedelta)) * OrbitRange;
     }

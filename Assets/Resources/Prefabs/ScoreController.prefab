@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2043282149866112354}
   m_Layer: 0
   m_Name: ScoreController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd65c92b9f7122f43b85eb3d29f6b155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BugStartTime: 2
-  BugSpawnTime: 10
+  BugStartTime: 6
+  BugSpawnTime: 8
   pickupList: []
   MaxBugsOnScreen: 1

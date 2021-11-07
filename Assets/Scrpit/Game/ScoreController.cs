@@ -24,6 +24,7 @@ public class ScoreController : MonoBehaviour
     {
         if (IsScoring())
             StopCoroutine(scoreCoroutine);
+        scoreCoroutine = null;
     }
     public bool IsScoring()
     {
@@ -32,6 +33,7 @@ public class ScoreController : MonoBehaviour
     public IEnumerator RecordGameCoroutine()
     {
         Score = 0;
+        Combo = 0;
         UIController.main.UpdateScore();
         score_start:
         {
