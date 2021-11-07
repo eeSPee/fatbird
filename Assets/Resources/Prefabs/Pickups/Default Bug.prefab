@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1343843461937300185}
   - component: {fileID: 8893625261947774974}
   - component: {fileID: 2762400803874106950}
-  - component: {fileID: -3900291241014244617}
   m_Layer: 0
   m_Name: Default Bug
   m_TagString: Untagged
@@ -198,6 +197,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+<<<<<<< HEAD
 --- !u!95 &-3900291241014244617
 Animator:
   serializedVersion: 3
@@ -217,3 +217,5 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+=======
+>>>>>>> parent of 8dad3f1 (Graphics .1)
