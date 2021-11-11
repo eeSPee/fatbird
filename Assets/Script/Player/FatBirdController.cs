@@ -8,9 +8,11 @@ public class FatBirdController : MonoBehaviour
     Rigidbody2D rbody;
     public AudioSource AudioSourceLeftWing;
     public AudioSource AudioSourceRightWing;
+    public AudioSource AudioSourceWhistle;
     public AudioSource AudioSourceEat;
     public AudioSource AudioSourceSpike;
     public AudioClip AudioClipLeftWing;
+    public AudioClip AudioClipWhistle;
     public AudioClip AudioClipRightWing;
     public AudioClip AudioClipEat;
     public AudioClip AudioClipSpike;
@@ -46,8 +48,8 @@ public class FatBirdController : MonoBehaviour
         {
             float fMult = ChargeStamina(FlapStamina) ? 1 : FlapWeak;
             if (transform.up.y > 0)
-                rbody.AddForce(transform.up * FlapSpeed * fMult);
-            rbody.AddTorque(FlapTorque * fMult * (right ? -1 : 1));
+              rbody.AddForce(transform.up * FlapSpeed * fMult);
+              rbody.AddTorque(FlapTorque * fMult * (right ? -1 : 1));
         }
         else
         {
@@ -63,11 +65,27 @@ public class FatBirdController : MonoBehaviour
 
         if (right)
         {
+            AudioSourceRightWing.pitch=(Random.Range(0.6f,1.4f));
             AudioSourceRightWing.PlayOneShot(AudioClipRightWing);
+            if (Stamina >= FlapStamina & AudioSourceWhistle.isPlaying)
+            {
+            }
+            else if(Stamina >= FlapStamina)
+            {
+              AudioSourceWhistle.PlayOneShot(AudioClipWhistle);
+            }
         }
         else
         {
+            AudioSourceLeftWing.pitch=(Random.Range(0.6f,1.4f));
             AudioSourceLeftWing.PlayOneShot(AudioClipLeftWing);
+            if (Stamina >= FlapStamina & AudioSourceWhistle.isPlaying)
+            {
+            }
+            else if(Stamina >= FlapStamina)
+            {
+              AudioSourceWhistle.PlayOneShot(AudioClipWhistle);
+            }
         }
     }
     float[] wingflap = new float[] { 0, 0 };
@@ -107,7 +125,7 @@ public class FatBirdController : MonoBehaviour
     public void EatBug()
     {
             anim.SetTrigger("EatBug");
-        
+
     }
     public void Reset()
     {
