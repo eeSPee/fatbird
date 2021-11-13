@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameController : MonoBehaviour
+public class ArcadeController : LevelController
 {
-    public static GameController main;
     GameObject[] Walls;
     List<SpikeController> Spikes = new List<SpikeController>();
-    private void Awake()
+    protected override void Awake()
     {
-        main = this;
+        base.Awake();
         Walls = new GameObject[]
         {
             transform.Find("Level Bounds R").gameObject,
@@ -18,49 +17,33 @@ public class GameController : MonoBehaviour
         };
         Spikes.AddRange(gameObject.GetComponentsInChildren<SpikeController>());
     }
-    private void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            ResetGame();
-        }
-    }
-    public void Start()
+    protected override void Start()
     {
         Walls[0].transform.position = Vector3.right * (Camera.main.orthographicSize * Camera.main.aspect + .5f);
         Walls[1].transform.position = Vector3.left * (Camera.main.orthographicSize * Camera.main.aspect + .5f);
         Walls[2].transform.localScale = new Vector3((Camera.main.orthographicSize * Camera.main.aspect) * 2, 1, 1);
         ResetSpikes();
     }
-    public void StartTheGame()
+    public override void StartTheGame()
     {
-        UIController.main.DisableTutorial();
         ScoreController.main.StartRecording();
         BugPoolController.main.StartSpawning();
         ArmSpikes();
+        base.StartTheGame();
     }
-    public void EndTheGame()
+    public override void EndTheGame()
     {
         ScoreController.main.StopRecording();
         BugPoolController.main.StopSpawning();
         ScoreController.main.ResetCombo();
-        UIController.main.EnableGameOverScreen();
-        GameOver = true;
+        base.EndTheGame();
     }
-    public void ResetGame()
+    public override void ResetGame()
     {
-        EndTheGame();
-        GameOver = false;
+        base.ResetGame();
         BugPoolController.main.ClearBugs();
-        FatBirdController.main.Reset();
-        UIController.main.DisableGameOverScreen();
         ScoreController.main.Score = 0;
         ResetSpikes();
-    }
-    bool GameOver = false;
-    public bool IsGameOver()
-    {
-        return GameOver;
     }
     public void ArmSpikes()
     {

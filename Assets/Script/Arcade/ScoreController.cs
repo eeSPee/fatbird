@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ScoreController : MonoBehaviour
 {
+    public float Score = 0;
     public int ScorePerSecond = 100;
     public int Combo = 0;
     public float ComboResetTime = 10;
-    public int Score = 0;
     public static ScoreController main;
     private void Awake()
     {
@@ -43,8 +43,9 @@ public class ScoreController : MonoBehaviour
             {
                 ResetCombo();
             }
-            yield return new WaitForSeconds(1);
-            Score += ScorePerSecond;
+            yield return new WaitForSeconds(.1f);
+            if (!FatBirdController.main.IsGrounded())
+                Score += ScorePerSecond * .1f;
             UIController.main.UpdateScore();
             goto score_start;
         }

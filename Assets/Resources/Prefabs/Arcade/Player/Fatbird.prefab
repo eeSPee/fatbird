@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5686518098449362753}
-  - component: {fileID: 5686518098449362758}
+  - component: {fileID: 5433833233636151584}
   - component: {fileID: 5686518098449362759}
   - component: {fileID: 5686518098449362756}
   - component: {fileID: 5686518098449362752}
@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5686518098449362757}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -2.5, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 5686518099628786616}
@@ -42,7 +42,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5686518098449362758
+--- !u!114 &5433833233636151584
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -51,13 +51,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5686518098449362757}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b65ecbfeb15ce04aa09bf3614afc4ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 13203f0a791a2ce4fb4f71e8065e2468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSourceLeftWing: {fileID: 3854046877941403783}
-  AudioSourceRightWing: {fileID: 3854046877941403783}
-  AudioSourceEat: {fileID: 3854046877941403783}
-  AudioSourceSpike: {fileID: 3854046877941403783}
+  audiosource: {fileID: 0}
   AudioClipLeftWing: {fileID: 8300000, guid: 48746a4135712a94a98c1fdf0fc3e74d, type: 3}
   AudioClipRightWing: {fileID: 8300000, guid: 45118b36e0e675447910d702fdd4503f, type: 3}
   AudioClipEat: {fileID: 8300000, guid: 80096aba59dedcb43bca245d5708d1fa, type: 3}
@@ -65,10 +62,10 @@ MonoBehaviour:
   FlapSpeedInitial: 200
   FlapSpeed: 60
   FlapTorque: 28
-  FlapStamina: 25
-  FlapWeak: 0.33
+  FlapStamina: 15
+  FlapWeak: 0.28
   Stamina: 100
-  StaminaRegen: 110
+  StaminaRegen: 75
 --- !u!50 &5686518098449362759
 Rigidbody2D:
   serializedVersion: 4

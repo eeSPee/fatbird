@@ -124,7 +124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start: {x: 0, y: -5, z: 0}
-  startDelay: 50
+  WaitForScore: 7500
+  ComeInTime: 3
 --- !u!1 &1186445001
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +250,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start: {x: -3, y: 0, z: 0}
-  startDelay: 30
+  WaitForScore: 5000
+  ComeInTime: 3
 --- !u!1 &1628298217
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +376,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start: {x: 3, y: 0, z: 0}
-  startDelay: 30
+  WaitForScore: 5000
+  ComeInTime: 3
 --- !u!1 &1650236151
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,7 +502,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start: {x: 0, y: -5, z: 0}
-  startDelay: 120
+  WaitForScore: 12000
+  ComeInTime: 3
 --- !u!1 &1817647018808035259
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,7 +821,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start: {x: 0, y: -5, z: 0}
-  startDelay: 50
+  WaitForScore: 7500
+  ComeInTime: 3
 --- !u!1 &7622960234916636775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,7 +1056,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7622960235428979453}
-  - component: {fileID: 1220903520910733331}
+  - component: {fileID: 368436088990412242}
   m_Layer: 0
   m_Name: Boundary Controller
   m_TagString: Untagged
@@ -1078,7 +1083,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1220903520910733331
+--- !u!114 &368436088990412242
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1087,7 +1092,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7622960235428979394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d99828ab82493a46bb238b0856be70c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a81f91c40bced647b7f81d2b961dd15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7622960235753631564

@@ -20,7 +20,7 @@ public abstract class BugController : MonoBehaviour
     }
     private void Start()
     {
-        audioSource_eat = FatBirdController.main.AudioSourceEat;
+        audioSource_eat = FatBirdController.main.audiosource;
         audioClip_eat = FatBirdController.main.AudioClipEat;
     }
     void OnEnable()
@@ -57,7 +57,7 @@ public abstract class BugController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && !GameController.main.IsGameOver())
+        if (collision.gameObject.tag == "Player" && !LevelController.main.IsGameOver())
         {
             SpecialEffectPooler.main.SpawnNewBug("BugPickup", transform.position);
             FatBirdController.main.EatBug();

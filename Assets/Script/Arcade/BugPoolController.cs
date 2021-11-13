@@ -64,7 +64,7 @@ public class BugPoolController : MonoBehaviour
                 return childTransform.GetComponent<BugController>();
             }
         }
-        GameObject bug = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Pickups/"+ bugName));
+        GameObject bug = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Arcade/Pickups/" + bugName));
         bug.name = bugName;
         bug.transform.SetParent(transform);
         bug.SetActive(false);
