@@ -36,7 +36,6 @@ public class ScoreController : MonoBehaviour
     {
         Score = 0;
         Combo = 0;
-        UIController.main.UpdateScore();
         score_start:
         {
             if (Combo > 0 && comboResetTime < Time.time)
@@ -46,7 +45,6 @@ public class ScoreController : MonoBehaviour
             yield return new WaitForSeconds(.1f);
             if (!FatBirdController.main.IsGrounded())
                 Score += ScorePerSecond * .1f;
-            UIController.main.UpdateScore();
             goto score_start;
         }
     }
@@ -60,12 +58,10 @@ public class ScoreController : MonoBehaviour
             comboResetTime = Time.time + ComboResetTime;
         }
             Score += points * Combo;
-        UIController.main.UpdateScore();
     }
     public void ResetCombo()
     {
         Combo = 0;
-        UIController.main.UpdateScore();
     }
 }
     

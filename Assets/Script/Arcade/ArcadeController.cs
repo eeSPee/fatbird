@@ -31,12 +31,12 @@ public class ArcadeController : LevelController
         ArmSpikes();
         base.StartTheGame();
     }
-    public override void EndTheGame()
+    public override void EndTheGame(bool victory)
     {
         ScoreController.main.StopRecording();
         BugPoolController.main.StopSpawning();
         ScoreController.main.ResetCombo();
-        base.EndTheGame();
+        base.EndTheGame(victory);
     }
     public override void ResetGame()
     {

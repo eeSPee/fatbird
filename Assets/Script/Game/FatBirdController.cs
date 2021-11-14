@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FatBirdController : MonoBehaviour
 {
+    Vector3 start;
     Animator anim;
     Rigidbody2D rbody;
     public AudioSource audiosource;
@@ -15,11 +16,12 @@ public class FatBirdController : MonoBehaviour
     private void Awake()
     {
         main = this;
+        start = transform.position;
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         audiosource = GetComponent<AudioSource>();
     }
-    void Update()
+    public virtual void Update()
     {
         if (!LevelController.main.IsGameOver())
         {
@@ -88,12 +90,12 @@ public class FatBirdController : MonoBehaviour
         Stamina = Mathf.Min(Stamina + StaminaRegen * Time.deltaTime,100);
         anim.SetBool("IsTired", Stamina< FlapStamina);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    public virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Spike" && !LevelController.main.IsGameOver())
         {
             audiosource.PlayOneShot(AudioClipSpike);
-            LevelController.main.EndTheGame();
+            LevelController.main.EndTheGame(false);
             transform.Find("Hurt Particle").gameObject.SetActive(true);
             anim.SetBool("Hurt", true);
         }
@@ -128,7 +130,7 @@ public class FatBirdController : MonoBehaviour
     }
     public void Reset()
     {
-        transform.position = Vector3.down * 2.5f;
+        transform.position = start;
         transform.rotation = Quaternion.Euler(0, 0, 0);
         rbody.velocity = Vector2.zero;
         rbody.angularVelocity = 0;

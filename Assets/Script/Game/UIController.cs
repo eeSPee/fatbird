@@ -5,50 +5,30 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-    Text ScoreCounter;
-    Text ComboCounter;
-    GameObject ComboHelp;
     GameObject Tutorial;
-    GameObject GameOverScreen;
 
     public static UIController main;
-    private void Awake()
+    public virtual void Awake()
     {
         main = this;
-        ScoreCounter = transform.Find("Score Counter").GetComponent<Text>();
-        ComboCounter = transform.Find("Combo Counter").GetComponent<Text>();
-        ComboHelp = transform.Find("Combo Title").gameObject;
-
         Tutorial = transform.Find("Tutorial").gameObject;
-        GameOverScreen = transform.Find("Game Over").gameObject;
     }
-    private void Start()
+    void Start()
     {
-        UpdateScore();
         DisableGameOverScreen();
     }
 
-    public void DisableTutorial()
+    public virtual void Update()
+    { }
+
+        public void DisableTutorial()
     {
         Tutorial.SetActive(false);
     }
-    float HighScore = 0;
-    public void EnableGameOverScreen()
+    public virtual void EnableGameOverScreen(bool victory)
     {
-        GameOverScreen.SetActive(true);
-        HighScore = Mathf.Max(HighScore, ScoreController.main.Score);
-        GameOverScreen.transform.Find("Hiscore Counter").GetComponent<Text>().text = HighScore+"!";
     }
-    public void DisableGameOverScreen()
+    public virtual void DisableGameOverScreen()
     {
-        GameOverScreen.SetActive(false);
-    }
-    public void UpdateScore()
-    {
-        ScoreCounter.text = ScoreController.main.Score.ToString();
-
-        ComboCounter.gameObject.SetActive(ScoreController.main.Combo>0);
-        ComboHelp.gameObject.SetActive(ScoreController.main.Combo>0);
-        ComboCounter.text = "x"+ScoreController.main.Combo;
     }
 }

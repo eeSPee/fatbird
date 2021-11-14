@@ -23,16 +23,17 @@ public class LevelController : MonoBehaviour
     {
         UIController.main.DisableTutorial();
         GameRunning = true;
+        StartTime = Time.time;
     }
-    public virtual void EndTheGame()
+    public virtual void EndTheGame(bool victory)
     {
-        UIController.main.EnableGameOverScreen();
+        UIController.main.EnableGameOverScreen(victory);
         GameOver = true;
         GameRunning = false;
     }
     public virtual void ResetGame()
     {
-        EndTheGame();
+        EndTheGame(false);
         GameOver = false;
         FatBirdController.main.Reset();
         UIController.main.DisableGameOverScreen();
@@ -46,5 +47,10 @@ public class LevelController : MonoBehaviour
     public bool IsGameRunning()
     {
         return GameRunning;
+    }
+    float StartTime = 0;
+    public virtual float GetGameTime()
+    {
+        return Time.time - StartTime;
     }
 }

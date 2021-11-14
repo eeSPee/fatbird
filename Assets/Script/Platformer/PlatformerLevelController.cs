@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class PlatformerLevelController : LevelController
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float GameTime = 10;
 
-    // Update is called once per frame
-    void Update()
+    public override float GetGameTime()
     {
-        
+        return GameTime - base.GetGameTime();
+    }
+    protected override void Update()
+    {
+        base.Update();
+        if (!IsGameOver() && GetGameTime()<=0)
+            {
+            EndTheGame(false);
+        }
     }
 }
