@@ -68,9 +68,10 @@ public abstract class BugController : MonoBehaviour
     public void Kill(bool playerscore)
     {
         if (playerscore)
+        {
+            SpecialEffectPooler.main.TextEffect("+" + ScoreValue, transform.position);
             ScoreController.main.ScorePoints(ScoreValue, true);
-        //else
-       //     ScoreController.main.ResetCombo();
+        }
         gameObject.SetActive(false);
     }
     public bool IsOutsideGameBounds()

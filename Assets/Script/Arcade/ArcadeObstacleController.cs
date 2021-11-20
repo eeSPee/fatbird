@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpikeController : MonoBehaviour
+public class ArcadeObstacleController : MonoBehaviour
 {
+    Collider2D mcollider;
     Vector3 startPosition;
     public Vector3 start = Vector3.zero;
     public float WaitForScore = 0;
@@ -12,6 +13,7 @@ public class SpikeController : MonoBehaviour
     private void Awake()
     {
         startPosition = transform.localPosition;
+        mcollider = GetComponent<Collider2D>();
     }
 
     Coroutine spawnCoroutine;
@@ -28,6 +30,7 @@ public class SpikeController : MonoBehaviour
         float retractFrames = ComeInTime * 60;
         float attackFrames = ComeInTime * 20;
 
+        mcollider.enabled = false;
         for (int I = 0; I < warningFrames; I++)
         {
             transform.localPosition -= start / warningFrames * .8f;
@@ -38,6 +41,7 @@ public class SpikeController : MonoBehaviour
             transform.localPosition += start / retractFrames * .8f;
             yield return new WaitForEndOfFrame();
         }
+        mcollider.enabled = true;
         for (int I = 0; I < attackFrames; I++)
         {
             transform.localPosition -= start / attackFrames;

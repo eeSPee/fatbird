@@ -11,7 +11,7 @@ public class LevelController : MonoBehaviour
     }
     protected virtual void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.R))
         {
             ResetGame();
         }
