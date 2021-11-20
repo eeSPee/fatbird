@@ -16,13 +16,13 @@ public class ArcadeObstacleController : MonoBehaviour
         mcollider = GetComponent<Collider2D>();
     }
 
-    Coroutine spawnCoroutine;
+    protected Coroutine spawnCoroutine;
     public void StartSpawning()
     {
         Reset();
         spawnCoroutine = StartCoroutine(SpawnIntoGame());
     }
-    IEnumerator SpawnIntoGame()
+    protected virtual IEnumerator SpawnIntoGame()
     {
         yield return new WaitWhile (() => { return ScoreController.main.Score < WaitForScore; });
 
@@ -48,7 +48,7 @@ public class ArcadeObstacleController : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
     }
-    public void Reset()
+    public virtual void Reset()
     {
         if (spawnCoroutine!=null)
         {
