@@ -33,12 +33,12 @@ public class ArcadeObstacleController : MonoBehaviour
         mcollider.enabled = false;
         for (int I = 0; I < warningFrames; I++)
         {
-            transform.localPosition -= start / warningFrames * .8f;
+            transform.localPosition -= start / warningFrames;
             yield return new WaitForEndOfFrame();
         }
         for (int I = 0; I < retractFrames; I++)
         {
-            transform.localPosition += start / retractFrames * .8f;
+            transform.localPosition += start / retractFrames;
             yield return new WaitForEndOfFrame();
         }
         mcollider.enabled = true;
