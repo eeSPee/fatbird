@@ -7,11 +7,18 @@ public class FatBirdController : MonoBehaviour
     Vector3 start;
     Animator anim;
     Rigidbody2D rbody;
-    public AudioSource audiosource;
+    public AudioSource AudioSourceLeftWing;
+    public AudioSource AudioSourceRightWing;
+    public AudioSource AudioSourceWhistle;
+    public AudioSource AudioSourceEat;
+    public AudioSource AudioSourceSpike;
+    public AudioSource AudioSourceBump;
     public AudioClip AudioClipLeftWing;
+    public AudioClip AudioClipWhistle;
     public AudioClip AudioClipRightWing;
     public AudioClip AudioClipEat;
     public AudioClip AudioClipSpike;
+    public AudioClip AudioClipBump;
     public static FatBirdController main;
     private void Awake()
     {
@@ -19,7 +26,6 @@ public class FatBirdController : MonoBehaviour
         start = transform.position;
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        audiosource = GetComponent<AudioSource>();
     }
     public virtual void Update()
     {
@@ -63,11 +69,27 @@ public class FatBirdController : MonoBehaviour
 
         if (right)
         {
-            audiosource.PlayOneShot(AudioClipRightWing);
+            AudioSourceRightWing.pitch=(Random.Range(0.6f,1.4f));
+            AudioSourceRightWing.PlayOneShot(AudioClipRightWing);
+            if (Stamina >= FlapStamina & AudioSourceWhistle.isPlaying)
+            {
+            }
+            else if(Stamina >= FlapStamina)
+            {
+              AudioSourceWhistle.PlayOneShot(AudioClipWhistle);
+            }
         }
         else
         {
-            audiosource.PlayOneShot(AudioClipLeftWing);
+            AudioSourceLeftWing.pitch=(Random.Range(0.6f,1.4f));
+            AudioSourceLeftWing.PlayOneShot(AudioClipLeftWing);
+            if (Stamina >= FlapStamina & AudioSourceWhistle.isPlaying)
+            {
+            }
+            else if(Stamina >= FlapStamina)
+            {
+              AudioSourceWhistle.PlayOneShot(AudioClipWhistle);
+            }
         }
     }
     float[] wingflap = new float[] { 0, 0 };
@@ -94,7 +116,7 @@ public class FatBirdController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Spike" && !LevelController.main.IsGameOver())
         {
-            audiosource.PlayOneShot(AudioClipSpike);
+            AudioSourceSpike.PlayOneShot(AudioClipSpike);
             LevelController.main.EndTheGame(false);
             transform.Find("Hurt Particle").gameObject.SetActive(true);
             anim.SetBool("Hurt", true);
@@ -104,7 +126,7 @@ public class FatBirdController : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
-        {        
+        {
             foreach (ContactPoint2D contact in collision.contacts)
             {
                 if (contact.point.y<transform.position.y + 1)
@@ -126,7 +148,7 @@ public class FatBirdController : MonoBehaviour
     public void EatBug()
     {
             anim.SetTrigger("EatBug");
-        
+
     }
     public void Reset()
     {

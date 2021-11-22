@@ -63,7 +63,7 @@ PrefabInstance:
     - target: {fileID: 2762400803874106950, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 254d8b7b7bc87a946a11fd5cbec96548, type: 3}
+      objectReference: {fileID: 8300000, guid: b973444b3fbae014683dd3668707e618, type: 3}
     - target: {fileID: 3888271627842841046, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
       propertyPath: m_Name
       value: DragonFly
