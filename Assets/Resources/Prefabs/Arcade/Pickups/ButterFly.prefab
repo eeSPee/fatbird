@@ -77,9 +77,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8528633356201447765, guid: 0c19e9e6a4846064794a985f3c61dccd, type: 3}
     - target: {fileID: 2762400803874106950, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
+      propertyPath: m_Pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2762400803874106950, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 93773d0b357513547beb886242bf3484, type: 3}
+      objectReference: {fileID: 8300000, guid: e5d368e7506043c44aa879fcabb90364, type: 3}
     - target: {fileID: 3888271627842841046, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
       propertyPath: m_Name
       value: ButterFly
