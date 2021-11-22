@@ -54,11 +54,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13203f0a791a2ce4fb4f71e8065e2468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audiosource: {fileID: 0}
+  audiosource: {fileID: 3854046877941403783}
   AudioClipLeftWing: {fileID: 8300000, guid: 48746a4135712a94a98c1fdf0fc3e74d, type: 3}
   AudioClipRightWing: {fileID: 8300000, guid: 45118b36e0e675447910d702fdd4503f, type: 3}
   AudioClipEat: {fileID: 8300000, guid: 80096aba59dedcb43bca245d5708d1fa, type: 3}
   AudioClipSpike: {fileID: 8300000, guid: 63c510e9bd7a9354c89ebc192618d694, type: 3}
+  AudioClipBump: {fileID: 8300000, guid: cd448e3ba08067a4ebeabe19a37b535c, type: 3}
   FlapSpeedInitial: 200
   FlapSpeed: 60
   FlapTorque: 28

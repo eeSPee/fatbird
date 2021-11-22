@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac1c48d9d43dfdf41b6741b8ad6e414f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audiosource: {fileID: 0}
+  audiosource: {fileID: 902361588138474645}
   AudioClipLeftWing: {fileID: 8300000, guid: 48746a4135712a94a98c1fdf0fc3e74d, type: 3}
   AudioClipRightWing: {fileID: 8300000, guid: 45118b36e0e675447910d702fdd4503f, type: 3}
   AudioClipEat: {fileID: 8300000, guid: 80096aba59dedcb43bca245d5708d1fa, type: 3}
   AudioClipSpike: {fileID: 8300000, guid: 63c510e9bd7a9354c89ebc192618d694, type: 3}
+  AudioClipBump: {fileID: 8300000, guid: cd448e3ba08067a4ebeabe19a37b535c, type: 3}
   FlapSpeedInitial: 200
   FlapSpeed: 60
   FlapTorque: 28
@@ -89,5 +90,10 @@ PrefabInstance:
 --- !u!1 &8580223942037504855 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5686518098449362757, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+  m_PrefabInstance: {fileID: 4177517610429443090}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &902361588138474645 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3854046877941403783, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
   m_PrefabInstance: {fileID: 4177517610429443090}
   m_PrefabAsset: {fileID: 0}

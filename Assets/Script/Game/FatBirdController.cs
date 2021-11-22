@@ -12,6 +12,7 @@ public class FatBirdController : MonoBehaviour
     public AudioClip AudioClipRightWing;
     public AudioClip AudioClipEat;
     public AudioClip AudioClipSpike;
+    public AudioClip AudioClipBump;
     public static FatBirdController main;
     private void Awake()
     {
@@ -104,7 +105,7 @@ public class FatBirdController : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
-        {        
+        {
             foreach (ContactPoint2D contact in collision.contacts)
             {
                 if (contact.point.y<transform.position.y + 1)
@@ -126,7 +127,7 @@ public class FatBirdController : MonoBehaviour
     public void EatBug()
     {
             anim.SetTrigger("EatBug");
-        
+
     }
     public void Reset()
     {
