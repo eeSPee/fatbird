@@ -12,6 +12,7 @@ public class FatBirdController : MonoBehaviour
     public AudioSource AudioSourceWhistle;
     public AudioSource AudioSourceEat;
     public AudioSource AudioSourceSpike;
+    public AudioSource AudioSourceBump;
     public AudioClip AudioClipLeftWing;
     public AudioClip AudioClipWhistle;
     public AudioClip AudioClipRightWing;
@@ -25,7 +26,6 @@ public class FatBirdController : MonoBehaviour
         start = transform.position;
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        audiosource = GetComponent<AudioSource>();
     }
     public virtual void Update()
     {
@@ -116,7 +116,7 @@ public class FatBirdController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Spike" && !LevelController.main.IsGameOver())
         {
-            audiosource.PlayOneShot(AudioClipSpike);
+            AudioSourceSpike.PlayOneShot(AudioClipSpike);
             LevelController.main.EndTheGame(false);
             transform.Find("Hurt Particle").gameObject.SetActive(true);
             anim.SetBool("Hurt", true);

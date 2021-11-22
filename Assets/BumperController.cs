@@ -13,7 +13,7 @@ public class BumperController : MonoBehaviour
     }
     private void Start()
     {
-        audioSource_bump = FatBirdController.main.audiosource;
+        audioSource_bump = FatBirdController.main.AudioSourceBump;
         audioClip_bump = FatBirdController.main.AudioClipBump;
     }
 

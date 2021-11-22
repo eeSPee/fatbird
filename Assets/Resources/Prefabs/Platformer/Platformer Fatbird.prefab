@@ -12,8 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac1c48d9d43dfdf41b6741b8ad6e414f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audiosource: {fileID: 902361588138474645}
+  AudioSourceLeftWing: {fileID: 3349896991731756879}
+  AudioSourceRightWing: {fileID: 8174333446024426468}
+  AudioSourceWhistle: {fileID: 902361588138474645}
+  AudioSourceEat: {fileID: 902361588138474645}
+  AudioSourceSpike: {fileID: 902361588138474645}
+  AudioSourceBump: {fileID: 902361588138474645}
   AudioClipLeftWing: {fileID: 8300000, guid: 48746a4135712a94a98c1fdf0fc3e74d, type: 3}
+  AudioClipWhistle: {fileID: 8300000, guid: b09b509a18e375240a52b1f7a9b63f7a, type: 3}
   AudioClipRightWing: {fileID: 8300000, guid: 45118b36e0e675447910d702fdd4503f, type: 3}
   AudioClipEat: {fileID: 8300000, guid: 80096aba59dedcb43bca245d5708d1fa, type: 3}
   AudioClipSpike: {fileID: 8300000, guid: 63c510e9bd7a9354c89ebc192618d694, type: 3}
@@ -95,5 +101,15 @@ GameObject:
 --- !u!82 &902361588138474645 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 3854046877941403783, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+  m_PrefabInstance: {fileID: 4177517610429443090}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &8174333446024426468 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5226593220702806006, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+  m_PrefabInstance: {fileID: 4177517610429443090}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &3349896991731756879 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1694690134760866653, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
   m_PrefabInstance: {fileID: 4177517610429443090}
   m_PrefabAsset: {fileID: 0}
