@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee6e78c1809b92541841e085211b64c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Score: 0
   ScorePerSecond: 100
   Combo: 0
   ComboResetTime: 15
-  Score: 0
 --- !u!114 &2043282149866112354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BugStartTime: 6
-  BugSpawnTime: 4
+  BugSpawnTime: 1
   pickupList: []
   MaxBugsOnScreen: 3
 --- !u!1001 &5480075647516580086

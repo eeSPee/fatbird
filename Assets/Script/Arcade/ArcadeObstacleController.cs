@@ -28,20 +28,23 @@ public class ArcadeObstacleController : MonoBehaviour
 
         float warningFrames = ComeInTime * 60;
         float retractFrames = ComeInTime * 60;
-        float attackFrames = ComeInTime * 20;
+        float attackFrames = Mathf.Abs(ComeInTime * 20);
 
-        mcollider.enabled = false;
-        for (int I = 0; I < warningFrames; I++)
+        if (ComeInTime > 0)
         {
-            transform.localPosition -= start / warningFrames;
-            yield return new WaitForEndOfFrame();
+            mcollider.enabled = false;
+            for (int I = 0; I < warningFrames; I++)
+            {
+                transform.localPosition -= start / warningFrames;
+                yield return new WaitForEndOfFrame();
+            }
+            for (int I = 0; I < retractFrames; I++)
+            {
+                transform.localPosition += start / retractFrames;
+                yield return new WaitForEndOfFrame();
+            }
+            mcollider.enabled = true;
         }
-        for (int I = 0; I < retractFrames; I++)
-        {
-            transform.localPosition += start / retractFrames;
-            yield return new WaitForEndOfFrame();
-        }
-        mcollider.enabled = true;
         for (int I = 0; I < attackFrames; I++)
         {
             transform.localPosition -= start / attackFrames;
