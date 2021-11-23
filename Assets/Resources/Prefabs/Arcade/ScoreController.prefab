@@ -62,9 +62,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BugStartTime: 6
-  BugSpawnTime: 1
+  BugSpawnTime: 2
   pickupList: []
-  MaxBugsOnScreen: 3
+  MaxBugsOnScreen: 4
 --- !u!1001 &5480075647516580086
 PrefabInstance:
   m_ObjectHideFlags: 0
