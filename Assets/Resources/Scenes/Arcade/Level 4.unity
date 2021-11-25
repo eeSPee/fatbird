@@ -912,6 +912,18 @@ PrefabInstance:
       propertyPath: WaitForScore
       value: 5000
       objectReference: {fileID: 0}
+    - target: {fileID: 1558596663055050132, guid: 0eded590599e1934c8aead2c1af489ec, type: 3}
+      propertyPath: AudioClipLvlStep1
+      value: 
+      objectReference: {fileID: 8300000, guid: 555303145b1be924fb75dc7850a27c71, type: 3}
+    - target: {fileID: 1558596663055050132, guid: 0eded590599e1934c8aead2c1af489ec, type: 3}
+      propertyPath: AudioClipLvlStep2
+      value: 
+      objectReference: {fileID: 8300000, guid: 0cd84113286a6c641801f8a8a1c848a1, type: 3}
+    - target: {fileID: 1558596663055050132, guid: 0eded590599e1934c8aead2c1af489ec, type: 3}
+      propertyPath: AudioSourceLvlStep
+      value: 
+      objectReference: {fileID: 91079867070857674}
     - target: {fileID: 3444549535499520154, guid: 0eded590599e1934c8aead2c1af489ec, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -3875,6 +3887,18 @@ PrefabInstance:
       propertyPath: WaitForScore
       value: 11000
       objectReference: {fileID: 0}
+    - target: {fileID: 7500617696944469747, guid: afe4ce9514527fa49af00392c2a40e48, type: 3}
+      propertyPath: AudioClipLvlStep1
+      value: 
+      objectReference: {fileID: 8300000, guid: 555303145b1be924fb75dc7850a27c71, type: 3}
+    - target: {fileID: 7500617696944469747, guid: afe4ce9514527fa49af00392c2a40e48, type: 3}
+      propertyPath: AudioClipLvlStep2
+      value: 
+      objectReference: {fileID: 8300000, guid: 0cd84113286a6c641801f8a8a1c848a1, type: 3}
+    - target: {fileID: 7500617696944469747, guid: afe4ce9514527fa49af00392c2a40e48, type: 3}
+      propertyPath: AudioSourceLvlStep
+      value: 
+      objectReference: {fileID: 91079867070857674}
     - target: {fileID: 8133394239714872761, guid: afe4ce9514527fa49af00392c2a40e48, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4096,6 +4120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6209882708899225744}
   - component: {fileID: 7539332888820043469}
+  - component: {fileID: 91079867070857674}
   m_Layer: 0
   m_Name: Winter Level
   m_TagString: Spike
@@ -4103,6 +4128,102 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!82 &91079867070857674
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91079867070857673}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.503
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!61 &477227119380571753
 BoxCollider2D:
   m_ObjectHideFlags: 0

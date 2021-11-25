@@ -10,6 +10,7 @@ public class WindController : ArcadeObstacleController
     public float RepeatTime = 15f;
     public float UpTime = 3f;
 
+    public AudioSource AudioSourceWind;
     Collider2D WindTrigger;
     List<ParticleSystem> particles;
     private void Awake()
@@ -25,6 +26,7 @@ public class WindController : ArcadeObstacleController
     public void StartBlowing()
     {
         WindTrigger.enabled = true;
+        AudioSourceWind.Play();
         foreach (ParticleSystem particle in particles)
         {
             particle.Play();

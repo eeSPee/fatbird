@@ -699,6 +699,18 @@ PrefabInstance:
       propertyPath: WaitForScore
       value: 7500
       objectReference: {fileID: 0}
+    - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
+      propertyPath: AudioClipLvlStep1
+      value: 
+      objectReference: {fileID: 8300000, guid: 555303145b1be924fb75dc7850a27c71, type: 3}
+    - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
+      propertyPath: AudioClipLvlStep2
+      value: 
+      objectReference: {fileID: 8300000, guid: 0cd84113286a6c641801f8a8a1c848a1, type: 3}
+    - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
+      propertyPath: AudioSourceLvlStep
+      value: 
+      objectReference: {fileID: 91079867070857674}
     m_RemovedComponents:
     - {fileID: 3379351540373018398, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
@@ -981,6 +993,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6209882708899225744}
     m_Modifications:
+    - target: {fileID: 4864429159201078, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4864429159201078, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d576390bc3b01424abe776265be625b8, type: 3}
+    - target: {fileID: 4864429159201078, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 83622383248388362, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
       propertyPath: m_Name
       value: Wind Left
@@ -1003,7 +1027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3775983481723824927, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3775983481723824927, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
       propertyPath: m_LocalScale.x
@@ -2186,6 +2210,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6209882708899225744}
     m_Modifications:
+    - target: {fileID: 4864429159201078, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4864429159201078, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d576390bc3b01424abe776265be625b8, type: 3}
+    - target: {fileID: 4864429159201078, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 83622383248388362, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
       propertyPath: m_Name
       value: WindRight
@@ -2208,7 +2244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3775983481723824927, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3775983481723824927, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
       propertyPath: m_LocalScale.x
@@ -4032,6 +4068,18 @@ PrefabInstance:
       propertyPath: WaitForScore
       value: 11000
       objectReference: {fileID: 0}
+    - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
+      propertyPath: AudioClipLvlStep1
+      value: 
+      objectReference: {fileID: 8300000, guid: 555303145b1be924fb75dc7850a27c71, type: 3}
+    - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
+      propertyPath: AudioClipLvlStep2
+      value: 
+      objectReference: {fileID: 8300000, guid: 0cd84113286a6c641801f8a8a1c848a1, type: 3}
+    - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
+      propertyPath: AudioSourceLvlStep
+      value: 
+      objectReference: {fileID: 91079867070857674}
     m_RemovedComponents:
     - {fileID: 3379351540373018398, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
@@ -4374,6 +4422,18 @@ PrefabInstance:
       propertyPath: WaitForScore
       value: 3000
       objectReference: {fileID: 0}
+    - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
+      propertyPath: AudioClipLvlStep1
+      value: 
+      objectReference: {fileID: 8300000, guid: 555303145b1be924fb75dc7850a27c71, type: 3}
+    - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
+      propertyPath: AudioClipLvlStep2
+      value: 
+      objectReference: {fileID: 8300000, guid: 0cd84113286a6c641801f8a8a1c848a1, type: 3}
+    - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
+      propertyPath: AudioSourceLvlStep
+      value: 
+      objectReference: {fileID: 91079867070857674}
     m_RemovedComponents:
     - {fileID: 3379351540373018398, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
@@ -5103,6 +5163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6209882708899225744}
   - component: {fileID: 7539332888820043469}
+  - component: {fileID: 91079867070857674}
   m_Layer: 0
   m_Name: Autumn Level
   m_TagString: Spike
@@ -5110,6 +5171,102 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!82 &91079867070857674
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91079867070857673}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.503
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!61 &477227119380571753
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5770,8 +5927,8 @@ Transform:
   m_Children:
   - {fileID: 8277632524864604512}
   - {fileID: 7946048876204651403}
-  - {fileID: 1490533605}
   - {fileID: 6460682183948320465}
+  - {fileID: 1490533605}
   - {fileID: 4757636776907298726}
   - {fileID: 6509802210508729080}
   - {fileID: 780621693}
@@ -5795,7 +5952,7 @@ Transform:
   - {fileID: 1209366435}
   - {fileID: 588226310}
   m_Father: {fileID: 6209882708899225744}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &6509802210508729080
 Transform:

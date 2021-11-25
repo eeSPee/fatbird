@@ -14,7 +14,8 @@ public class FatBirdController : MonoBehaviour
     public AudioSource AudioSourceSpike;
     public AudioSource AudioSourceBump;
     public AudioClip AudioClipLeftWing;
-    public AudioClip AudioClipWhistle;
+    public AudioClip AudioClipWhistleUp;
+    public AudioClip AudioClipWhistleDown;
     public AudioClip AudioClipRightWing;
     public AudioClip AudioClipEat;
     public AudioClip AudioClipSpike;
@@ -76,7 +77,14 @@ public class FatBirdController : MonoBehaviour
             }
             else if(Stamina >= FlapStamina)
             {
-              AudioSourceWhistle.PlayOneShot(AudioClipWhistle);
+              AudioSourceWhistle.PlayOneShot(AudioClipWhistleUp);
+            }
+            if (Stamina < FlapStamina & AudioSourceWhistle.isPlaying)
+            {
+            }
+            else if(Stamina < FlapStamina)
+            {
+              AudioSourceWhistle.PlayOneShot(AudioClipWhistleDown);
             }
         }
         else
@@ -88,7 +96,14 @@ public class FatBirdController : MonoBehaviour
             }
             else if(Stamina >= FlapStamina)
             {
-              AudioSourceWhistle.PlayOneShot(AudioClipWhistle);
+              AudioSourceWhistle.PlayOneShot(AudioClipWhistleUp);
+            }
+            if (Stamina < FlapStamina & AudioSourceWhistle.isPlaying)
+            {
+            }
+            else if(Stamina < FlapStamina)
+            {
+              AudioSourceWhistle.PlayOneShot(AudioClipWhistleDown);
             }
         }
     }

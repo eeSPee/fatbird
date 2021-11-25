@@ -9,6 +9,9 @@ public class ScoreController : MonoBehaviour
     public int Combo = 0;
     public float ComboResetTime = 10;
     public static ScoreController main;
+    public AudioSource AudioSourceCombo;
+    public AudioClip AudioClipCombo;
+
     private void Awake()
     {
         main = this;
@@ -54,6 +57,8 @@ public class ScoreController : MonoBehaviour
 
         {
             transform.Find("ComboParticle").gameObject.SetActive(true);
+            AudioSourceCombo.pitch = 1f + (float)Combo*0.25f;
+            AudioSourceCombo.PlayOneShot(AudioClipCombo);
             Combo++;
             comboResetTime = Time.time + ComboResetTime;
         }
@@ -64,4 +69,3 @@ public class ScoreController : MonoBehaviour
         Combo = 0;
     }
 }
-    

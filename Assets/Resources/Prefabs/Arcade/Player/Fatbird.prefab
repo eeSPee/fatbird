@@ -61,7 +61,8 @@ MonoBehaviour:
   AudioSourceSpike: {fileID: 3854046877941403783}
   AudioSourceBump: {fileID: 3854046877941403783}
   AudioClipLeftWing: {fileID: 8300000, guid: 23c3037f990ba5945bf5c8ee07958d5b, type: 3}
-  AudioClipWhistle: {fileID: 8300000, guid: b09b509a18e375240a52b1f7a9b63f7a, type: 3}
+  AudioClipWhistleUp: {fileID: 8300000, guid: b09b509a18e375240a52b1f7a9b63f7a, type: 3}
+  AudioClipWhistleDown: {fileID: 8300000, guid: 24786e102297ca54c8047fc7ae242ebe, type: 3}
   AudioClipRightWing: {fileID: 8300000, guid: 23c3037f990ba5945bf5c8ee07958d5b, type: 3}
   AudioClipEat: {fileID: 8300000, guid: 80096aba59dedcb43bca245d5708d1fa, type: 3}
   AudioClipSpike: {fileID: 8300000, guid: 63c510e9bd7a9354c89ebc192618d694, type: 3}
