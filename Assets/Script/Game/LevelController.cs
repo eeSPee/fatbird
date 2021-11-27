@@ -63,4 +63,8 @@ public class LevelController : MonoBehaviour
         Time.timeScale = pause ? 0 : 1f;
         UIController.main.EnableDisablePauseMenu(pause);
     }
+    private void OnDisable()
+    {
+        PauseUnpause(false);
+    }
 }
