@@ -6,13 +6,8 @@ public class FatBirdController : MonoBehaviour
 {
     Vector3 start;
     Animator anim;
-    Rigidbody2D rbody;
-    public AudioSource AudioSourceLeftWing;
-    public AudioSource AudioSourceRightWing;
-    public AudioSource AudioSourceWhistle;
-    public AudioSource AudioSourceEat;
-    public AudioSource AudioSourceSpike;
-    public AudioSource AudioSourceBump;
+    protected Rigidbody2D rbody;
+    public AudioSource AudioSource;
     public AudioClip AudioClipLeftWing;
     public AudioClip AudioClipWhistleUp;
     public AudioClip AudioClipWhistleDown;
@@ -26,6 +21,7 @@ public class FatBirdController : MonoBehaviour
         main = this;
         start = transform.position;
         rbody = GetComponent<Rigidbody2D>();
+        AudioSource = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
     }
     public virtual void Update()
@@ -70,40 +66,40 @@ public class FatBirdController : MonoBehaviour
 
         if (right)
         {
-            AudioSourceRightWing.pitch=(Random.Range(0.6f,1.4f));
-            AudioSourceRightWing.PlayOneShot(AudioClipRightWing);
-            if (Stamina >= FlapStamina & AudioSourceWhistle.isPlaying)
+            AudioSource.pitch=(Random.Range(0.6f,1.4f));
+            AudioSource.PlayOneShot(AudioClipRightWing);
+            if (Stamina >= FlapStamina & AudioSource.isPlaying)
             {
             }
             else if(Stamina >= FlapStamina)
             {
-              AudioSourceWhistle.PlayOneShot(AudioClipWhistleUp);
+              AudioSource.PlayOneShot(AudioClipWhistleUp);
             }
-            if (Stamina < FlapStamina & AudioSourceWhistle.isPlaying)
+            if (Stamina < FlapStamina & AudioSource.isPlaying)
             {
             }
             else if(Stamina < FlapStamina)
             {
-              AudioSourceWhistle.PlayOneShot(AudioClipWhistleDown);
+              AudioSource.PlayOneShot(AudioClipWhistleDown);
             }
         }
         else
         {
-            AudioSourceLeftWing.pitch=(Random.Range(0.6f,1.4f));
-            AudioSourceLeftWing.PlayOneShot(AudioClipLeftWing);
-            if (Stamina >= FlapStamina & AudioSourceWhistle.isPlaying)
+            AudioSource.pitch=(Random.Range(0.6f,1.4f));
+            AudioSource.PlayOneShot(AudioClipLeftWing);
+            if (Stamina >= FlapStamina & AudioSource.isPlaying)
             {
             }
             else if(Stamina >= FlapStamina)
             {
-              AudioSourceWhistle.PlayOneShot(AudioClipWhistleUp);
+              AudioSource.PlayOneShot(AudioClipWhistleUp);
             }
-            if (Stamina < FlapStamina & AudioSourceWhistle.isPlaying)
+            if (Stamina < FlapStamina & AudioSource.isPlaying)
             {
             }
             else if(Stamina < FlapStamina)
             {
-              AudioSourceWhistle.PlayOneShot(AudioClipWhistleDown);
+              AudioSource.PlayOneShot(AudioClipWhistleDown);
             }
         }
     }
@@ -131,7 +127,7 @@ public class FatBirdController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Spike" && !LevelController.main.IsGameOver())
         {
-            AudioSourceSpike.PlayOneShot(AudioClipSpike);
+            AudioSource.PlayOneShot(AudioClipSpike);
             LevelController.main.EndTheGame(false);
             transform.Find("Hurt Particle").gameObject.SetActive(true);
             anim.SetBool("Hurt", true);

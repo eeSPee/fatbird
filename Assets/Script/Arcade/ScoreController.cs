@@ -62,8 +62,9 @@ public class ScoreController : MonoBehaviour
             Combo++;
             comboResetTime = Time.time + ComboResetTime;
         }
-            Score += points * Combo;
-        return points * Combo;
+        int nScore = points * Mathf.Max(1, Combo);
+            Score += nScore;
+        return nScore;
     }
     public void ResetCombo()
     {

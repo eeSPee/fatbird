@@ -20,7 +20,7 @@ public abstract class BugController : MonoBehaviour
     }
     private void Start()
     {
-        audioSource_eat = FatBirdController.main.AudioSourceEat;
+        audioSource_eat = FatBirdController.main.AudioSource;
         audioClip_eat = FatBirdController.main.AudioClipEat;
     }
     void OnEnable()
