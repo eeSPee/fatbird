@@ -53,7 +53,6 @@ public class DragonFly : BugController
             case BugState.fleeing:
                 if (IsOutsideGameBounds())
                 {
-                    ScoreController.main.ResetCombo();
                     Kill(false);
                 }
                 break;

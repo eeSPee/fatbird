@@ -6,6 +6,15 @@ using UnityEngine.UI;
 
 public class UIGameOverScreen : MonoBehaviour
 {
+    GameObject HighScoreAlert;
+    Text LastScoreCount;
+    Text HighScoreCount;
+    private void Awake()
+    {
+        HighScoreAlert =  transform.Find("New High Score").gameObject;
+        LastScoreCount = transform.Find("Yourscore Counter").GetComponent<Text>();
+        HighScoreCount = transform.Find("Hiscore Counter").GetComponent<Text>();
+    }
     public string GetLevelName()
     {
         return SceneManager.GetActiveScene().name; 
@@ -14,13 +23,11 @@ public class UIGameOverScreen : MonoBehaviour
     {
         float MyScore = ScoreController.main.Score;
         float OldScore = PlayerPrefs.GetFloat(GetLevelName() + " HighScore");
-        transform.Find("Yourscore Counter").GetComponent<Text>().text = MyScore + "";
-        transform.Find("Hiscore Counter").GetComponent<Text>().text = Mathf.Max(OldScore, MyScore) + "";
-        if (MyScore > OldScore)
-        {
-            transform.Find("New High Score").gameObject.SetActive(true);
-            
-        }
+        LastScoreCount.text = MyScore + "";
+        HighScoreCount.text = Mathf.Max(OldScore, MyScore) + "";
+        
+            HighScoreAlert.SetActive(MyScore > OldScore);
+        
 
         SaveScores(MyScore, Mathf.Max(OldScore, MyScore));
     }

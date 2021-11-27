@@ -17,7 +17,6 @@ public class FruitFly : BugController
     {
         if (IsOutsideGameBounds())
         {
-            ScoreController.main.ResetCombo();
             Kill(false);
         }
     }

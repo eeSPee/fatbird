@@ -5446,14 +5446,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fatbird
       objectReference: {fileID: 0}
-    - target: {fileID: 8346635284147438047, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8346635284147438047, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
-      propertyPath: InitialModule.gravityModifier.scalar
-      value: 0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
 --- !u!4 &6209882708899225744
@@ -5695,7 +5687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &8855925868239728777
 GameObject:
   m_ObjectHideFlags: 0

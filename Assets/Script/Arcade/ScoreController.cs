@@ -41,14 +41,17 @@ public class ScoreController : MonoBehaviour
         Combo = 0;
         score_start:
         {
-            if (Combo > 0 && comboResetTime < Time.time)
-            {
-                ResetCombo();
-            }
             yield return new WaitForSeconds(.1f);
             if (!FatBirdController.main.IsGrounded())
                 Score += ScorePerSecond * .1f;
             goto score_start;
+        }
+    }
+    private void Update()
+    {
+        if (Combo > 0 && Time.time > comboResetTime)
+        {
+            ResetCombo();
         }
     }
     public int ScorePoints(int points, bool combo)
@@ -57,11 +60,12 @@ public class ScoreController : MonoBehaviour
 
         {
             transform.Find("ComboParticle").gameObject.SetActive(true);
-            AudioSourceCombo.pitch = 1f + (float)Combo*0.25f;
-            AudioSourceCombo.PlayOneShot(AudioClipCombo);
             Combo++;
             comboResetTime = Time.time + ComboResetTime;
         }
+            AudioSourceCombo.pitch = 1f + (float)Combo * 0.25f;
+            AudioSourceCombo.PlayOneShot(AudioClipCombo);
+        
         int nScore = points * Mathf.Max(1, Combo);
             Score += nScore;
         return nScore;

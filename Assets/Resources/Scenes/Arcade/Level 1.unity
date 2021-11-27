@@ -390,7 +390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3582981383897069885, guid: 32927e102976aaa4fbae2ad5591db809, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3582981383897069885, guid: 32927e102976aaa4fbae2ad5591db809, type: 3}
       propertyPath: m_LocalRotation.w
@@ -911,7 +911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   start: {x: 0, y: -5, z: 0}
   WaitForScore: 7500
-  ComeInTime: 5
+  ComeInTime: -20
   AudioSourceLvlStep: {fileID: 91079867070857674}
   AudioClipLvlStep1: {fileID: 8300000, guid: 555303145b1be924fb75dc7850a27c71, type: 3}
   AudioClipLvlStep2: {fileID: 8300000, guid: 0cd84113286a6c641801f8a8a1c848a1, type: 3}
@@ -1569,7 +1569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   start: {x: 5, y: 0, z: 0}
   WaitForScore: 5000
-  ComeInTime: 5
+  ComeInTime: -20
   AudioSourceLvlStep: {fileID: 0}
   AudioClipLvlStep1: {fileID: 0}
   AudioClipLvlStep2: {fileID: 0}
@@ -2223,7 +2223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   start: {x: 0, y: 10, z: 0}
   WaitForScore: 12000
-  ComeInTime: 5
+  ComeInTime: -20
   AudioSourceLvlStep: {fileID: 0}
   AudioClipLvlStep1: {fileID: 0}
   AudioClipLvlStep2: {fileID: 0}
@@ -2410,7 +2410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   start: {x: 0, y: -5, z: 0}
   WaitForScore: 7500
-  ComeInTime: 5
+  ComeInTime: -20
   AudioSourceLvlStep: {fileID: 0}
   AudioClipLvlStep1: {fileID: 0}
   AudioClipLvlStep2: {fileID: 0}
@@ -2914,7 +2914,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   start: {x: 0, y: 10, z: 0}
   WaitForScore: 12000
-  ComeInTime: 5
+  ComeInTime: -20
   AudioSourceLvlStep: {fileID: 91079867070857674}
   AudioClipLvlStep1: {fileID: 8300000, guid: 555303145b1be924fb75dc7850a27c71, type: 3}
   AudioClipLvlStep2: {fileID: 8300000, guid: 0cd84113286a6c641801f8a8a1c848a1, type: 3}
@@ -3205,7 +3205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   start: {x: -5, y: 0, z: 0}
   WaitForScore: 5000
-  ComeInTime: 5
+  ComeInTime: -20
   AudioSourceLvlStep: {fileID: 91079867070857674}
   AudioClipLvlStep1: {fileID: 8300000, guid: 555303145b1be924fb75dc7850a27c71, type: 3}
   AudioClipLvlStep2: {fileID: 8300000, guid: 0cd84113286a6c641801f8a8a1c848a1, type: 3}
@@ -3534,7 +3534,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &8855925868239728777
 GameObject:
   m_ObjectHideFlags: 0

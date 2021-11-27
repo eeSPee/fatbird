@@ -21,7 +21,7 @@ public class FatBirdArcade : FatBirdController
         base.Update();
 
         float newDelta = Mathf.DeltaAngle(LastRotation,rbody.rotation);
-        if ((newDelta < 0 && RotationDelta>0) || (newDelta > 0 && RotationDelta < 0))
+        if ((newDelta < 0 && RotationDelta>0) || (newDelta > 0 && RotationDelta < 0) || IsGrounded())
         {
             TotalRotation = 0;
         }

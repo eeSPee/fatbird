@@ -54,12 +54,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13203f0a791a2ce4fb4f71e8065e2468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSourceLeftWing: {fileID: 1694690134760866653}
-  AudioSourceRightWing: {fileID: 5226593220702806006}
-  AudioSourceWhistle: {fileID: 3854046877941403783}
-  AudioSourceEat: {fileID: 3854046877941403783}
-  AudioSourceSpike: {fileID: 3854046877941403783}
-  AudioSourceBump: {fileID: 3854046877941403783}
+  AudioSource: {fileID: 0}
   AudioClipLeftWing: {fileID: 8300000, guid: 23c3037f990ba5945bf5c8ee07958d5b, type: 3}
   AudioClipWhistleUp: {fileID: 8300000, guid: b09b509a18e375240a52b1f7a9b63f7a, type: 3}
   AudioClipWhistleDown: {fileID: 8300000, guid: 24786e102297ca54c8047fc7ae242ebe, type: 3}
@@ -70,10 +65,12 @@ MonoBehaviour:
   FlapSpeedInitial: 200
   FlapSpeed: 60
   FlapTorque: 28
-  FlapStamina: 25
+  FlapStamina: 18
   FlapWeak: 0.28
   Stamina: 100
   StaminaRegen: 125
+  RotationScore: 25
+  RotationAngle: 330
 --- !u!50 &5686518098449362759
 Rigidbody2D:
   serializedVersion: 4
@@ -479,7 +476,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -918,7 +915,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.66
+      scalar: 0.5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
