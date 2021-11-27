@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ScoreDisplayComponent : MonoBehaviour
+public class UILevelSelectScores : MonoBehaviour
 {
     public string LevelName = "Arcade";
     Text LevelText;
@@ -30,10 +30,6 @@ public class ScoreDisplayComponent : MonoBehaviour
     }
     public void OnPlayPressed()
     {
-        Invoke("ChangeLevelCoroutine",.33f);
-    }
-    public void ChangeLevelCoroutine()
-    {
-        SceneManager.LoadScene(LevelName);
+        SceneManager.LoadSceneAsync(LevelName);
     }
 }

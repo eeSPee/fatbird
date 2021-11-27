@@ -11,9 +11,9 @@ public class LevelController : MonoBehaviour
     }
     protected virtual void Update()
     {
-        if (Input.GetKeyUp(KeyCode.R))
+        if (!GamePaused && GameRunning && !GameOver && Input.GetKeyUp(KeyCode.P))
         {
-            ResetGame();
+            PauseUnpause(true);
         }
     }
     protected virtual void Start()
@@ -21,12 +21,14 @@ public class LevelController : MonoBehaviour
     }
     public virtual void StartTheGame()
     {
+        PauseUnpause(false);
         UIController.main.DisableTutorial();
         GameRunning = true;
         StartTime = Time.time;
     }
     public virtual void EndTheGame(bool victory)
     {
+        PauseUnpause(false);
         UIController.main.EnableGameOverScreen(victory);
         GameOver = true;
         GameRunning = false;
@@ -37,6 +39,7 @@ public class LevelController : MonoBehaviour
         GameOver = false;
         FatBirdController.main.Reset();
         UIController.main.DisableGameOverScreen();
+        PauseUnpause(false);
     }
     bool GameRunning = false;
     bool GameOver = false;
@@ -52,5 +55,12 @@ public class LevelController : MonoBehaviour
     public virtual float GetGameTime()
     {
         return Time.time - StartTime;
+    }
+    bool GamePaused = false;
+    public virtual void PauseUnpause(bool pause)
+    {
+        GamePaused = pause;
+        Time.timeScale = pause ? 0 : 1f;
+        UIController.main.EnableDisablePauseMenu(pause);
     }
 }

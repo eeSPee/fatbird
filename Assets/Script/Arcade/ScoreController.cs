@@ -51,7 +51,7 @@ public class ScoreController : MonoBehaviour
             goto score_start;
         }
     }
-    public void ScorePoints(int points, bool combo)
+    public int ScorePoints(int points, bool combo)
     {
         if (combo)
 
@@ -63,6 +63,7 @@ public class ScoreController : MonoBehaviour
             comboResetTime = Time.time + ComboResetTime;
         }
             Score += points * Combo;
+        return points * Combo;
     }
     public void ResetCombo()
     {

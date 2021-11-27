@@ -69,8 +69,7 @@ public abstract class BugController : MonoBehaviour
     {
         if (playerscore)
         {
-            SpecialEffectPooler.main.TextEffect("+" + ScoreValue, transform.position);
-            ScoreController.main.ScorePoints(ScoreValue, true);
+            SpecialEffectPooler.main.TextEffect("+" + ScoreController.main.ScorePoints(ScoreValue, true), transform.position);
         }
         gameObject.SetActive(false);
     }

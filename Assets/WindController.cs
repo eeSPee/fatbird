@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WindController : ArcadeObstacleController
+public class WindController : MonoBehaviour, IArcadeObstacle
 {
     public bool AlwaysBlows = false;
     public float WindAcceleration = 1f;
 
+    public float ComeInTime = 10f;
     public float RepeatTime = 15f;
     public float UpTime = 3f;
 
@@ -40,14 +41,6 @@ public class WindController : ArcadeObstacleController
             particle.Stop();
         }
     }
-    public override void Reset()
-    {
-        if (spawnCoroutine != null)
-        {
-            StopCoroutine(spawnCoroutine);
-        }
-        StopBlowing();
-    }
     private void OnTriggerStay2D(Collider2D collision)
     {
      if (collision.gameObject.tag == "Player")
@@ -55,7 +48,21 @@ public class WindController : ArcadeObstacleController
             collision.gameObject.GetComponent<Rigidbody2D>().velocity += (Vector2)transform.right * WindAcceleration * Time.deltaTime;
         }
     }
-    protected override IEnumerator SpawnIntoGame()
+    protected Coroutine spawnCoroutine;
+    public void StartSpawning()
+    {
+        Reset();
+        spawnCoroutine = StartCoroutine(SpawnIntoGame());
+    }
+    public void Reset()
+    {
+        if (spawnCoroutine != null)
+        {
+            StopCoroutine(spawnCoroutine);
+        }
+        StopBlowing();
+    }
+    protected IEnumerator SpawnIntoGame()
     {
         if (AlwaysBlows)
         {
