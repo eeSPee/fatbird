@@ -284,8 +284,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 0.6
+      scalar: 4
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1028,7 +1028,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
     - serializedVersion: 2
       time: 0.5
       countCurve:
@@ -1086,7 +1086,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
   SizeModule:
     enabled: 0
     curve:
@@ -5206,8 +5206,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 0.6
+      scalar: 4
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5950,7 +5950,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
     - serializedVersion: 2
       time: 0.5
       countCurve:
@@ -6008,7 +6008,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
   SizeModule:
     enabled: 0
     curve:
@@ -10128,8 +10128,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 0.6
+      scalar: 4
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -10872,7 +10872,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
     - serializedVersion: 2
       time: 0.5
       countCurve:
@@ -10930,7 +10930,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
   SizeModule:
     enabled: 0
     curve:
@@ -15050,8 +15050,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 0.6
+      scalar: 4
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -15794,7 +15794,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
     - serializedVersion: 2
       time: 0.5
       countCurve:
@@ -15852,7 +15852,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
   SizeModule:
     enabled: 0
     curve:
@@ -19972,8 +19972,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 0.6
+      scalar: 4
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -20716,7 +20716,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
     - serializedVersion: 2
       time: 0.5
       countCurve:
@@ -20774,7 +20774,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
   SizeModule:
     enabled: 0
     curve:
@@ -24894,8 +24894,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 0.6
+      scalar: 4
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -25638,7 +25638,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
     - serializedVersion: 2
       time: 0.5
       countCurve:
@@ -25696,7 +25696,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
   SizeModule:
     enabled: 0
     curve:
@@ -29816,8 +29816,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 0.6
+      scalar: 4
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30560,7 +30560,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
     - serializedVersion: 2
       time: 0.5
       countCurve:
@@ -30618,7 +30618,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
   SizeModule:
     enabled: 0
     curve:
@@ -34738,8 +34738,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 0.6
+      scalar: 4
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -35482,7 +35482,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
     - serializedVersion: 2
       time: 0.5
       countCurve:
@@ -35540,7 +35540,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
   SizeModule:
     enabled: 0
     curve:
@@ -39660,8 +39660,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 0.6
+      scalar: 4
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -40404,7 +40404,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
     - serializedVersion: 2
       time: 0.5
       countCurve:
@@ -40462,7 +40462,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
   SizeModule:
     enabled: 0
     curve:
@@ -44582,8 +44582,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 0.6
+      scalar: 4
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -45326,7 +45326,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
     - serializedVersion: 2
       time: 0.5
       countCurve:
@@ -45384,7 +45384,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
   SizeModule:
     enabled: 0
     curve:
@@ -49504,8 +49504,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 0.6
+      scalar: 4
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -50248,7 +50248,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
     - serializedVersion: 2
       time: 0.5
       countCurve:
@@ -50306,7 +50306,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
   SizeModule:
     enabled: 0
     curve:
@@ -54426,8 +54426,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 0.6
+      scalar: 4
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -55170,7 +55170,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
     - serializedVersion: 2
       time: 0.5
       countCurve:
@@ -55228,7 +55228,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
   SizeModule:
     enabled: 0
     curve:
@@ -59392,8 +59392,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 0.6
+      scalar: 4
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -60136,7 +60136,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
     - serializedVersion: 2
       time: 0.5
       countCurve:
@@ -60194,7 +60194,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
   SizeModule:
     enabled: 0
     curve:
@@ -64314,8 +64314,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 0.6
+      scalar: 4
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -65058,7 +65058,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
     - serializedVersion: 2
       time: 0.5
       countCurve:
@@ -65116,7 +65116,7 @@ ParticleSystem:
           m_RotationOrder: 4
       cycleCount: 1
       repeatInterval: 0.01
-      probability: 0.1
+      probability: 0.05
   SizeModule:
     enabled: 0
     curve:
