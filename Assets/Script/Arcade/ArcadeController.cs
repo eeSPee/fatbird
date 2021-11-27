@@ -5,7 +5,7 @@ using UnityEngine;
 public class ArcadeController : LevelController
 {
     GameObject[] Walls;
-    List<ArcadeObstacleController> Spikes = new List<ArcadeObstacleController>();
+    List<IArcadeObstacle> Spikes = new List<IArcadeObstacle>();
     protected override void Awake()
     {
         base.Awake();
@@ -15,7 +15,7 @@ public class ArcadeController : LevelController
             transform.Find("Level Bounds L").gameObject,
             transform.Find("Level Bounds T").gameObject,
         };
-        Spikes.AddRange(gameObject.GetComponentsInChildren<ArcadeObstacleController>());
+        Spikes.AddRange(gameObject.GetComponentsInChildren<IArcadeObstacle>());
     }
     protected override void Start()
     {
@@ -47,14 +47,14 @@ public class ArcadeController : LevelController
     }
     public void ArmSpikes()
     {
-        foreach (ArcadeObstacleController spike in Spikes)
+        foreach (IArcadeObstacle spike in Spikes)
         {
             spike.StartSpawning();
         }
     }
     public void ResetSpikes()
     {
-        foreach (ArcadeObstacleController spike in Spikes)
+        foreach (IArcadeObstacle spike in Spikes)
         {
             spike.Reset();
         }

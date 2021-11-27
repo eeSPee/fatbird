@@ -169,8 +169,10 @@ public class FatBirdController : MonoBehaviour
     {
         transform.position = start;
         transform.rotation = Quaternion.Euler(0, 0, 0);
+        rbody.isKinematic = true;
         rbody.velocity = Vector2.zero;
         rbody.angularVelocity = 0;
+        rbody.isKinematic = false;
         anim.SetBool("Hurt", false);
     }
 }
