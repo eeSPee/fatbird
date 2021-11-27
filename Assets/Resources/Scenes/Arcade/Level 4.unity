@@ -4069,6 +4069,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 558664521, guid: 32927e102976aaa4fbae2ad5591db809, type: 3}
+      propertyPath: useUnscaledTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 852210995, guid: 32927e102976aaa4fbae2ad5591db809, type: 3}
+      propertyPath: useUnscaledTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 884189414, guid: 32927e102976aaa4fbae2ad5591db809, type: 3}
+      propertyPath: useUnscaledTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1221270255, guid: 32927e102976aaa4fbae2ad5591db809, type: 3}
+      propertyPath: useUnscaledTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896936368, guid: 32927e102976aaa4fbae2ad5591db809, type: 3}
+      propertyPath: useUnscaledTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2126607704, guid: 32927e102976aaa4fbae2ad5591db809, type: 3}
+      propertyPath: useUnscaledTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114750318777121305, guid: 32927e102976aaa4fbae2ad5591db809, type: 3}
+      propertyPath: useUnscaledTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1411163763847539012, guid: 32927e102976aaa4fbae2ad5591db809, type: 3}
+      propertyPath: useUnscaledTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2241351438334649307, guid: 32927e102976aaa4fbae2ad5591db809, type: 3}
+      propertyPath: useUnscaledTime
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3582981383897069885, guid: 32927e102976aaa4fbae2ad5591db809, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4111,6 +4147,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3582981383897069885, guid: 32927e102976aaa4fbae2ad5591db809, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5726457322607456532, guid: 32927e102976aaa4fbae2ad5591db809, type: 3}
+      propertyPath: useUnscaledTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803780490917247899, guid: 32927e102976aaa4fbae2ad5591db809, type: 3}
+      propertyPath: useUnscaledTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7470718580210929423, guid: 32927e102976aaa4fbae2ad5591db809, type: 3}
+      propertyPath: useUnscaledTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7568915331192807530, guid: 32927e102976aaa4fbae2ad5591db809, type: 3}
+      propertyPath: useUnscaledTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033635025965095419, guid: 32927e102976aaa4fbae2ad5591db809, type: 3}
+      propertyPath: useUnscaledTime
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8045045853649210425, guid: 32927e102976aaa4fbae2ad5591db809, type: 3}

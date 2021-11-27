@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f0fcedc9587bcba4cbec48871dd1075f
+guid: d937e89eab360ce4796f702bf0c3077e
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,8 +9,9 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Almond Nougat
-  fallbackFontReferences: []
+  - Lemonism DEMO
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: ad36f9711ae97c94b9ef6b3cec74ca95, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
