@@ -697,7 +697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: WaitForScore
-      value: 7500
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: AudioClipLvlStep1
@@ -1382,7 +1382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: WaitForScore
-      value: 7500
+      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3379351540373018398, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
@@ -1894,7 +1894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: WaitForScore
-      value: 3000
+      value: 5000
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3379351540373018398, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
@@ -2249,7 +2249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: WaitForScore
-      value: 3000
+      value: 5000
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3379351540373018398, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
@@ -3248,7 +3248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: WaitForScore
-      value: 11000
+      value: 15000
       objectReference: {fileID: 0}
     - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: AudioClipLvlStep1
@@ -3588,7 +3588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: WaitForScore
-      value: 3000
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: AudioClipLvlStep1
@@ -4351,7 +4351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: WaitForScore
-      value: 3000
+      value: 5000
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3379351540373018398, guid: 2e4eadfff2e984840b4c144389589140, type: 3}

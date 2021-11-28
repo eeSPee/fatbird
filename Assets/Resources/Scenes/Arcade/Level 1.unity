@@ -578,8 +578,6 @@ GameObject:
   - component: {fileID: 1549632955}
   - component: {fileID: 1549632959}
   - component: {fileID: 1549632958}
-  - component: {fileID: 1549632957}
-  - component: {fileID: 1549632956}
   m_Layer: 0
   m_Name: SpikeR (1)
   m_TagString: Spike
@@ -601,40 +599,6 @@ Transform:
   m_Father: {fileID: 6634539778571561419}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!70 &1549632956
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1549632954}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1}
-  m_Size: {x: 4.8390408, y: 3.7443228}
-  m_Direction: 1
---- !u!114 &1549632957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1549632954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf3ec567315d65d43aead6614ad7a2d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  start: {x: 5, y: 0, z: 0}
-  WaitForScore: 7500
-  ComeInTime: -20
-  AudioSourceLvlStep: {fileID: 0}
-  AudioClipLvlStep1: {fileID: 0}
-  AudioClipLvlStep2: {fileID: 0}
 --- !u!114 &1549632958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1268,7 +1232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   start: {x: 0, y: -5, z: 0}
   WaitForScore: 5000
-  ComeInTime: -20
+  ComeInTime: -12
   AudioSourceLvlStep: {fileID: 91079867070857674}
   AudioClipLvlStep1: {fileID: 8300000, guid: 555303145b1be924fb75dc7850a27c71, type: 3}
   AudioClipLvlStep2: {fileID: 8300000, guid: 0cd84113286a6c641801f8a8a1c848a1, type: 3}
@@ -2008,8 +1972,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start: {x: 5, y: 0, z: 0}
-  WaitForScore: 7500
-  ComeInTime: -20
+  WaitForScore: 10000
+  ComeInTime: -12
   AudioSourceLvlStep: {fileID: 0}
   AudioClipLvlStep1: {fileID: 0}
   AudioClipLvlStep2: {fileID: 0}
@@ -2541,8 +2505,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start: {x: 0, y: 10, z: 0}
-  WaitForScore: 12000
-  ComeInTime: -20
+  WaitForScore: 15000
+  ComeInTime: -12
   AudioSourceLvlStep: {fileID: 0}
   AudioClipLvlStep1: {fileID: 0}
   AudioClipLvlStep2: {fileID: 0}
@@ -2728,7 +2692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   start: {x: 0, y: -5, z: 0}
   WaitForScore: 5000
-  ComeInTime: -20
+  ComeInTime: -12
   AudioSourceLvlStep: {fileID: 0}
   AudioClipLvlStep1: {fileID: 0}
   AudioClipLvlStep2: {fileID: 0}
@@ -3187,8 +3151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start: {x: 0, y: 10, z: 0}
-  WaitForScore: 12000
-  ComeInTime: -20
+  WaitForScore: 15000
+  ComeInTime: -12
   AudioSourceLvlStep: {fileID: 91079867070857674}
   AudioClipLvlStep1: {fileID: 8300000, guid: 555303145b1be924fb75dc7850a27c71, type: 3}
   AudioClipLvlStep2: {fileID: 8300000, guid: 0cd84113286a6c641801f8a8a1c848a1, type: 3}
@@ -3399,8 +3363,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start: {x: -5, y: 0, z: 0}
-  WaitForScore: 7500
-  ComeInTime: -20
+  WaitForScore: 10000
+  ComeInTime: -12
   AudioSourceLvlStep: {fileID: 91079867070857674}
   AudioClipLvlStep1: {fileID: 8300000, guid: 555303145b1be924fb75dc7850a27c71, type: 3}
   AudioClipLvlStep2: {fileID: 8300000, guid: 0cd84113286a6c641801f8a8a1c848a1, type: 3}

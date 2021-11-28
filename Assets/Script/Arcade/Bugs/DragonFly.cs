@@ -48,6 +48,7 @@ public class DragonFly : BugController
                 }
                 break;
             case BugState.curious:
+                moveRight = FatBirdController.main.transform.position.x > transform.position.x;
                 AiState = BugState.fleeing;
                 break;
             case BugState.fleeing:

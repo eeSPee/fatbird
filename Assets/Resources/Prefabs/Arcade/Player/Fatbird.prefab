@@ -63,7 +63,7 @@ MonoBehaviour:
   AudioClipSpike: {fileID: 8300000, guid: 63c510e9bd7a9354c89ebc192618d694, type: 3}
   AudioClipBump: {fileID: 8300000, guid: cd448e3ba08067a4ebeabe19a37b535c, type: 3}
   FlapSpeedInitial: 200
-  FlapSpeed: 60
+  FlapSpeed: 66
   FlapTorque: 28
   FlapStamina: 18
   FlapWeak: 0.28
@@ -86,7 +86,7 @@ Rigidbody2D:
   m_Mass: 0.8
   m_LinearDrag: 0.8
   m_AngularDrag: 0.45
-  m_GravityScale: 0.5
+  m_GravityScale: 0.66
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

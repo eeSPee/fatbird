@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1558596663055050132, guid: 0eded590599e1934c8aead2c1af489ec, type: 3}
       propertyPath: ComeInTime
-      value: -60
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 1558596663055050132, guid: 0eded590599e1934c8aead2c1af489ec, type: 3}
       propertyPath: WaitForScore
@@ -1051,11 +1051,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1558596663055050132, guid: 0eded590599e1934c8aead2c1af489ec, type: 3}
       propertyPath: ComeInTime
-      value: -60
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 1558596663055050132, guid: 0eded590599e1934c8aead2c1af489ec, type: 3}
       propertyPath: WaitForScore
-      value: 7500
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 3444549535499520154, guid: 0eded590599e1934c8aead2c1af489ec, type: 3}
       propertyPath: m_RootOrder
@@ -2127,7 +2127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: ComeInTime
-      value: -60
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: WaitForScore
@@ -2157,7 +2157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1558596663055050132, guid: 0eded590599e1934c8aead2c1af489ec, type: 3}
       propertyPath: ComeInTime
-      value: -60
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 1558596663055050132, guid: 0eded590599e1934c8aead2c1af489ec, type: 3}
       propertyPath: WaitForScore
@@ -3374,11 +3374,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: ComeInTime
-      value: -60
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: WaitForScore
-      value: 12000
+      value: 15000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
@@ -3404,7 +3404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1558596663055050132, guid: 0eded590599e1934c8aead2c1af489ec, type: 3}
       propertyPath: ComeInTime
-      value: -60
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 1558596663055050132, guid: 0eded590599e1934c8aead2c1af489ec, type: 3}
       propertyPath: WaitForScore
@@ -4287,7 +4287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: ComeInTime
-      value: -60
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: WaitForScore
@@ -5072,11 +5072,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: ComeInTime
-      value: -60
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: WaitForScore
-      value: 12000
+      value: 15000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
@@ -5097,7 +5097,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1558596663055050132, guid: 0eded590599e1934c8aead2c1af489ec, type: 3}
       propertyPath: ComeInTime
-      value: -60
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 1558596663055050132, guid: 0eded590599e1934c8aead2c1af489ec, type: 3}
       propertyPath: WaitForScore
@@ -5198,11 +5198,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7500617696944469747, guid: afe4ce9514527fa49af00392c2a40e48, type: 3}
       propertyPath: ComeInTime
-      value: -60
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 7500617696944469747, guid: afe4ce9514527fa49af00392c2a40e48, type: 3}
       propertyPath: WaitForScore
-      value: 12000
+      value: 15000
       objectReference: {fileID: 0}
     - target: {fileID: 7500617696944469747, guid: afe4ce9514527fa49af00392c2a40e48, type: 3}
       propertyPath: AudioClipLvlStep1
@@ -5370,7 +5370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1558596663055050132, guid: 0eded590599e1934c8aead2c1af489ec, type: 3}
       propertyPath: ComeInTime
-      value: -60
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 1558596663055050132, guid: 0eded590599e1934c8aead2c1af489ec, type: 3}
       propertyPath: WaitForScore
@@ -6640,11 +6640,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: ComeInTime
-      value: -60
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: WaitForScore
-      value: 7500
+      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
@@ -6661,11 +6661,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1558596663055050132, guid: 0eded590599e1934c8aead2c1af489ec, type: 3}
       propertyPath: ComeInTime
-      value: -60
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 1558596663055050132, guid: 0eded590599e1934c8aead2c1af489ec, type: 3}
       propertyPath: WaitForScore
-      value: 7500
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 3444549535499520154, guid: 0eded590599e1934c8aead2c1af489ec, type: 3}
       propertyPath: m_RootOrder
@@ -7662,11 +7662,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: ComeInTime
-      value: -60
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: WaitForScore
-      value: 7500
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 3951846487403126090, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: AudioClipLvlStep1
