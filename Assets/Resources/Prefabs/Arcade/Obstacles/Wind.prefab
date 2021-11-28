@@ -77,14 +77,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f406b18e436a948a54e94f57064d62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  start: {x: 0, y: 0, z: 0}
-  WaitForScore: 0
-  ComeInTime: 3
-  AudioSourceLvlStep: {fileID: 0}
-  AudioClipLvlStep1: {fileID: 0}
-  AudioClipLvlStep2: {fileID: 0}
   AlwaysBlows: 0
   WindAcceleration: 1
+  ComeInTime: 3
   RepeatTime: 15
   UpTime: 3
   AudioSourceWind: {fileID: 4864429159201078}
@@ -6152,7 +6147,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 4
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -16097,7 +16092,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 4
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -20940,7 +20935,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 8
+      scalar: 12
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -25756,7 +25751,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 9
+      scalar: 12
       minScalar: 10
       maxCurve:
         serializedVersion: 2

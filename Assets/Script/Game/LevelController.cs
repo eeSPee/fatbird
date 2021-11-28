@@ -11,11 +11,11 @@ public class LevelController : MonoBehaviour
     }
     protected virtual void Update()
     {
-        if ( GameRunning && !GameOver && Input.GetKeyUp(KeyCode.P))
+        if ( !GameOver && Input.GetKeyUp(KeyCode.P))
         {
             PauseUnpause(!GamePaused);
         }
-        if ( GameRunning && Input.GetKeyUp(KeyCode.R))
+        if ( (GameRunning || GameOver) && Input.GetKeyUp(KeyCode.R))
         {
             ResetGame();
         }

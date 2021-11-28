@@ -1,22 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &806977615101377514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1741638361354828634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0f558c9c2a5bac4d9a999da8138c2e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 3
-  OrbitRange: 1
-  ScoreValue: 75
-  SightRange: 7
-  AweTime: 3
 --- !u!1001 &3305185474300220044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75,3 +58,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3888271627842841046, guid: 713feb44b57dede4eb12e4244d6a84da, type: 3}
   m_PrefabInstance: {fileID: 3305185474300220044}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &806977615101377514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741638361354828634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f558c9c2a5bac4d9a999da8138c2e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 3
+  OrbitRange: 1
+  ScoreValue: 75
+  SightRange: 6
+  AweTime: 2
