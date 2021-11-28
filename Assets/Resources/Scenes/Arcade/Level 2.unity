@@ -2953,6 +2953,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1803656396330955459, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8235294
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803656396330955459, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8235294
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803656396330955459, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
+      propertyPath: m_Color.r
+      value: 0.84313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803656396330955459, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: m_LocalAABB.m_Center.x
       value: 0.03972912
       objectReference: {fileID: 0}
@@ -4832,7 +4844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 545588310698022125, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 545588310698022125, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4861,6 +4873,18 @@ PrefabInstance:
     - target: {fileID: 545588310698022125, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803656396330955459, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8235294
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803656396330955459, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8235294
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803656396330955459, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
+      propertyPath: m_Color.r
+      value: 0.84313726
       objectReference: {fileID: 0}
     - target: {fileID: 1803656396330955459, guid: 2e4eadfff2e984840b4c144389589140, type: 3}
       propertyPath: m_LocalAABB.m_Center.x
