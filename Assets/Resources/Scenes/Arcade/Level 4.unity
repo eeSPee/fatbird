@@ -937,6 +937,10 @@ PrefabInstance:
       value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 1558596663055050132, guid: 0eded590599e1934c8aead2c1af489ec, type: 3}
+      propertyPath: AudioClipLvlStep
+      value: 
+      objectReference: {fileID: 8300000, guid: 555303145b1be924fb75dc7850a27c71, type: 3}
+    - target: {fileID: 1558596663055050132, guid: 0eded590599e1934c8aead2c1af489ec, type: 3}
       propertyPath: AudioClipLvlStep1
       value: 
       objectReference: {fileID: 8300000, guid: 555303145b1be924fb75dc7850a27c71, type: 3}
@@ -4540,6 +4544,10 @@ PrefabInstance:
       propertyPath: WaitForScore
       value: 11000
       objectReference: {fileID: 0}
+    - target: {fileID: 7500617696944469747, guid: afe4ce9514527fa49af00392c2a40e48, type: 3}
+      propertyPath: AudioClipLvlStep
+      value: 
+      objectReference: {fileID: 8300000, guid: 555303145b1be924fb75dc7850a27c71, type: 3}
     - target: {fileID: 7500617696944469747, guid: afe4ce9514527fa49af00392c2a40e48, type: 3}
       propertyPath: AudioClipLvlStep1
       value: 
