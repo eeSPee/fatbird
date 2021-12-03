@@ -8,10 +8,10 @@ public class FatBirdController : MonoBehaviour
     Animator anim;
     protected Rigidbody2D rbody;
     public AudioSource AudioSource;
-    public AudioClip AudioClipLeftWing;
-    public AudioClip AudioClipWhistleUp;
-    public AudioClip AudioClipWhistleDown;
-    public AudioClip AudioClipRightWing;
+    public AudioSource AudioSourceWingL;
+    public AudioSource AudioSourceWingR;
+    public AudioClip AudioClipFlap;
+    public AudioClip AudioClipWhistle;
     public AudioClip AudioClipEat;
     public AudioClip AudioClipSpike;
     public AudioClip AudioClipBump;
@@ -66,40 +66,26 @@ public class FatBirdController : MonoBehaviour
 
         if (right)
         {
-            AudioSource.pitch=(Random.Range(0.6f,1.4f));
-            AudioSource.PlayOneShot(AudioClipRightWing);
-            if (Stamina >= FlapStamina & AudioSource.isPlaying)
+            AudioSourceWingR.pitch=(Random.Range(0.6f,1.2f));
+            if (Stamina < FlapStamina)
             {
+              AudioSourceWingR.PlayOneShot(AudioClipWhistle);
             }
-            else if(Stamina >= FlapStamina)
+            else
             {
-              AudioSource.PlayOneShot(AudioClipWhistleUp);
-            }
-            if (Stamina < FlapStamina & AudioSource.isPlaying)
-            {
-            }
-            else if(Stamina < FlapStamina)
-            {
-              AudioSource.PlayOneShot(AudioClipWhistleDown);
+              AudioSourceWingR.PlayOneShot(AudioClipFlap);
             }
         }
         else
         {
-            AudioSource.pitch=(Random.Range(0.6f,1.4f));
-            AudioSource.PlayOneShot(AudioClipLeftWing);
-            if (Stamina >= FlapStamina & AudioSource.isPlaying)
+            AudioSourceWingL.pitch=(Random.Range(0.6f,1.2f));
+            if (Stamina < FlapStamina)
             {
+              AudioSourceWingL.PlayOneShot(AudioClipWhistle);
             }
-            else if(Stamina >= FlapStamina)
+            else
             {
-              AudioSource.PlayOneShot(AudioClipWhistleUp);
-            }
-            if (Stamina < FlapStamina & AudioSource.isPlaying)
-            {
-            }
-            else if(Stamina < FlapStamina)
-            {
-              AudioSource.PlayOneShot(AudioClipWhistleDown);
+              AudioSourceWingL.PlayOneShot(AudioClipFlap);
             }
         }
     }

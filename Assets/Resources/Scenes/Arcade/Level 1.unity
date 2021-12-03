@@ -1234,8 +1234,7 @@ MonoBehaviour:
   WaitForScore: 10000
   ComeInTime: -12
   AudioSourceLvlStep: {fileID: 91079867070857674}
-  AudioClipLvlStep1: {fileID: 8300000, guid: 555303145b1be924fb75dc7850a27c71, type: 3}
-  AudioClipLvlStep2: {fileID: 8300000, guid: 0cd84113286a6c641801f8a8a1c848a1, type: 3}
+  AudioClipLvlStep: {fileID: 8300000, guid: 555303145b1be924fb75dc7850a27c71, type: 3}
 --- !u!1971053207 &1256736270168034486
 SpriteShapeRenderer:
   m_ObjectHideFlags: 0
@@ -1975,8 +1974,7 @@ MonoBehaviour:
   WaitForScore: 5000
   ComeInTime: -12
   AudioSourceLvlStep: {fileID: 0}
-  AudioClipLvlStep1: {fileID: 0}
-  AudioClipLvlStep2: {fileID: 0}
+  AudioClipLvlStep: {fileID: 0}
 --- !u!114 &2996688700505505796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2508,8 +2506,7 @@ MonoBehaviour:
   WaitForScore: 15000
   ComeInTime: -12
   AudioSourceLvlStep: {fileID: 0}
-  AudioClipLvlStep1: {fileID: 0}
-  AudioClipLvlStep2: {fileID: 0}
+  AudioClipLvlStep: {fileID: 0}
 --- !u!1971053207 &4460955353944816041
 SpriteShapeRenderer:
   m_ObjectHideFlags: 0
@@ -2694,8 +2691,7 @@ MonoBehaviour:
   WaitForScore: 10000
   ComeInTime: -12
   AudioSourceLvlStep: {fileID: 0}
-  AudioClipLvlStep1: {fileID: 0}
-  AudioClipLvlStep2: {fileID: 0}
+  AudioClipLvlStep: {fileID: 0}
 --- !u!1971053207 &5367902103888055230
 SpriteShapeRenderer:
   m_ObjectHideFlags: 0
@@ -3154,8 +3150,7 @@ MonoBehaviour:
   WaitForScore: 15000
   ComeInTime: -12
   AudioSourceLvlStep: {fileID: 91079867070857674}
-  AudioClipLvlStep1: {fileID: 8300000, guid: 555303145b1be924fb75dc7850a27c71, type: 3}
-  AudioClipLvlStep2: {fileID: 8300000, guid: 0cd84113286a6c641801f8a8a1c848a1, type: 3}
+  AudioClipLvlStep: {fileID: 8300000, guid: 555303145b1be924fb75dc7850a27c71, type: 3}
 --- !u!212 &6928683252039725433
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3366,8 +3361,7 @@ MonoBehaviour:
   WaitForScore: 5000
   ComeInTime: -12
   AudioSourceLvlStep: {fileID: 91079867070857674}
-  AudioClipLvlStep1: {fileID: 8300000, guid: 555303145b1be924fb75dc7850a27c71, type: 3}
-  AudioClipLvlStep2: {fileID: 8300000, guid: 0cd84113286a6c641801f8a8a1c848a1, type: 3}
+  AudioClipLvlStep: {fileID: 8300000, guid: 555303145b1be924fb75dc7850a27c71, type: 3}
 --- !u!4 &7946048876204651403
 Transform:
   m_ObjectHideFlags: 0
