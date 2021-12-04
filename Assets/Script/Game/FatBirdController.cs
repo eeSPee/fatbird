@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FatBirdController : MonoBehaviour
 {
-    Vector3 start;
+    protected Vector3 start;
     Animator anim;
     protected Rigidbody2D rbody;
     public AudioSource AudioSource;
