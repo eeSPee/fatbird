@@ -47,7 +47,7 @@ public class FatBirdArcade : FatBirdController
     {
         if (IsGrounded())
             return;
-        SpecialEffectPooler.main.SpawnNewBug("BugPickup", transform.position);
+        SpecialEffectPooler.main.CreateSpecialEffect("BugPickup", transform.position);
         SpecialEffectPooler.main.TextEffect("FLIP!", transform.position + Vector3.up * .33f);
         SpecialEffectPooler.main.TextEffect("+" + ScoreController.main.ScorePoints(RotationScore, false), transform.position);
     }

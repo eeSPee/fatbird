@@ -12,6 +12,7 @@ public class UIControllerPlatformer : UIController
     {
         base.Awake();
         TimerDisplay = transform.Find("Time Display").GetComponent<Text>();
+        TimerDisplay.gameObject.SetActive(false);
         WinScreen = transform.Find("Game Complete").gameObject;
         LoseScreen = transform.Find("Game Over").gameObject;
     }
@@ -20,10 +21,11 @@ public class UIControllerPlatformer : UIController
         WinScreen.SetActive(false);
         LoseScreen.SetActive(false);
     }
-    public override void Update()
+    /*public override void Update()
     {
-        TimerDisplay.gameObject.SetActive(LevelController.main.IsGameRunning());
-        if (LevelController.main.IsGameRunning())
+        bool showTimer = LevelController.main.IsGameRunning() && !LevelController.main.IsGameSuspended();
+        TimerDisplay.gameObject.SetActive(showTimer);
+        if (showTimer)
         {
             float gameTime = LevelController.main.GetGameTime();
             float mins = (Mathf.Round(gameTime / 60));
@@ -31,7 +33,7 @@ public class UIControllerPlatformer : UIController
 
             TimerDisplay.text = mins + ":" + (secs<10 ? "0" : "")+ secs;
         }
-    }
+    }*/
     public override void EnableGameOverScreen(bool victory)
     {
         WinScreen.SetActive(victory);

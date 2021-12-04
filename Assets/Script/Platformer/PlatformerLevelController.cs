@@ -10,12 +10,12 @@ public class PlatformerLevelController : LevelController
     {
         return GameTime - base.GetGameTime();
     }
-    protected override void Update()
+    /*protected override void Update()
     {
         base.Update();
-        if (!IsGameOver() && GetGameTime()<=0)
+        if (!IsGameOver() && !IsGameSuspended() && GetGameTime()<=0)
             {
             EndTheGame(false);
         }
-    }
+    }*/
 }
