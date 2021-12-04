@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!82 &127537158 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3349896991731756879, guid: d32e2fd792f823142ba889b2d34499d2, type: 3}
+  m_PrefabInstance: {fileID: 1719465156}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &337003900
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee91a931946955459c7166b9972bc00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CheckPointID: 0
+  CheckPointID: 1
 --- !u!58 &337003902
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -330,6 +335,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &453341303 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8174333446024426468, guid: d32e2fd792f823142ba889b2d34499d2, type: 3}
+  m_PrefabInstance: {fileID: 1719465156}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &770364477
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +527,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameTime: 3
+--- !u!82 &1680805039 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 902361588138474645, guid: d32e2fd792f823142ba889b2d34499d2, type: 3}
+  m_PrefabInstance: {fileID: 1719465156}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1719465156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -524,6 +539,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1017066890625368614, guid: d32e2fd792f823142ba889b2d34499d2, type: 3}
+      propertyPath: AudioSource
+      value: 
+      objectReference: {fileID: 1680805039}
+    - target: {fileID: 1017066890625368614, guid: d32e2fd792f823142ba889b2d34499d2, type: 3}
+      propertyPath: AudioSourceWingL
+      value: 
+      objectReference: {fileID: 127537158}
+    - target: {fileID: 1017066890625368614, guid: d32e2fd792f823142ba889b2d34499d2, type: 3}
+      propertyPath: AudioSourceWingR
+      value: 
+      objectReference: {fileID: 453341303}
     - target: {fileID: 8580223942037504851, guid: d32e2fd792f823142ba889b2d34499d2, type: 3}
       propertyPath: m_RootOrder
       value: 1

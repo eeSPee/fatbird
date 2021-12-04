@@ -59,7 +59,7 @@ public abstract class BugController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && !LevelController.main.IsGameOver())
         {
-            SpecialEffectPooler.main.SpawnNewBug("BugPickup", transform.position);
+            SpecialEffectPooler.main.CreateSpecialEffect("BugPickup", transform.position);
             FatBirdController.main.EatBug();
             audioSource_eat.PlayOneShot(audioClip_eat);
             Kill(true);

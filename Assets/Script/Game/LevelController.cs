@@ -40,6 +40,7 @@ public class LevelController : MonoBehaviour
     public virtual void ResetGame()
     {
         EndTheGame(false);
+        StartTime = Time.time;
         GameOver = false;
         FatBirdController.main.Reset();
         UIController.main.DisableGameOverScreen();
@@ -70,5 +71,19 @@ public class LevelController : MonoBehaviour
     private void OnDisable()
     {
         PauseUnpause(false);
+    }
+    protected bool Suspended = false;
+    public bool IsGameSuspended()
+    {
+        return Suspended;
+    }
+    public virtual void SuspendGame()
+    {
+        Suspended = true;
+    }
+    public virtual void ResumeGame()
+    {
+        Suspended = false;
+        StartTime = Time.time;
     }
 }

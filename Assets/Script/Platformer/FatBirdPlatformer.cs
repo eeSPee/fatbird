@@ -27,6 +27,11 @@ public class FatBirdPlatformer : FatBirdController
     }
     public void SetCheckPoint(CheckPointController checkpoint)
     {
+        if (lastCheckPoint == checkpoint)
+            return;
         lastCheckPoint = checkpoint;
+        start = lastCheckPoint.transform.position + Vector3.up;
+        SpecialEffectPooler.main.CreateSpecialEffect("BugPickup", transform.position);
+        SpecialEffectPooler.main.TextEffect("CHECKPOINT!", transform.position + Vector3.up * .33f);
     }
 }

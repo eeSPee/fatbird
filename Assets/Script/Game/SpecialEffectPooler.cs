@@ -25,7 +25,7 @@ public class SpecialEffectPooler : MonoBehaviour
         bug.SetActive(false);
         return bug;
     }
-    public void SpawnNewBug(string bug, Vector3 pos)
+    public void CreateSpecialEffect(string bug, Vector3 pos)
     {
         GameObject newBug = PoolEffect(bug);
         newBug.SetActive(true);
