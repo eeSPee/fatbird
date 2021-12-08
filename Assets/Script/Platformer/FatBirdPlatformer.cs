@@ -6,6 +6,8 @@ public class FatBirdPlatformer : FatBirdController
 {
     int StartingCheckPoint = 0;
     CheckPointController lastCheckPoint;
+    public AudioSource AudioSourceCheckpoint;
+
     public override void Update()
     {
         base.Update();
@@ -17,12 +19,12 @@ public class FatBirdPlatformer : FatBirdController
         if (collision.gameObject.tag == "Checkpoint" && !LevelController.main.IsGameOver())
         {
             SetCheckPoint(collision.gameObject.GetComponent<CheckPointController>());
-
         }
             if (collision.gameObject.tag == "Victory" && !LevelController.main.IsGameOver())
         {
             //TODO shertigan add a victory sound?
             LevelController.main.EndTheGame(true);
+            AudioSourceCheckpoint.Play();
         }
     }
     public void SetCheckPoint(CheckPointController checkpoint)
@@ -33,5 +35,6 @@ public class FatBirdPlatformer : FatBirdController
         start = lastCheckPoint.transform.position + Vector3.up;
         SpecialEffectPooler.main.CreateSpecialEffect("BugPickup", transform.position);
         SpecialEffectPooler.main.TextEffect("CHECKPOINT!", transform.position + Vector3.up * .33f);
+        AudioSourceCheckpoint.Play();
     }
 }

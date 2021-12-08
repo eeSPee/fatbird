@@ -19,7 +19,6 @@ public class BumperController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //TODO add sound
         BumperAnimator.SetTrigger("Bump");
         audioSource_bump.PlayOneShot(audioClip_bump);
     }
