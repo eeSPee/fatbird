@@ -18,4 +18,31 @@ public class PlatformerLevelController : LevelController
             EndTheGame(false);
         }
     }*/
+    public List<PlatformerBugController> bugs;
+    protected override void Awake()
+    {
+        base.Awake();
+        bugs = new List<PlatformerBugController>();
+    }
+    public override void SuspendGame()
+    {
+        foreach (PlatformerBugController bug in bugs)
+        {
+            if (bug.gameObject.activeInHierarchy)
+            {
+                bug.RemoveFromTheGame();
+            }
+        }
+    }
+    public override void ResetGame()
+    {
+        base.ResetGame();
+        foreach (PlatformerBugController bug in bugs)
+        {
+            if (!bug.wasRemoved)
+            {
+                bug.gameObject.SetActive(true);
+            }
+        }
+    }
 }

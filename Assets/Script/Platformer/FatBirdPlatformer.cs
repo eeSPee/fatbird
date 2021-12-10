@@ -19,6 +19,7 @@ public class FatBirdPlatformer : FatBirdController
         if (collision.gameObject.tag == "Checkpoint" && !LevelController.main.IsGameOver())
         {
             SetCheckPoint(collision.gameObject.GetComponent<CheckPointController>());
+            LevelController.main.SuspendGame();
         }
             if (collision.gameObject.tag == "Victory" && !LevelController.main.IsGameOver())
         {
