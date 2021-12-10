@@ -22,7 +22,8 @@ public class WindController : MonoBehaviour, IArcadeObstacle
     }
     private void Start()
     {
-        StopBlowing();
+        if (!AlwaysBlows)
+            StopBlowing();
     }
     public void StartBlowing()
     {
