@@ -77,11 +77,11 @@ public class LevelController : MonoBehaviour
     {
         return Suspended;
     }
-    public virtual void SuspendGame()
+    public virtual void PlayerEnterSafezone()
     {
         Suspended = true;
     }
-    public virtual void ResumeGame()
+    public virtual void PlayerLeaveSafezone()
     {
         Suspended = false;
         StartTime = Time.time;

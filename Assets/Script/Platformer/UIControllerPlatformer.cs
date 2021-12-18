@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class UIControllerPlatformer : UIController
 {
+    int currentCheckpoint = 0;
     Text TimerDisplay;
     GameObject WinScreen;
     GameObject LoseScreen;
+    GameObject LevelSelScreen;
     public override void Awake()
     {
         base.Awake();
@@ -15,6 +17,39 @@ public class UIControllerPlatformer : UIController
         TimerDisplay.gameObject.SetActive(false);
         WinScreen = transform.Find("Game Complete").gameObject;
         LoseScreen = transform.Find("Game Over").gameObject;
+        LevelSelScreen = transform.Find("LevelSelect").gameObject;
+    }
+    public void EnableLevelSelect(bool value)
+    {
+        LevelSelScreen.SetActive(value);
+        FatBirdController.main.enabled = !value;
+        Tutorial.SetActive(!value);
+    }
+    public void SelectLevel(int nLevel)
+    {
+        CheckPointController checkpoint = (LevelController.main as PlatformerLevelController).GetCheckpointByID(nLevel);
+        if (checkpoint != null)
+        {
+            currentCheckpoint = nLevel;
+            Camera.main.transform.position = new Vector3(checkpoint.transform.position .x, checkpoint.transform.position .y + FatBirdController.main.GetRadius(), Camera.main.transform.position .z);
+            FatBirdController.main.transform.position = checkpoint.transform.position + Vector3.up * FatBirdController.main.GetRadius();
+            (FatBirdController.main as FatBirdPlatformer).SetCheckPoint(checkpoint);
+
+            LevelSelScreen.transform.Find("CheckpointID").GetComponent<Text>().text = ""+ (1+nLevel);
+        }
+    }
+    public void HandlePlayerChoseCheckpoint(bool forward)
+    {
+        if (forward)
+        {
+            SelectLevel(currentCheckpoint + 1);
+        }
+        else 
+        {
+            if (currentCheckpoint == 0)
+                return;
+            SelectLevel(currentCheckpoint - 1);
+        }
     }
     public override void DisableGameOverScreen()
     {
@@ -38,5 +73,14 @@ public class UIControllerPlatformer : UIController
     {
         WinScreen.SetActive(victory);
         LoseScreen.SetActive(!victory);
+        LevelSelScreen.SetActive(false);
+    }
+    protected override void Start()
+    {
+        base.Start();
+        Tutorial.SetActive(false);
+        EnableDisablePauseMenu(false);
+        EnableLevelSelect(true);
+        SelectLevel(currentCheckpoint);
     }
 }

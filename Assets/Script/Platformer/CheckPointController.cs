@@ -10,7 +10,7 @@ public class CheckPointController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            LevelController.main.ResumeGame();
+            LevelController.main.PlayerLeaveSafezone();
         }
     }
 }

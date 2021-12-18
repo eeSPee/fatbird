@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-    GameObject Tutorial;
-    GameObject PauseMenu;
+    protected GameObject Tutorial;
+    protected GameObject PauseMenu;
 
     public static UIController main;
     public virtual void Awake()
@@ -15,14 +15,11 @@ public class UIController : MonoBehaviour
         Tutorial = transform.Find("Tutorial").gameObject;
         PauseMenu = transform.Find("Pause Menu").gameObject;
     }
-    void Start()
+    protected virtual void Start()
     {
         DisableGameOverScreen();
         EnableDisablePauseMenu(false);
     }
-
-    public virtual void Update()
-    { }
 
         public void DisableTutorial()
     {

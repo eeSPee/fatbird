@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FatBirdPlatformer : FatBirdController
 {
-    int StartingCheckPoint = 0;
+   public static int StartingCheckPoint = 0;
     CheckPointController lastCheckPoint;
 
     public override void Update()
@@ -18,7 +18,7 @@ public class FatBirdPlatformer : FatBirdController
         if (collision.gameObject.tag == "Checkpoint" && !LevelController.main.IsGameOver())
         {
             SetCheckPoint(collision.gameObject.GetComponent<CheckPointController>());
-            LevelController.main.SuspendGame();
+            LevelController.main.PlayerEnterSafezone();
         }
             if (collision.gameObject.tag == "Victory" && !LevelController.main.IsGameOver())
         {
@@ -32,9 +32,12 @@ public class FatBirdPlatformer : FatBirdController
         if (lastCheckPoint == checkpoint)
             return;
         lastCheckPoint = checkpoint;
-        start = lastCheckPoint.transform.position + Vector3.up;
-        SpecialEffectPooler.main.CreateSpecialEffect("BugPickup", transform.position);
-        SpecialEffectPooler.main.TextEffect("CHECKPOINT!", transform.position + Vector3.up * .33f);
-        AudioSource.Play();
+        start = lastCheckPoint.transform.position + Vector3.up * GetRadius();
+        if (enabled)
+        {
+            SpecialEffectPooler.main.CreateSpecialEffect("BugPickup", transform.position);
+            SpecialEffectPooler.main.TextEffect("CHECKPOINT!", transform.position + Vector3.up * .33f);
+            AudioSource.Play();
+        }
     }
 }

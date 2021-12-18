@@ -23,8 +23,10 @@ public class PlatformerLevelController : LevelController
     {
         base.Awake();
         bugs = new List<PlatformerBugController>();
+        checkPoints = new List<CheckPointController>();
+        checkPoints.AddRange(Object.FindObjectsOfType<CheckPointController>());
     }
-    public override void SuspendGame()
+    public override void PlayerEnterSafezone()
     {
         foreach (PlatformerBugController bug in bugs)
         {
@@ -44,5 +46,15 @@ public class PlatformerLevelController : LevelController
                 bug.gameObject.SetActive(true);
             }
         }
+    }
+    public List<CheckPointController> checkPoints;
+    public CheckPointController GetCheckpointByID(int ID)
+    {
+        foreach (CheckPointController ch in checkPoints)
+        {
+            if (ch.CheckPointID == ID)
+                return ch;
+        }
+        return null;
     }
 }
