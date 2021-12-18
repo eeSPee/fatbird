@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/Scenes/Arcade/Level 4.unity
     guid: a67d4cbd7e7e28f48a062ea48d0d10eb
+  - enabled: 1
+    path: Assets/Resources/Scenes/Platformer Levels/wampyPlatform.unity
+    guid: dd84159c57b6f7945a637c8885c2e607
   m_configObjects: {}

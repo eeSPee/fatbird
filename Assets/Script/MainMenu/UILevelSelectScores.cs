@@ -13,20 +13,23 @@ public class UILevelSelectScores : MonoBehaviour
 
     private void Awake()
     {
-        LevelText = transform.Find("Level Label").GetComponentInChildren<Text>();
-        HighScoreText = transform.Find("High Score Label").Find("Score").GetComponent<Text>();
-        LastScoreText = transform.Find("Last Score Label").Find("Score").GetComponent<Text>();
+        LevelText = transform.Find("Level Label")?.GetComponentInChildren<Text>();
+        HighScoreText = transform.Find("High Score Label")?.Find("Score")?.GetComponent<Text>();
+        LastScoreText = transform.Find("Last Score Label")?.Find("Score")?.GetComponent<Text>();
     }
     void Start()
     {
-        LevelText.text = LevelName;
+        if (LevelText!=null)
+            LevelText.text = LevelName;
     }
 
     void OnEnable()
     {
 
+        if (HighScoreText!=null)
         HighScoreText.text = PlayerPrefs.GetFloat(LevelName + " HighScore")+"";
-        LastScoreText.text = PlayerPrefs.GetFloat(LevelName + " LastScore") + "";
+        if (LastScoreText != null)
+            LastScoreText.text = PlayerPrefs.GetFloat(LevelName + " LastScore") + "";
     }
     public void OnPlayPressed()
     {

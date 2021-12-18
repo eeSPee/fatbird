@@ -2733,6 +2733,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6209882708899225744}
     m_Modifications:
+    - target: {fileID: 4864429159201078, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 27b43f8d194c4ee4388ba376ea7d45d2, type: 3}
     - target: {fileID: 83622383248388362, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
       propertyPath: m_Name
       value: Wind RT
@@ -2824,6 +2828,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6209882708899225744}
     m_Modifications:
+    - target: {fileID: 4864429159201078, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 27b43f8d194c4ee4388ba376ea7d45d2, type: 3}
     - target: {fileID: 83622383248388362, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
       propertyPath: m_Name
       value: Wind LT
@@ -2910,6 +2918,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6209882708899225744}
     m_Modifications:
+    - target: {fileID: 4864429159201078, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 27b43f8d194c4ee4388ba376ea7d45d2, type: 3}
     - target: {fileID: 83622383248388362, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
       propertyPath: m_Name
       value: Wind RB
@@ -4361,6 +4373,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6209882708899225744}
     m_Modifications:
+    - target: {fileID: 4864429159201078, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 27b43f8d194c4ee4388ba376ea7d45d2, type: 3}
     - target: {fileID: 83622383248388362, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
       propertyPath: m_Name
       value: Wind LB

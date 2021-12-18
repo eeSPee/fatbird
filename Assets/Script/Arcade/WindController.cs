@@ -28,7 +28,6 @@ public class WindController : MonoBehaviour, IArcadeObstacle
     public void StartBlowing()
     {
         WindTrigger.enabled = true;
-        AudioSourceWind.Play();
         foreach (ParticleSystem particle in particles)
         {
             particle.Play();
@@ -75,6 +74,7 @@ public class WindController : MonoBehaviour, IArcadeObstacle
             blow_cycle:
             {
                 StartBlowing();
+                AudioSourceWind.Play();
                 yield return new WaitForSeconds(UpTime);
                 StopBlowing();
             }
@@ -84,4 +84,9 @@ public class WindController : MonoBehaviour, IArcadeObstacle
         }
 
     }
+//    public void UpdateListener()
+//      {
+//        float ListenerDistance = ((Vector2)transform.position - (Vector2)FatBirdController.player.transform.position).magnitude;
+//        AudioSourceWind.volume = Mathf.Clamp(1 - ((ListenerDistance-FatBirdController.MinListenerDistance) / (FatBirdController.MaxListenerDistance - FatBirdController.MinListenerDistance)),0,1);
+//      }
 }
