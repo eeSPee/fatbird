@@ -13,36 +13,41 @@ MonoBehaviour:
   m_Name: closedGround
   m_EditorClassIdentifier: 
   m_Angles:
-  - m_Start: -180
-    m_End: 180
-    m_Order: 0
+  - m_Start: -72
+    m_End: 67
+    m_Order: 1
     m_Sprites:
     - {fileID: -3878557786174838139, guid: e8049be9be5532a4c9ccf9887aa9c428, type: 3}
+  - m_Start: -292
+    m_End: -72
+    m_Order: 0
+    m_Sprites:
+    - {fileID: -801218282540892073, guid: 94e385f6cbe724b40b885a387587e887, type: 3}
   m_FillTexture: {fileID: 2800000, guid: 9d12fd69780107a4591ea45710ea1f99, type: 3}
   m_CornerSprites:
   - m_CornerType: 0
     m_Sprites:
-    - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
+    - {fileID: -9055170379147609841, guid: 94e385f6cbe724b40b885a387587e887, type: 3}
   - m_CornerType: 1
     m_Sprites:
-    - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
+    - {fileID: 6332661547945369029, guid: 94e385f6cbe724b40b885a387587e887, type: 3}
   - m_CornerType: 2
     m_Sprites:
-    - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
+    - {fileID: 7036394314857510557, guid: 94e385f6cbe724b40b885a387587e887, type: 3}
   - m_CornerType: 3
     m_Sprites:
-    - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
+    - {fileID: 2715372370310274574, guid: 94e385f6cbe724b40b885a387587e887, type: 3}
   - m_CornerType: 4
     m_Sprites:
-    - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
+    - {fileID: 5209917228914547768, guid: 94e385f6cbe724b40b885a387587e887, type: 3}
   - m_CornerType: 5
     m_Sprites:
-    - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
+    - {fileID: 1946498188614892244, guid: 94e385f6cbe724b40b885a387587e887, type: 3}
   - m_CornerType: 6
     m_Sprites:
-    - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
+    - {fileID: -7401051914033315993, guid: 94e385f6cbe724b40b885a387587e887, type: 3}
   - m_CornerType: 7
     m_Sprites:
-    - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
-  m_FillOffset: 0
+    - {fileID: -2284680802580619086, guid: 94e385f6cbe724b40b885a387587e887, type: 3}
+  m_FillOffset: -0.085
   m_UseSpriteBorders: 1
