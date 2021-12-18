@@ -18,7 +18,7 @@ public class PlatformerBugController : MonoBehaviour
         audioSource_eat = FatBirdController.main.AudioSource;
         audioClip_eat = FatBirdController.main.AudioClipEat;
 
-        PlatformerLevelController lc = LevelController.main;
+        PlatformerLevelController lc = LevelController.main as PlatformerLevelController;
         if (lc != null)
         {
             lc.bugs.Add(this);

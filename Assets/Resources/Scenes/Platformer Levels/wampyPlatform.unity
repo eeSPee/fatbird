@@ -825,7 +825,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 0b6dfc1dc98a569459f3f8e442378178, type: 3}
     - target: {fileID: 3775983481723824927, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3775983481723824927, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
       propertyPath: m_LocalScale.x
@@ -9670,6 +9670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameTime: 10
+  bugs: []
 --- !u!4 &1409100336
 Transform:
   m_ObjectHideFlags: 0
@@ -12956,10 +12957,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1017066890625368614, guid: d32e2fd792f823142ba889b2d34499d2, type: 3}
-      propertyPath: AudioSourceCheckpoint
-      value: 
-      objectReference: {fileID: 1409100334}
     - target: {fileID: 8580223942037504851, guid: d32e2fd792f823142ba889b2d34499d2, type: 3}
       propertyPath: m_RootOrder
       value: 2

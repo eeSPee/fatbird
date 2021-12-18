@@ -16,12 +16,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5686518098449362753, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686518098449362753, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686518098449362753, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -44.35
+      value: 53.96
       objectReference: {fileID: 0}
     - target: {fileID: 5686518098449362753, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.87
+      value: 17.66
       objectReference: {fileID: 0}
     - target: {fileID: 5686518098449362753, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -58,6 +66,10 @@ PrefabInstance:
     - target: {fileID: 5686518098449362757, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
       propertyPath: m_Name
       value: Platformer Fatbird
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686518098449362759, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: m_GravityScale
+      value: 0.75
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5433833233636151584, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
@@ -103,10 +115,9 @@ MonoBehaviour:
   AudioClipSpike: {fileID: 8300000, guid: 63c510e9bd7a9354c89ebc192618d694, type: 3}
   AudioClipBump: {fileID: 8300000, guid: cd448e3ba08067a4ebeabe19a37b535c, type: 3}
   FlapSpeedInitial: 200
-  FlapSpeed: 60
+  FlapSpeed: 70
   FlapTorque: 28
   FlapStamina: 15
-  FlapWeak: 0.25
+  FlapWeak: 0.33
   Stamina: 100
-  StaminaRegen: 75
-  AudioSourceCheckpoint: {fileID: 0}
+  StaminaRegen: 90
