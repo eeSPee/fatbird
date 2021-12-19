@@ -38,7 +38,6 @@ public class PlatformerLevelController : LevelController
     }
     public override void ResetGame()
     {
-        base.ResetGame();
         foreach (PlatformerBugController bug in bugs)
         {
             if (!bug.wasRemoved)
@@ -46,6 +45,7 @@ public class PlatformerLevelController : LevelController
                 bug.gameObject.SetActive(true);
             }
         }
+        base.ResetGame();
     }
     public List<CheckPointController> checkPoints;
     public CheckPointController GetCheckpointByID(int ID)

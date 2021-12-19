@@ -31,8 +31,8 @@ public class UIControllerPlatformer : UIController
         if (checkpoint != null)
         {
             currentCheckpoint = nLevel;
-            Camera.main.transform.position = new Vector3(checkpoint.transform.position .x, checkpoint.transform.position .y + FatBirdController.main.GetRadius(), Camera.main.transform.position .z);
-            FatBirdController.main.transform.position = checkpoint.transform.position + Vector3.up * FatBirdController.main.GetRadius();
+            Camera.main.transform.position = new Vector3(checkpoint.transform.position .x, checkpoint.transform.position .y , Camera.main.transform.position .z);
+            FatBirdController.main.transform.position = checkpoint.transform.position;
             (FatBirdController.main as FatBirdPlatformer).SetCheckPoint(checkpoint);
 
             LevelSelScreen.transform.Find("CheckpointID").GetComponent<Text>().text = ""+ (1+nLevel);

@@ -40,7 +40,8 @@ public class FatBirdPlatformer : FatBirdController
         if (lastCheckPoint == checkpoint)
             return;
         lastCheckPoint = checkpoint;
-        start = lastCheckPoint.transform.position + Vector3.up * GetRadius();
+        checkpoint.SetEmpty(true);
+        start = lastCheckPoint.transform.position;
         if (enabled)
         {
             SpecialEffectPooler.main.CreateSpecialEffect("BugPickup", transform.position);

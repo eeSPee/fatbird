@@ -19,11 +19,11 @@ public class SpecialEffectPooler : MonoBehaviour
                 return childTransform.gameObject;
             }
         }
-        GameObject bug = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Special Effects/" + effectName));
-        bug.name = effectName;
-        bug.transform.SetParent(transform);
-        bug.SetActive(false);
-        return bug;
+        GameObject FX = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Special Effects/" + effectName));
+        FX.name = effectName;
+        FX.transform.SetParent(transform);
+        FX.SetActive(false);
+        return FX;
     }
     public void CreateSpecialEffect(string bug, Vector3 pos)
     {

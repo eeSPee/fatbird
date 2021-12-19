@@ -157,10 +157,6 @@ public class FatBirdController : MonoBehaviour
         rbody.isKinematic = false;
         anim.SetBool("Hurt", false);
     }
-    public float GetRadius()
-    {
-        return GetComponent<CircleCollider2D>().radius * transform.localScale.x;
-    }
     private void OnDisable()
     {
         rbody.bodyType = RigidbodyType2D.Static;
