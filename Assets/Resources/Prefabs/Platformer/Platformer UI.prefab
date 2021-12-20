@@ -165,7 +165,6 @@ GameObject:
   - component: {fileID: 153716281}
   - component: {fileID: 153716284}
   - component: {fileID: 153716283}
-  - component: {fileID: 153716282}
   m_Layer: 5
   m_Name: Bugs (1)
   m_TagString: Untagged
@@ -234,18 +233,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'BUGS COLLECTED:'
---- !u!114 &153716282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 153716280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68932234fb381e343829460df2112366, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &205779647
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,9 +684,9 @@ GameObject:
   - component: {fileID: 391691856}
   - component: {fileID: 391691859}
   - component: {fileID: 391691858}
-  - component: {fileID: 391691857}
+  - component: {fileID: 999531901}
   m_Layer: 5
-  m_Name: Score (3)
+  m_Name: TopBugs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -766,7 +753,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 0 / 50
---- !u!114 &391691857
+--- !u!114 &999531901
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -775,7 +762,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 391691855}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68932234fb381e343829460df2112366, type: 3}
+  m_Script: {fileID: 11500000, guid: a05820efe2f122a41be79e113c9dc4c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &463290465
@@ -789,7 +776,6 @@ GameObject:
   - component: {fileID: 463290466}
   - component: {fileID: 463290469}
   - component: {fileID: 463290468}
-  - component: {fileID: 463290467}
   m_Layer: 5
   m_Name: Score (3)
   m_TagString: Untagged
@@ -858,18 +844,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'BEST TIME :'
---- !u!114 &463290467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463290465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68932234fb381e343829460df2112366, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &524451677
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,9 +855,9 @@ GameObject:
   - component: {fileID: 524451678}
   - component: {fileID: 524451681}
   - component: {fileID: 524451680}
-  - component: {fileID: 524451679}
+  - component: {fileID: 2072438384}
   m_Layer: 5
-  m_Name: Score (2)
+  m_Name: TopBugs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -950,7 +924,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 0 / 50
---- !u!114 &524451679
+--- !u!114 &2072438384
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -959,7 +933,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 524451677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68932234fb381e343829460df2112366, type: 3}
+  m_Script: {fileID: 11500000, guid: a05820efe2f122a41be79e113c9dc4c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &568125535
@@ -1379,7 +1353,6 @@ GameObject:
   - component: {fileID: 845221016}
   - component: {fileID: 845221018}
   - component: {fileID: 845221017}
-  - component: {fileID: 845221019}
   m_Layer: 5
   m_Name: Bugs
   m_TagString: Untagged
@@ -1448,18 +1421,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'BUGS COLLECTED:'
---- !u!114 &845221019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845221015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68932234fb381e343829460df2112366, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &882672994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1783,7 +1744,6 @@ GameObject:
   - component: {fileID: 1108274000}
   - component: {fileID: 1108274003}
   - component: {fileID: 1108274002}
-  - component: {fileID: 1108274001}
   m_Layer: 5
   m_Name: Bugs (1)
   m_TagString: Untagged
@@ -1852,18 +1812,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'BUGS COLLECTED:'
---- !u!114 &1108274001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1108273999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68932234fb381e343829460df2112366, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1121015515
 GameObject:
   m_ObjectHideFlags: 0
@@ -2007,7 +1955,6 @@ GameObject:
   - component: {fileID: 1128721276}
   - component: {fileID: 1128721278}
   - component: {fileID: 1128721277}
-  - component: {fileID: 1128721279}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -2076,18 +2023,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'BEST TIME :'
---- !u!114 &1128721279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128721275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68932234fb381e343829460df2112366, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1277286206
 GameObject:
   m_ObjectHideFlags: 0
@@ -2174,9 +2109,9 @@ GameObject:
   - component: {fileID: 1396188140}
   - component: {fileID: 1396188143}
   - component: {fileID: 1396188142}
-  - component: {fileID: 1396188141}
+  - component: {fileID: 1467887987}
   m_Layer: 5
-  m_Name: Score (1)
+  m_Name: TopTime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2243,7 +2178,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 0M 0S
---- !u!114 &1396188141
+--- !u!114 &1467887987
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2252,7 +2187,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1396188139}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68932234fb381e343829460df2112366, type: 3}
+  m_Script: {fileID: 11500000, guid: d60e2a2080501b148b78df7472df7e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1411881071
@@ -2341,9 +2276,9 @@ GameObject:
   - component: {fileID: 1431599536}
   - component: {fileID: 1431599539}
   - component: {fileID: 1431599538}
-  - component: {fileID: 1431599537}
+  - component: {fileID: 904712054}
   m_Layer: 5
-  m_Name: Score (5)
+  m_Name: TopBugs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2410,7 +2345,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 0 / 50
---- !u!114 &1431599537
+--- !u!114 &904712054
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2419,7 +2354,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1431599535}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68932234fb381e343829460df2112366, type: 3}
+  m_Script: {fileID: 11500000, guid: a05820efe2f122a41be79e113c9dc4c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1754011055
@@ -2512,9 +2447,9 @@ GameObject:
   - component: {fileID: 2006326608}
   - component: {fileID: 2006326611}
   - component: {fileID: 2006326610}
-  - component: {fileID: 2006326609}
+  - component: {fileID: 1026339056}
   m_Layer: 5
-  m_Name: Score (4)
+  m_Name: TopTime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2581,7 +2516,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 0M 0S
---- !u!114 &2006326609
+--- !u!114 &1026339056
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2590,7 +2525,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2006326607}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68932234fb381e343829460df2112366, type: 3}
+  m_Script: {fileID: 11500000, guid: d60e2a2080501b148b78df7472df7e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5894612606763366

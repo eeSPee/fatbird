@@ -4,20 +4,7 @@ using UnityEngine;
 
 public class PlatformerLevelController : LevelController
 {
-    public float GameTime = 10;
-
-    public override float GetGameTime()
-    {
-        return GameTime - base.GetGameTime();
-    }
-    /*protected override void Update()
-    {
-        base.Update();
-        if (!IsGameOver() && !IsGameSuspended() && GetGameTime()<=0)
-            {
-            EndTheGame(false);
-        }
-    }*/
+    bool timerCountdown = false;
     public List<PlatformerBugController> bugs;
     protected override void Awake()
     {
@@ -25,16 +12,26 @@ public class PlatformerLevelController : LevelController
         bugs = new List<PlatformerBugController>();
         checkPoints = new List<CheckPointController>();
         checkPoints.AddRange(Object.FindObjectsOfType<CheckPointController>());
+        bugs = new List<PlatformerBugController>();
+        bugs.AddRange(Object.FindObjectsOfType<PlatformerBugController>());
     }
     public override void PlayerEnterSafezone()
     {
+        int bugsCollected = 0;
         foreach (PlatformerBugController bug in bugs)
         {
-            if (bug.gameObject.activeInHierarchy)
+            if (bug.wasCollected)
             {
                 bug.RemoveFromTheGame();
+                bugsCollected++;
             }
         }
+        PlayerPrefs.SetInt(LevelController.main.GetLevelName() + " BugCount", bugsCollected);
+    }
+    public override void StartTheGame()
+    {
+        base.StartTheGame();
+
     }
     public override void ResetGame()
     {

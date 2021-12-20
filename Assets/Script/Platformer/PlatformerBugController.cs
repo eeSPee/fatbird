@@ -7,22 +7,17 @@ public class PlatformerBugController : MonoBehaviour
     SpriteRenderer renderer;
     protected AudioSource audioSource_eat;
     protected AudioClip audioClip_eat;
-    bool wasCollected = false;
+    public bool wasCollected = false;
     public bool wasRemoved = false;
     private void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();
+    
     }
     private void Start()
     {
         audioSource_eat = FatBirdController.main.AudioSource;
         audioClip_eat = FatBirdController.main.AudioClipEat;
-
-        PlatformerLevelController lc = LevelController.main as PlatformerLevelController;
-        if (lc != null)
-        {
-            lc.bugs.Add(this);
-        }
     }
     public void OnEnable()
     {

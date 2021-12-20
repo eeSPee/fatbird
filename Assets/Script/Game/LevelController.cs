@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
@@ -85,5 +86,9 @@ public class LevelController : MonoBehaviour
     {
         Suspended = false;
         StartTime = Time.time;
+    }
+    public string GetLevelName()
+    {
+        return SceneManager.GetActiveScene().name;
     }
 }

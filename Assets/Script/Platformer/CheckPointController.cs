@@ -8,11 +8,14 @@ public class CheckPointController : MonoBehaviour
     Animator ac;
 
 
-    private void Awake()
+    private void Start()
     {
         ac = GetComponent<Animator>();
-        if (CheckPointID == 0)
+        if (CheckPointID <= PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " CheckpointProgress"))
+        {
+            ac.Play("empty");
             SetEmpty(true);
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {

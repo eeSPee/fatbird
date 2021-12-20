@@ -30,7 +30,6 @@ public class FatBirdPlatformer : FatBirdController
         }
             if (collision.gameObject.tag == "Victory" && !LevelController.main.IsGameOver())
         {
-            //TODO shertigan add a victory sound?
             LevelController.main.EndTheGame(true);
             audioSource_fatbird.PlayOneShot(AudioClipVictory);
         }
@@ -42,6 +41,8 @@ public class FatBirdPlatformer : FatBirdController
         lastCheckPoint = checkpoint;
         checkpoint.SetEmpty(true);
         start = lastCheckPoint.transform.position;
+        string varName = LevelController.main.GetLevelName() + " CheckpointProgress";
+        PlayerPrefs.SetInt(varName, Mathf.Max(PlayerPrefs.GetInt(varName), checkpoint.CheckPointID));
         if (enabled)
         {
             SpecialEffectPooler.main.CreateSpecialEffect("BugPickup", transform.position);

@@ -10,6 +10,8 @@ public class UIControllerPlatformer : UIController
     GameObject WinScreen;
     GameObject LoseScreen;
     GameObject LevelSelScreen;
+    GameObject BackButton;
+    GameObject FrontButton;
     public override void Awake()
     {
         base.Awake();
@@ -18,6 +20,8 @@ public class UIControllerPlatformer : UIController
         WinScreen = transform.Find("Game Complete").gameObject;
         LoseScreen = transform.Find("Game Over").gameObject;
         LevelSelScreen = transform.Find("LevelSelect").gameObject;
+        FrontButton = LevelSelScreen.transform.Find("Right Btn").gameObject;
+        BackButton = LevelSelScreen.transform.Find("Left Btn").gameObject;
     }
     public void EnableLevelSelect(bool value)
     {
@@ -27,6 +31,12 @@ public class UIControllerPlatformer : UIController
     }
     public void SelectLevel(int nLevel)
     {
+        int max = PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " CheckpointProgress");
+        nLevel = Mathf.Clamp(nLevel, 0, max);
+
+        BackButton.GetComponent<Button>().interactable = nLevel > 0;
+        FrontButton.GetComponent<Button>().interactable = nLevel < max;
+
         CheckPointController checkpoint = (LevelController.main as PlatformerLevelController).GetCheckpointByID(nLevel);
         if (checkpoint != null)
         {
