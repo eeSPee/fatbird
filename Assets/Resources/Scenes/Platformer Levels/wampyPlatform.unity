@@ -17756,30 +17756,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 731598001, guid: 2fda8047cbb1d934f974fbd98a392011, type: 3}
-      propertyPath: m_Colors.m_DisabledColor.b
-      value: 0.2441705
-      objectReference: {fileID: 0}
-    - target: {fileID: 731598001, guid: 2fda8047cbb1d934f974fbd98a392011, type: 3}
-      propertyPath: m_Colors.m_DisabledColor.g
-      value: 0.2441705
-      objectReference: {fileID: 0}
-    - target: {fileID: 731598001, guid: 2fda8047cbb1d934f974fbd98a392011, type: 3}
-      propertyPath: m_Colors.m_DisabledColor.r
-      value: 0.2924528
-      objectReference: {fileID: 0}
-    - target: {fileID: 1121015517, guid: 2fda8047cbb1d934f974fbd98a392011, type: 3}
-      propertyPath: m_Colors.m_DisabledColor.b
-      value: 0.2441705
-      objectReference: {fileID: 0}
-    - target: {fileID: 1121015517, guid: 2fda8047cbb1d934f974fbd98a392011, type: 3}
-      propertyPath: m_Colors.m_DisabledColor.g
-      value: 0.2441705
-      objectReference: {fileID: 0}
-    - target: {fileID: 1121015517, guid: 2fda8047cbb1d934f974fbd98a392011, type: 3}
-      propertyPath: m_Colors.m_DisabledColor.r
-      value: 0.2924528
-      objectReference: {fileID: 0}
     - target: {fileID: 3690349236506922822, guid: 2fda8047cbb1d934f974fbd98a392011, type: 3}
       propertyPath: m_Pivot.x
       value: 0
