@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlatformerLevelController : LevelController
 {
-    bool timerCountdown = false;
     public List<PlatformerBugController> bugs;
     protected override void Awake()
     {
@@ -17,6 +16,7 @@ public class PlatformerLevelController : LevelController
     }
     public override void PlayerEnterSafezone()
     {
+        base.PlayerEnterSafezone();
         int bugsCollected = 0;
         foreach (PlatformerBugController bug in bugs)
         {
@@ -26,7 +26,17 @@ public class PlatformerLevelController : LevelController
                 bugsCollected++;
             }
         }
-        PlayerPrefs.SetInt(LevelController.main.GetLevelName() + " BugCount", bugsCollected);
+        PlayerPrefs.SetInt(LevelController.main.GetLevelName() + " BugCount", Mathf.Max(PlayerPrefs.GetInt(LevelController.main.GetLevelName()),bugsCollected));
+        PlayerPrefs.SetFloat(LevelController.main.GetLevelName() + " Checkpoint "+ PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " LastCheckPoint") + " TimeCount", LevelController.main.GetGameTime());
+
+        UIControllerPlatformer uic = UIController.main as UIControllerPlatformer;
+        uic.ShowTimer = false;
+    }
+    public override void PlayerLeaveSafezone()
+    {
+        base.PlayerLeaveSafezone();
+        UIControllerPlatformer uic = UIController.main as UIControllerPlatformer;
+        uic.ShowTimer = true;
     }
     public override void StartTheGame()
     {

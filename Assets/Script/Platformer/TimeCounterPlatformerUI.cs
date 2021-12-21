@@ -21,7 +21,20 @@ public class TimeCounterPlatformerUI : MonoBehaviour
     }
     public virtual void UpdateScore()
     {
-        float num = PlayerPrefs.GetFloat(LevelController.main.GetLevelName() + " LevelTime");
+        PlatformerLevelController lc = LevelController.main as PlatformerLevelController;
+        if (PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " Complete")==0)
+        {
+            text.text = "--M --S";
+            return;
+        }
+
+
+            float num = 0;
+        for (int I = 0; I< lc.checkPoints.Count; I++)
+        {
+            num+= PlayerPrefs.GetFloat(LevelController.main.GetLevelName() + " Checkpoint " + I + " TimeCount") ;
+        }
+
         int mins = Mathf.FloorToInt(num/60);
         int secs = Mathf.FloorToInt(num-mins*60);
         text.text = mins+"M "+secs+"S";

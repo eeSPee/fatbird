@@ -84,8 +84,11 @@ public class LevelController : MonoBehaviour
     }
     public virtual void PlayerLeaveSafezone()
     {
-        Suspended = false;
-        StartTime = Time.time;
+        if (Suspended)
+        {
+            Suspended = false;
+            StartTime = Time.time;
+        }
     }
     public string GetLevelName()
     {

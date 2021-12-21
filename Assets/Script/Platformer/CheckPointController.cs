@@ -26,6 +26,6 @@ public class CheckPointController : MonoBehaviour
     }
     public void SetEmpty(bool value)
     {
-        ac.SetBool("isempty", value);
+        ac?.SetBool("isempty", value);
     }
 }

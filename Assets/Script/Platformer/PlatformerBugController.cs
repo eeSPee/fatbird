@@ -35,6 +35,7 @@ public class PlatformerBugController : MonoBehaviour
             FatBirdController.main.EatBug();
             audioSource_eat.PlayOneShot(audioClip_eat);
             gameObject.SetActive(false);
+            SpecialEffectPooler.main.TextEffect("MUNCH!", transform.position);
             wasCollected = true;
         }
     }

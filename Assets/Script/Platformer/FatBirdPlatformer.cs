@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FatBirdPlatformer : FatBirdController
 {
-   public static int StartingCheckPoint = 0;
     CheckPointController lastCheckPoint;
     public AudioClip AudioClipNest;
     public AudioClip AudioClipVictory;
@@ -32,6 +31,7 @@ public class FatBirdPlatformer : FatBirdController
         {
             LevelController.main.EndTheGame(true);
             audioSource_fatbird.PlayOneShot(AudioClipVictory);
+            PlayerPrefs.SetInt(LevelController.main.GetLevelName() + " Complete", 1);
         }
     }
     public void SetCheckPoint(CheckPointController checkpoint)
@@ -43,6 +43,7 @@ public class FatBirdPlatformer : FatBirdController
         start = lastCheckPoint.transform.position;
         string varName = LevelController.main.GetLevelName() + " CheckpointProgress";
         PlayerPrefs.SetInt(varName, Mathf.Max(PlayerPrefs.GetInt(varName), checkpoint.CheckPointID));
+        PlayerPrefs.SetInt(LevelController.main.GetLevelName() + " LastCheckPoint", checkpoint.CheckPointID);
         if (enabled)
         {
             SpecialEffectPooler.main.CreateSpecialEffect("BugPickup", transform.position);
