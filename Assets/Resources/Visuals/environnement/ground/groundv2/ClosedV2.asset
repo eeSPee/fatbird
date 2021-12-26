@@ -49,5 +49,5 @@ MonoBehaviour:
   - m_CornerType: 7
     m_Sprites:
     - {fileID: -2425044401672767601, guid: c7f94b73efbff6a40923b9056b052c1b, type: 3}
-  m_FillOffset: -0.286
+  m_FillOffset: 0
   m_UseSpriteBorders: 1
