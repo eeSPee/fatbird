@@ -48,9 +48,13 @@ public class FatBirdController : MonoBehaviour
         if (LevelController.main.IsGameRunning())
         {
             float fMult = ChargeStamina(FlapStamina) ? 1 : FlapWeak;
-            if (!IsGrounded() || transform.up.y > 0 )
+            float tMult = 3;
+            if (!IsGrounded() || transform.up.y > 0)
+            {
                 rbody.AddForce(transform.up * FlapSpeed * fMult);
-            rbody.AddTorque(FlapTorque * fMult * (right ? -1 : 1));
+                tMult = 1;
+            }
+            rbody.AddTorque(FlapTorque * fMult * (right ? -1 : 1) * tMult);
         }
         else
         {

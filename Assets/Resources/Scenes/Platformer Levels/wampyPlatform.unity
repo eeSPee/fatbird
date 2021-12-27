@@ -18610,6 +18610,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 63035083, guid: 2fda8047cbb1d934f974fbd98a392011, type: 3}
+      propertyPath: m_Name
+      value: Checkpoint Prompt
+      objectReference: {fileID: 0}
     - target: {fileID: 3690349236506922822, guid: 2fda8047cbb1d934f974fbd98a392011, type: 3}
       propertyPath: m_Pivot.x
       value: 0

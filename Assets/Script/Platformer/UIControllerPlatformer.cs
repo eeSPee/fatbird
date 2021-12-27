@@ -20,8 +20,9 @@ public class UIControllerPlatformer : UIController
         WinScreen = transform.Find("Game Complete").gameObject;
         LoseScreen = transform.Find("Game Over").gameObject;
         LevelSelScreen = transform.Find("LevelSelect").gameObject;
-        FrontButton = LevelSelScreen.transform.Find("Right Btn").gameObject;
-        BackButton = LevelSelScreen.transform.Find("Left Btn").gameObject;
+        Transform LevelSelParent = LevelSelScreen.transform.Find("Level Select");
+        FrontButton = LevelSelParent.Find("Right Btn").gameObject;
+        BackButton = LevelSelParent.Find("Left Btn").gameObject;
     }
     public void EnableLevelSelect(bool value)
     {
@@ -47,7 +48,7 @@ public class UIControllerPlatformer : UIController
             FatBirdController.main.transform.position = checkpoint.transform.position;
             (FatBirdController.main as FatBirdPlatformer).SetCheckPoint(checkpoint);
 
-            LevelSelScreen.transform.Find("CheckpointID").GetComponent<Text>().text = ""+ (1+nLevel);
+            LevelSelScreen.transform.Find("Level Select").Find("CheckpointID").GetComponent<Text>().text = ""+ (1+nLevel);
         }
     }
     public void HandlePlayerChoseCheckpoint(bool forward)
