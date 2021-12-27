@@ -11,11 +11,12 @@ public class CheckPointController : MonoBehaviour
     private void Start()
     {
         ac = GetComponent<Animator>();
-        if (CheckPointID <= PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " CheckpointProgress"))
-        {
-            ac.Play("empty");
-            SetEmpty(true);
-        }
+        /*  if (CheckPointID >= 0 && CheckPointID <= PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " CheckpointProgress"))
+          {
+              ac.Play("activated");
+              SetEmpty(true);
+          }*/
+        SetEmpty(false);
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -26,6 +27,6 @@ public class CheckPointController : MonoBehaviour
     }
     public void SetEmpty(bool value)
     {
-        ac?.SetBool("isempty", value);
+        ac?.SetBool("activated", value);
     }
 }

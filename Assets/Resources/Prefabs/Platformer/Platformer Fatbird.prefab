@@ -71,6 +71,30 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 5686518099628786619, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686518099628786619, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1993113957
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686518100124582381, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686518100124582381, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1993113957
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686518100465713962, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686518100465713962, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1993113957
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5433833233636151584, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}

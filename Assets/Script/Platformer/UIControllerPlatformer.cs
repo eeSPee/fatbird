@@ -68,7 +68,7 @@ public class UIControllerPlatformer : UIController
         WinScreen.SetActive(false);
         LoseScreen.SetActive(false);
     }
-    public bool ShowTimer = true;
+    public bool ShowTimer = false;
     public void Update()
     {
         TimerDisplay.gameObject.SetActive(ShowTimer);
