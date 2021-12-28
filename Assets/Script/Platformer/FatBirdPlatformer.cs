@@ -32,6 +32,8 @@ public class FatBirdPlatformer : FatBirdController
             LevelController.main.EndTheGame(true);
             audioSource_fatbird.PlayOneShot(AudioClipVictory);
             PlayerPrefs.SetInt(LevelController.main.GetLevelName() + " Complete", 1);
+            if (collision.gameObject.TryGetComponent<CheckPointController>(out CheckPointController chp))
+                chp.SetEmpty(true);
         }
     }
     public void SetCheckPoint(CheckPointController checkpoint)

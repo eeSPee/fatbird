@@ -32,12 +32,12 @@ public class PlatformerLevelController : LevelController
         UIControllerPlatformer uic = UIController.main as UIControllerPlatformer;
         uic.ShowTimer = false;
     }
-    public override void PlayerLeaveSafezone()
+    /*public override void PlayerLeaveSafezone()
     {
         base.PlayerLeaveSafezone();
         UIControllerPlatformer uic = UIController.main as UIControllerPlatformer;
         uic.ShowTimer = true;
-    }
+    }*/
     public override void StartTheGame()
     {
         base.StartTheGame();
