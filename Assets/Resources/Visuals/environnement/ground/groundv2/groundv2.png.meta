@@ -262,8 +262,8 @@ TextureImporter:
       name: groundv2_5
       rect:
         serializedVersion: 2
-        x: 250
-        y: 165
+        x: 208
+        y: 212
         width: 600
         height: 220
       alignment: 0
