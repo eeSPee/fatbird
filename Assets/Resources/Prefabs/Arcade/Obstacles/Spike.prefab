@@ -73,8 +73,8 @@ SpriteShapeRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1005369979
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_MaskInteraction: 0
@@ -178,6 +178,8 @@ MonoBehaviour:
   start: {x: -5, y: 0, z: 0}
   WaitForScore: 5000
   ComeInTime: 5
+  AudioSourceLvlStep: {fileID: 0}
+  AudioClipLvlStep: {fileID: 0}
 --- !u!60 &3379351540373018398
 PolygonCollider2D:
   m_ObjectHideFlags: 0

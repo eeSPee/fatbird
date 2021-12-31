@@ -63,4 +63,9 @@ public void OnEaten()
         float timedelta = (Time.time + OrbitRandom) % OrbitTime * Mathf.PI;
         transform.position = orbitCenter+ new Vector3(Mathf.Sin(timedelta), Mathf.Cos(timedelta),0) * OrbitRange ;
     }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.black;
+        Gizmos.DrawWireSphere(transform.position, OrbitRange);
+    }
 }

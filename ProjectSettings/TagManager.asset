@@ -46,6 +46,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BG
+    uniqueID: 2588617941
+    locked: 0
+  - name: Terrain
+    uniqueID: 2686976531
+    locked: 0
   - name: Obstacles
     uniqueID: 3289597317
     locked: 0
