@@ -26,10 +26,10 @@ public class UIControllerPlatformer : UIController
     }
     public void EnableLevelSelect(bool value)
     {
+        BugCounter.main.SetEnabled(false);
         LevelSelScreen.SetActive(value);
         FatBirdController.main.enabled = !value;
         Tutorial.SetActive(!value);
-        ShowTimer = false;
         SelectLevel( PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " LastCheckPoint"));
     }
     public void SelectLevel(int nLevel)
@@ -87,6 +87,7 @@ public class UIControllerPlatformer : UIController
         WinScreen.SetActive(victory);
         LoseScreen.SetActive(!victory);
         LevelSelScreen.SetActive(false);
+        BugCounter.main.SetEnabled( false);
     }
     protected override void Start()
     {
@@ -95,5 +96,6 @@ public class UIControllerPlatformer : UIController
         EnableDisablePauseMenu(false);
         EnableLevelSelect(true);
         SelectLevel(currentCheckpoint);
+        BugCounter.main.SetEnabled(false);
     }
 }

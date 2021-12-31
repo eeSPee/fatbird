@@ -41,7 +41,7 @@ public class PlatformerLevelController : LevelController
     public override void StartTheGame()
     {
         base.StartTheGame();
-
+        BugCounter.main.SetEnabled( true);
     }
     public override void ResetGame()
     {

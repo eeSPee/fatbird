@@ -39,13 +39,20 @@ public class PlatformerBugController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && !LevelController.main.IsGameOver())
         {
-            SpecialEffectPooler.main.CreateSpecialEffect("BugPickup", transform.position);
-            FatBirdController.main.EatBug();
-            audioSource_eat.PlayOneShot(audioClip_eat);
-            gameObject.SetActive(false);
-            SpecialEffectPooler.main.TextEffect("MUNCH!", transform.position);
-            wasCollected = true;
+            OnEaten();
         }
+    }
+    public static string[] eatWords = new string[] { "NOM", "NOM", "NOM", "NOM NOM", "MUNCH"};
+public void OnEaten()
+    {
+        SpecialEffectPooler.main.CreateSpecialEffect("BugPickup", transform.position);
+        FatBirdController.main.EatBug();
+        audioSource_eat.PlayOneShot(audioClip_eat);
+        gameObject.SetActive(false);
+        
+        SpecialEffectPooler.main.TextEffect(eatWords [(int)(Random.value * (eatWords.Length-1))]+ "!", transform.position);
+        wasCollected = true;
+        BugCounter.main?.IncreaseScore();
     }
     private void FixedUpdate()
     {
