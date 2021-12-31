@@ -29,6 +29,7 @@ public class PlatformerBugController : MonoBehaviour
         audioSource_eat = FatBirdController.main.AudioSource;
         audioClip_eat = FatBirdController.main.AudioClipEat;
         orbitCenter = transform.position;
+        OrbitTime *= OrbitRange * Mathf.PI * 2;
         OrbitRandom = Random.value * OrbitTime;
     }
     public bool WasCollected()
@@ -60,7 +61,7 @@ public void OnEaten()
     }
     private void FixedUpdate()
     {
-        float timedelta = (Time.time + OrbitRandom) % OrbitTime * Mathf.PI;
+        float timedelta = ((Time.time + OrbitRandom) % OrbitTime) / OrbitTime * Mathf.PI*2;
         transform.position = orbitCenter+ new Vector3(Mathf.Sin(timedelta), Mathf.Cos(timedelta),0) * OrbitRange ;
     }
     private void OnDrawGizmos()
