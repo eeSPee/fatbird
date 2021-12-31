@@ -12,7 +12,6 @@ public class PlatformerBugController : MonoBehaviour
     SpriteRenderer renderer;
     protected AudioSource audioSource_eat;
     protected AudioClip audioClip_eat;
-    public bool wasCollected = false;
     public bool wasRemoved = false;
     private void Awake()
     {
@@ -22,17 +21,23 @@ public class PlatformerBugController : MonoBehaviour
     }
     private void Start()
     {
+        if (WasCollected())
+        {
+            RemoveFromTheGame();
+        }
+
         audioSource_eat = FatBirdController.main.AudioSource;
         audioClip_eat = FatBirdController.main.AudioClipEat;
         orbitCenter = transform.position;
         OrbitRandom = Random.value * OrbitTime;
     }
-    public void OnEnable()
+    public bool WasCollected()
     {
-        wasCollected = false;
+        return PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " Bug" + transform.GetSiblingIndex()) == 1;
     }
     public void RemoveFromTheGame()
     {
+        gameObject.SetActive(false);
         wasRemoved = true;
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -50,8 +55,8 @@ public void OnEaten()
         gameObject.SetActive(false);
         
         SpecialEffectPooler.main.TextEffect("NOM!", transform.position);
-        wasCollected = true;
         BugCounter.main?.IncreaseScore();
+        PlayerPrefs.SetInt(LevelController.main.GetLevelName() + " Bug" + transform.GetSiblingIndex(),1);
     }
     private void FixedUpdate()
     {

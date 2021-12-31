@@ -17,20 +17,23 @@ public class PlatformerLevelController : LevelController
     public override void PlayerEnterSafezone()
     {
         base.PlayerEnterSafezone();
+        RecountBugsCollected();
+        PlayerPrefs.SetFloat(LevelController.main.GetLevelName() + " Checkpoint "+ PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " LastCheckPoint") + " TimeCount", LevelController.main.GetGameTime());
+
+        UIControllerPlatformer uic = UIController.main as UIControllerPlatformer;
+    }
+    public void RecountBugsCollected()
+    {
         int bugsCollected = 0;
         foreach (PlatformerBugController bug in bugs)
         {
-            if (bug.wasCollected)
+            if (bug.WasCollected())
             {
                 bug.RemoveFromTheGame();
                 bugsCollected++;
             }
         }
-        PlayerPrefs.SetInt(LevelController.main.GetLevelName() + " BugCount", Mathf.Max(PlayerPrefs.GetInt(LevelController.main.GetLevelName()),bugsCollected));
-        PlayerPrefs.SetFloat(LevelController.main.GetLevelName() + " Checkpoint "+ PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " LastCheckPoint") + " TimeCount", LevelController.main.GetGameTime());
-
-        UIControllerPlatformer uic = UIController.main as UIControllerPlatformer;
-        uic.ShowTimer = false;
+        PlayerPrefs.SetInt(LevelController.main.GetLevelName() + " BugCount", Mathf.Max(PlayerPrefs.GetInt(LevelController.main.GetLevelName()), bugsCollected));
     }
     /*public override void PlayerLeaveSafezone()
     {
@@ -52,6 +55,7 @@ public class PlatformerLevelController : LevelController
                 bug.gameObject.SetActive(true);
             }
         }
+        BugCounter.main.ResetBugs();
         base.ResetGame();
     }
     public List<CheckPointController> checkPoints;
