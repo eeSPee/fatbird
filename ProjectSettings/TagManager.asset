@@ -43,11 +43,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: BG
     uniqueID: 2588617941
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Terrain
     uniqueID: 2686976531
@@ -57,4 +57,7 @@ TagManager:
     locked: 0
   - name: Entities
     uniqueID: 1993113957
+    locked: 0
+  - name: FX
+    uniqueID: 3997814419
     locked: 0
