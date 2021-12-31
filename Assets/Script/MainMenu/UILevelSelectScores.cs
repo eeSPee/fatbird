@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class UILevelSelectScores : MonoBehaviour
 {
-    public bool ErasePlayerPrefs = true;
     public string LevelName = "Arcade";
     Text LevelText;
     Text HighScoreText;
@@ -14,10 +13,6 @@ public class UILevelSelectScores : MonoBehaviour
 
     private void Awake()
     {
-#if UNITY_EDITOR
-        if (ErasePlayerPrefs)
-        PlayerPrefs.DeleteAll();
-#endif
         LevelText = transform.Find("Level Label")?.GetComponentInChildren<Text>();
         HighScoreText = transform.Find("High Score Label")?.Find("Score")?.GetComponent<Text>();
         LastScoreText = transform.Find("Last Score Label")?.Find("Score")?.GetComponent<Text>();

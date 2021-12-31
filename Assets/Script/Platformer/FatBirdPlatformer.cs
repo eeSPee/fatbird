@@ -29,6 +29,7 @@ public class FatBirdPlatformer : FatBirdController
         }
             if (collision.gameObject.tag == "Victory" && !LevelController.main.IsGameOver())
         {
+            LevelController.main.PlayerEnterSafezone();
             LevelController.main.EndTheGame(true);
             audioSource_fatbird.PlayOneShot(AudioClipVictory);
             PlayerPrefs.SetInt(LevelController.main.GetLevelName() + " Complete", 1);

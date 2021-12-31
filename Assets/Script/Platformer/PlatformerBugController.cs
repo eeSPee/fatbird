@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlatformerBugController : MonoBehaviour
 {
+    float OrbitRandom = 0;
+    Vector3 orbitCenter;
+    public float OrbitRange = 1;
+    public float OrbitTime = 2;
+
     SpriteRenderer renderer;
     protected AudioSource audioSource_eat;
     protected AudioClip audioClip_eat;
@@ -12,12 +17,15 @@ public class PlatformerBugController : MonoBehaviour
     private void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();
-    
+
+
     }
     private void Start()
     {
         audioSource_eat = FatBirdController.main.AudioSource;
         audioClip_eat = FatBirdController.main.AudioClipEat;
+        orbitCenter = transform.position;
+        OrbitRandom = Random.value * OrbitTime;
     }
     public void OnEnable()
     {
@@ -38,5 +46,10 @@ public class PlatformerBugController : MonoBehaviour
             SpecialEffectPooler.main.TextEffect("MUNCH!", transform.position);
             wasCollected = true;
         }
+    }
+    private void FixedUpdate()
+    {
+        float timedelta = (Time.time + OrbitRandom) % OrbitTime * Mathf.PI;
+        transform.position = orbitCenter+ new Vector3(Mathf.Sin(timedelta), Mathf.Cos(timedelta),0) * OrbitRange ;
     }
 }
