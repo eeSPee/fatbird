@@ -42,7 +42,6 @@ public class PlatformerBugController : MonoBehaviour
             OnEaten();
         }
     }
-    public static string[] eatWords = new string[] { "NOM", "NOM", "NOM", "NOM NOM", "MUNCH"};
 public void OnEaten()
     {
         SpecialEffectPooler.main.CreateSpecialEffect("BugPickup", transform.position);
@@ -50,7 +49,7 @@ public void OnEaten()
         audioSource_eat.PlayOneShot(audioClip_eat);
         gameObject.SetActive(false);
         
-        SpecialEffectPooler.main.TextEffect(eatWords [(int)(Random.value * (eatWords.Length-1))]+ "!", transform.position);
+        SpecialEffectPooler.main.TextEffect("NOM!", transform.position);
         wasCollected = true;
         BugCounter.main?.IncreaseScore();
     }
