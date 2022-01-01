@@ -8076,7 +8076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8f2e82555847bd44b747b631ffcf2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelName: wampyPlatform
+  LevelName: WampyRetouchPlatformer
 --- !u!114 &2036526344
 MonoBehaviour:
   m_ObjectHideFlags: 0
