@@ -61,6 +61,10 @@ public class LevelController : MonoBehaviour
     {
         return GameRunning;
     }
+    public bool IsLevelCompleted()
+    {
+        return LevelComplete;
+    }
     float StartTime = 0;
     public virtual float GetGameTime()
     {

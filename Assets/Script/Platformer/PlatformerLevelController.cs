@@ -34,7 +34,6 @@ public class PlatformerLevelController : LevelController
     }
     public override void ResetGame(bool hardReset)
     {
-        BugCounter.main.ResetBugs();
         base.ResetGame(hardReset);
         if (hardReset)
         {
@@ -47,6 +46,7 @@ public class PlatformerLevelController : LevelController
                 }
             }
         }
+        BugCounter.main.ResetBugs();
     }
     public override void EndTheGame(bool victory)
     {

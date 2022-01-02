@@ -8,7 +8,7 @@ public class ResetGameButton : MonoBehaviour
     {
         GetComponent<Button>().onClick.AddListener(() =>
         {
-            LevelController.main.ResetGame(LevelController.main.IsGameOver());
+            LevelController.main.ResetGame(LevelController.main.IsLevelCompleted());
         });
     }
 
