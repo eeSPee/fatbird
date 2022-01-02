@@ -14602,7 +14602,7 @@ MonoBehaviour:
   FlapSpeedInitial: 200
   FlapSpeed: 66
   FlapTorque: 28
-  FlapStamina: 5
+  FlapStamina: 18
   FlapWeak: 0.28
   Stamina: 100
   StaminaRegen: 125
