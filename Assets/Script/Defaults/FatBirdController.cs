@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class FatBirdController : MonoBehaviour
 {
+    enum BirdState
+    {
+        takeoff,
+        flying,
+        hurt,
+    }
+    BirdState state = BirdState.takeoff;
     protected Vector3 start;
     Animator anim;
     protected Rigidbody2D rbody;
@@ -26,7 +33,7 @@ public class FatBirdController : MonoBehaviour
     }
     public virtual void Update()
     {
-        if (!LevelController.main.IsGameOver())
+        if (state!=BirdState.hurt)
         {
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.Mouse0))
             {
@@ -45,7 +52,18 @@ public class FatBirdController : MonoBehaviour
     public float FlapWeak = .33f;
     public virtual void FlapWing(bool right)
     {
-        if (LevelController.main.IsGameRunning())
+        if (state == BirdState.takeoff)
+        {
+            wingflap[right ? 0 : 1] = Time.time;
+            if (Mathf.Abs(wingflap[0] - wingflap[1]) < .1f)
+            {
+                LevelController.main.StartTheGame();
+                rbody.AddForce(transform.up * FlapSpeedInitial);
+                transform.Find("Launch Particle").gameObject.SetActive(true);
+                state = BirdState.flying;
+            }
+        }
+        else if (state == BirdState.flying)
         {
             float fMult = ChargeStamina(FlapStamina) ? 1 : FlapWeak;
             float tMult = 3;
@@ -56,16 +74,7 @@ public class FatBirdController : MonoBehaviour
             }
             rbody.AddTorque(FlapTorque * fMult * (right ? -1 : 1) * tMult);
         }
-        else
-        {
-            wingflap[right ? 0 : 1] = Time.time;
-            if (Mathf.Abs(wingflap[0] - wingflap[1]) < .1f)
-            {
-                LevelController.main.StartTheGame();
-                rbody.AddForce(transform.up * FlapSpeedInitial);
-                transform.Find("Launch Particle").gameObject.SetActive(true);
-            }
-        }
+
         anim.SetTrigger("Flap" + (right ? "Right" : "Left"));
 
         if (right)
@@ -98,6 +107,23 @@ public class FatBirdController : MonoBehaviour
     public float Stamina = 100;
     public float StaminaRegen = 75;
 
+    public bool IsAbleToFly()
+    {
+        return LevelController.main.IsGameRunning();
+    }
+    public void Hurt()
+    {
+        AudioSource.PlayOneShot(AudioClipSpike);
+        LevelController.main.EndTheGame(false);
+        transform.Find("Hurt Particle").gameObject.SetActive(true);
+        anim.SetBool("Hurt", true);
+        state = BirdState.hurt;
+    }
+    public void UnHurt()
+    {
+        anim.SetBool("Hurt", false);
+        state = BirdState.takeoff;
+    }
     public bool ChargeStamina(float amount)
     {
         if (Stamina<amount)
@@ -117,10 +143,7 @@ public class FatBirdController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Spike" && !LevelController.main.IsGameOver())
         {
-            AudioSource.PlayOneShot(AudioClipSpike);
-            LevelController.main.EndTheGame(false);
-            transform.Find("Hurt Particle").gameObject.SetActive(true);
-            anim.SetBool("Hurt", true);
+            Hurt();
         }
     }
     float lastGroundTime = 0;
@@ -151,7 +174,7 @@ public class FatBirdController : MonoBehaviour
             anim.SetTrigger("EatBug");
 
     }
-    public void Reset()
+    public void OnLevelReset()
     {
         transform.position = start;
         transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -159,7 +182,7 @@ public class FatBirdController : MonoBehaviour
         rbody.velocity = Vector2.zero;
         rbody.angularVelocity = 0;
         rbody.isKinematic = false;
-        anim.SetBool("Hurt", false);
+        UnHurt();
     }
     private void OnDisable()
     {

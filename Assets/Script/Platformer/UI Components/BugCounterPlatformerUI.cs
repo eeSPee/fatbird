@@ -22,6 +22,7 @@ public class BugCounterPlatformerUI : MonoBehaviour
     public virtual void UpdateScore()
     {
         PlatformerLevelController lc = LevelController.main as PlatformerLevelController;
-        text.text = PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " BugCount") + " / " + lc.bugs.Count;
+        float bugCount = ((PlatformerLevelController)LevelController.main).RecountBugsCollected();// PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " BugCount");
+        text.text = bugCount + " / " + lc.bugs.Count;
     }
 }

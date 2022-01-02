@@ -41,7 +41,6 @@ public class UIControllerPlatformer : UIController
     public void HandlePlayerChoseCheckpoint(bool forward)
     {
         PlatformerLevelController lvc = (PlatformerLevelController)LevelController.main;
-        int max = PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " CheckpointProgress");
         if (forward)
         {
             lvc. JumpToCheckpoint(lvc.currentCheckpoint + 1);
@@ -72,6 +71,7 @@ public class UIControllerPlatformer : UIController
         LoseScreen.SetActive(!victory);
         LevelSelScreen.SetActive(false);
         BugCounter.main.SetEnabled( !victory);
+        EnableDisableTimer(!victory);
     }
     protected override void Start()
     {

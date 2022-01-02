@@ -44,7 +44,7 @@ public class LevelController : MonoBehaviour
     {
         EndTheGame(false);
         GameOver = false;
-        FatBirdController.main.Reset();
+        FatBirdController.main.OnLevelReset();
         UIController.main.DisableGameOverScreen();
         PauseUnpause(false);
         if (hardReset)

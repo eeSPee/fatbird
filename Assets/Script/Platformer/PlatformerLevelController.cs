@@ -34,32 +34,34 @@ public class PlatformerLevelController : LevelController
     }
     public override void ResetGame(bool hardReset)
     {
-        foreach (PlatformerBugController bug in bugs)
-        {
-            if (!bug.wasRemoved)
-            {
-                bug.gameObject.SetActive(true);
-            }
-        }
         BugCounter.main.ResetBugs();
         base.ResetGame(hardReset);
         if (hardReset)
         {
             JumpToCheckpoint(0);
+            foreach (PlatformerBugController bug in bugs)
+            {
+                //if (!bug.wasRemoved)
+                {
+                    bug.gameObject.SetActive(true);
+                }
+            }
         }
     }
     public override void EndTheGame(bool victory)
     {
         if (victory)
         {
+            if (PlayerPrefs.GetFloat(LevelController.main.GetLevelName() + " TimeCount")>0)
+            PlayerPrefs.SetFloat(LevelController.main.GetLevelName() + " TimeCount", Mathf.Min(PlayerPrefs.GetFloat(LevelController.main.GetLevelName() + " TimeCount"), GetGameTime()));
+            else
+                PlayerPrefs.SetFloat(LevelController.main.GetLevelName() + " TimeCount", GetGameTime());
             PlayerPrefs.SetInt(LevelController.main.GetLevelName() + " BugCount", Mathf.Max(PlayerPrefs.GetInt(LevelController.main.GetLevelName()), RecountBugsCollected()));
-            RecordTime();
         }
         base.EndTheGame(victory);
     }
     public void RecordTime()
     {
-        PlayerPrefs.SetFloat(LevelController.main.GetLevelName() + " TimeCount", Mathf.Min(PlayerPrefs.GetFloat(LevelController.main.GetLevelName() + " TimeCount"),GetGameTime()));
     }
     public List<CheckPointController> checkPoints;
     public CheckPointController GetCheckpointByID(int ID)
