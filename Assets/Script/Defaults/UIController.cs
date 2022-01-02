@@ -21,7 +21,7 @@ public class UIController : MonoBehaviour
         EnableDisablePauseMenu(false);
     }
 
-        public void DisableTutorial()
+        public virtual void DisableTutorial()
     {
         Tutorial.SetActive(false);
     }

@@ -21,11 +21,11 @@ public class PlatformerBugController : MonoBehaviour
     }
     private void Start()
     {
-        if (WasCollected())
+        /*if (WasCollected())
         {
             RemoveFromTheGame();
-        }
-
+        }*/
+        PlayerPrefs.SetInt(LevelController.main.GetLevelName() + " Bug" + transform.GetSiblingIndex(), 0);
         audioSource_eat = FatBirdController.main.AudioSource;
         audioClip_eat = FatBirdController.main.AudioClipEat;
         orbitCenter = transform.position;
@@ -58,6 +58,7 @@ public void OnEaten()
         SpecialEffectPooler.main.TextEffect("NOM!", transform.position);
         BugCounter.main?.IncreaseScore();
         PlayerPrefs.SetInt(LevelController.main.GetLevelName() + " Bug" + transform.GetSiblingIndex(),1);
+        RemoveFromTheGame();
     }
     private void FixedUpdate()
     {

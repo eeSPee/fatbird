@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class UIControllerPlatformer : UIController
 {
-    int currentCheckpoint = 0;
-    Text TimerDisplay;
+    TimerUI TimerDisplay;
     GameObject WinScreen;
     GameObject LoseScreen;
     GameObject LevelSelScreen;
@@ -15,7 +14,7 @@ public class UIControllerPlatformer : UIController
     public override void Awake()
     {
         base.Awake();
-        TimerDisplay = transform.Find("Time Display").GetComponent<Text>();
+        TimerDisplay = GetComponentInChildren<TimerUI>();
         TimerDisplay.gameObject.SetActive(false);
         WinScreen = transform.Find("Game Complete").gameObject;
         LoseScreen = transform.Find("Game Over").gameObject;
@@ -27,75 +26,58 @@ public class UIControllerPlatformer : UIController
     public void EnableLevelSelect(bool value)
     {
         BugCounter.main.SetEnabled(false);
+        EnableDisableTimer( false);
         LevelSelScreen.SetActive(value);
         FatBirdController.main.enabled = !value;
         Tutorial.SetActive(!value);
-        SelectLevel( PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " LastCheckPoint"));
+        //SelectLevel( PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " LastCheckPoint"));
     }
-    public void SelectLevel(int nLevel)
+    public override void DisableTutorial()
     {
-        int max = PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " CheckpointProgress");
-        nLevel = Mathf.Clamp(nLevel, 0, max);
-
-        BackButton.GetComponent<Button>().interactable = nLevel > 0;
-        FrontButton.GetComponent<Button>().interactable = nLevel < max;
-
-        CheckPointController checkpoint = (LevelController.main as PlatformerLevelController).GetCheckpointByID(nLevel);
-        if (checkpoint != null)
-        {
-            currentCheckpoint = nLevel;
-            Camera.main.transform.position = new Vector3(checkpoint.transform.position .x, checkpoint.transform.position .y , Camera.main.transform.position .z);
-            FatBirdController.main.transform.position = checkpoint.transform.position;
-            (FatBirdController.main as FatBirdPlatformer).SetCheckPoint(checkpoint);
-
-            LevelSelScreen.transform.Find("Level Select").Find("CheckpointID").GetComponent<Text>().text = ""+ (1+nLevel);
-        }
+        base.DisableTutorial();
+        BugCounter.main.SetEnabled(true);
+        EnableDisableTimer(true);
     }
     public void HandlePlayerChoseCheckpoint(bool forward)
     {
+        PlatformerLevelController lvc = (PlatformerLevelController)LevelController.main;
+        int max = PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " CheckpointProgress");
         if (forward)
         {
-            SelectLevel(currentCheckpoint + 1);
+            lvc. JumpToCheckpoint(lvc.currentCheckpoint + 1);
         }
         else 
         {
-            if (currentCheckpoint == 0)
+            if (lvc.currentCheckpoint == 0)
                 return;
-            SelectLevel(currentCheckpoint - 1);
+            lvc.JumpToCheckpoint(lvc.currentCheckpoint - 1);
         }
+
+        BackButton.GetComponent<Button>().interactable = lvc.currentCheckpoint > 0;
+        FrontButton.GetComponent<Button>().interactable = lvc.currentCheckpoint < lvc.GetMaxCheckPoints();
+        LevelSelScreen.transform.Find("Level Select").Find("CheckpointID").GetComponent<Text>().text = "" + (1 + lvc.currentCheckpoint);
     }
     public override void DisableGameOverScreen()
     {
         WinScreen.SetActive(false);
         LoseScreen.SetActive(false);
     }
-    public bool ShowTimer = false;
-    public void Update()
+    public void EnableDisableTimer(bool value)
     {
-        TimerDisplay.gameObject.SetActive(ShowTimer);
-        if (ShowTimer)
-        {
-            float gameTime = LevelController.main.GetGameTime();
-            float mins = (Mathf.Round(gameTime / 60));
-            float secs = Mathf.Ceil(gameTime % 60);
-
-            TimerDisplay.text = mins + ":" + (secs<10 ? "0" : "")+ secs;
-        }
+        TimerDisplay.gameObject.SetActive(value);
     }
     public override void EnableGameOverScreen(bool victory)
     {
         WinScreen.SetActive(victory);
         LoseScreen.SetActive(!victory);
         LevelSelScreen.SetActive(false);
-        BugCounter.main.SetEnabled( false);
+        BugCounter.main.SetEnabled( !victory);
     }
     protected override void Start()
     {
         base.Start();
-        Tutorial.SetActive(false);
+        Tutorial.SetActive(true);
         EnableDisablePauseMenu(false);
         EnableLevelSelect(true);
-        SelectLevel(currentCheckpoint);
-        BugCounter.main.SetEnabled(false);
     }
 }

@@ -38,9 +38,9 @@ public class ArcadeController : LevelController
         ScoreController.main.ResetCombo();
         base.EndTheGame(victory);
     }
-    public override void ResetGame()
+    public override void ResetGame(bool hardReset)
     {
-        base.ResetGame();
+        base.ResetGame(hardReset);
         BugPoolController.main.ClearBugs();
         ScoreController.main.Score = 0;
         ResetSpikes();

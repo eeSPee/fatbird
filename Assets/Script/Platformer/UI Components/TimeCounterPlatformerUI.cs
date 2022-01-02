@@ -29,11 +29,7 @@ public class TimeCounterPlatformerUI : MonoBehaviour
         }
 
 
-            float num = 0;
-        for (int I = 0; I< lc.checkPoints.Count; I++)
-        {
-            num+= PlayerPrefs.GetFloat(LevelController.main.GetLevelName() + " Checkpoint " + I + " TimeCount") ;
-        }
+            float num = PlayerPrefs.GetFloat(LevelController.main.GetLevelName() + " TimeCount");
 
         int mins = Mathf.FloorToInt(num/60);
         int secs = Mathf.FloorToInt(num-mins*60);

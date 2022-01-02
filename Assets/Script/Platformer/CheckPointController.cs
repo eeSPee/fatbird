@@ -18,13 +18,6 @@ public class CheckPointController : MonoBehaviour
           }*/
         SetEmpty(false);
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            LevelController.main.PlayerLeaveSafezone();
-        }
-    }
     public void SetEmpty(bool value)
     {
         ac?.SetBool("activated", value);

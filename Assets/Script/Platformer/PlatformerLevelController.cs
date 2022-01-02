@@ -14,39 +14,25 @@ public class PlatformerLevelController : LevelController
         bugs = new List<PlatformerBugController>();
         bugs.AddRange(Object.FindObjectsOfType<PlatformerBugController>());
     }
-    public override void PlayerEnterSafezone()
+    protected override void Start()
     {
-        base.PlayerEnterSafezone();
-        RecountBugsCollected();
-        PlayerPrefs.SetFloat(LevelController.main.GetLevelName() + " Checkpoint "+ PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " LastCheckPoint") + " TimeCount", LevelController.main.GetGameTime());
-
-        UIControllerPlatformer uic = UIController.main as UIControllerPlatformer;
+        base.Start();
+        JumpToCheckpoint(0);
     }
-    public void RecountBugsCollected()
+    public int RecountBugsCollected()
     {
         int bugsCollected = 0;
         foreach (PlatformerBugController bug in bugs)
         {
             if (bug.WasCollected())
             {
-                bug.RemoveFromTheGame();
+             //   bug.RemoveFromTheGame();
                 bugsCollected++;
             }
         }
-        PlayerPrefs.SetInt(LevelController.main.GetLevelName() + " BugCount", Mathf.Max(PlayerPrefs.GetInt(LevelController.main.GetLevelName()), bugsCollected));
+        return bugsCollected;
     }
-    /*public override void PlayerLeaveSafezone()
-    {
-        base.PlayerLeaveSafezone();
-        UIControllerPlatformer uic = UIController.main as UIControllerPlatformer;
-        uic.ShowTimer = true;
-    }*/
-    public override void StartTheGame()
-    {
-        base.StartTheGame();
-        BugCounter.main.SetEnabled( true);
-    }
-    public override void ResetGame()
+    public override void ResetGame(bool hardReset)
     {
         foreach (PlatformerBugController bug in bugs)
         {
@@ -56,7 +42,24 @@ public class PlatformerLevelController : LevelController
             }
         }
         BugCounter.main.ResetBugs();
-        base.ResetGame();
+        base.ResetGame(hardReset);
+        if (hardReset)
+        {
+            JumpToCheckpoint(0);
+        }
+    }
+    public override void EndTheGame(bool victory)
+    {
+        if (victory)
+        {
+            PlayerPrefs.SetInt(LevelController.main.GetLevelName() + " BugCount", Mathf.Max(PlayerPrefs.GetInt(LevelController.main.GetLevelName()), RecountBugsCollected()));
+            RecordTime();
+        }
+        base.EndTheGame(victory);
+    }
+    public void RecordTime()
+    {
+        PlayerPrefs.SetFloat(LevelController.main.GetLevelName() + " TimeCount", Mathf.Min(PlayerPrefs.GetFloat(LevelController.main.GetLevelName() + " TimeCount"),GetGameTime()));
     }
     public List<CheckPointController> checkPoints;
     public CheckPointController GetCheckpointByID(int ID)
@@ -67,5 +70,25 @@ public class PlatformerLevelController : LevelController
                 return ch;
         }
         return null;
+    }
+    public int currentCheckpoint = 0;
+    public void JumpToCheckpoint(int nLevel)
+    {
+        int max = GetMaxCheckPoints();
+        nLevel = Mathf.Clamp(nLevel, 0, max);
+
+        CheckPointController checkpoint = (LevelController.main as PlatformerLevelController).GetCheckpointByID(nLevel);
+        if (checkpoint != null)
+        {
+            currentCheckpoint = nLevel;
+            Camera.main.transform.position = new Vector3(checkpoint.transform.position.x, checkpoint.transform.position.y, Camera.main.transform.position.z);
+            FatBirdController.main.transform.position = checkpoint.transform.position;
+            (FatBirdController.main as FatBirdPlatformer).SetCheckPoint(checkpoint);
+
+        }
+    }
+    public int GetMaxCheckPoints()
+    {
+        return PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " CheckpointProgress");
     }
 }

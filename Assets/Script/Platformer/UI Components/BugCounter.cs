@@ -15,6 +15,7 @@ public class BugCounter : MonoBehaviour
     public void SetEnabled(bool value)
     {
         transform.parent.gameObject.SetActive(value);
+
         if (value)
             ResetBugs();
     }
@@ -31,7 +32,7 @@ public class BugCounter : MonoBehaviour
     public void ResetBugs()
     {
 
-        Score = PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " BugCount");
+        Score = ((PlatformerLevelController)LevelController.main).RecountBugsCollected();// PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " BugCount");
         UpdateText();
     }
 }

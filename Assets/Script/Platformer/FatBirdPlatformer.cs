@@ -7,13 +7,6 @@ public class FatBirdPlatformer : FatBirdController
     CheckPointController lastCheckPoint;
     public AudioClip AudioClipNest;
     public AudioClip AudioClipVictory;
-    protected AudioSource audioSource_fatbird;
-
-    private void Start()
-    {
-      audioSource_fatbird = FatBirdController.main.AudioSource;
-    }
-
     public override void Update()
     {
         base.Update();
@@ -25,13 +18,11 @@ public class FatBirdPlatformer : FatBirdController
         if (collision.gameObject.tag == "Checkpoint" && !LevelController.main.IsGameOver())
         {
             SetCheckPoint(collision.gameObject.GetComponent<CheckPointController>());
-            LevelController.main.PlayerEnterSafezone();
         }
             if (collision.gameObject.tag == "Victory" && !LevelController.main.IsGameOver())
         {
-            LevelController.main.PlayerEnterSafezone();
             LevelController.main.EndTheGame(true);
-            audioSource_fatbird.PlayOneShot(AudioClipVictory);
+            FatBirdController.main.AudioSource.PlayOneShot(AudioClipVictory);
             PlayerPrefs.SetInt(LevelController.main.GetLevelName() + " Complete", 1);
             if (collision.gameObject.TryGetComponent<CheckPointController>(out CheckPointController chp))
                 chp.SetEmpty(true);
@@ -51,7 +42,7 @@ public class FatBirdPlatformer : FatBirdController
         {
             SpecialEffectPooler.main.CreateSpecialEffect("BugPickup", transform.position);
             SpecialEffectPooler.main.TextEffect("CHECKPOINT!", transform.position + Vector3.up * .33f);
-            audioSource_fatbird.PlayOneShot(AudioClipNest);
+            FatBirdController.main.AudioSource.PlayOneShot(AudioClipNest);
         }
     }
 }
