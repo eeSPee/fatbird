@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BugController : MonoBehaviour
+public abstract class ScoreBugController : MonoBehaviour
 {
     SpriteRenderer renderer;
     public float Speed = .33f;
@@ -20,8 +20,8 @@ public abstract class BugController : MonoBehaviour
     }
     private void Start()
     {
-        audioSource_eat = FatBirdController.main.AudioSource;
-        audioClip_eat = FatBirdController.main.AudioClipEat;
+        audioSource_eat = PlayerController.main.AudioSource;
+        audioClip_eat = PlayerController.main.AudioClipEat;
     }
     void OnEnable()
     {
@@ -40,7 +40,7 @@ public abstract class BugController : MonoBehaviour
     public virtual void OnSpawn()
     {
         Variation = Random.value;
-        moveRight = FatBirdController.main.transform.position.x > 0;
+        moveRight = PlayerController.main.transform.position.x > 0;
         renderer.flipX = moveRight;
         transform.position = new Vector3(
             -(Camera.main.aspect * Camera.main.orthographicSize + 1) * (moveRight ? 1 : -1),
@@ -60,7 +60,7 @@ public abstract class BugController : MonoBehaviour
         if (collision.gameObject.tag == "Player" && !LevelController.main.IsGameOver())
         {
             SpecialEffectPooler.main.CreateSpecialEffect("BugPickup", transform.position);
-            FatBirdController.main.EatBug();
+            PlayerController.main.EatBug();
             audioSource_eat.PlayOneShot(audioClip_eat);
             Kill(true);
         }

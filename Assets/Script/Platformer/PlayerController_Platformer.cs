@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FatBirdPlatformer : FatBirdController
+public class PlayerController_Platformer : PlayerController
 {
     CheckPointController lastCheckPoint;
     public AudioClip AudioClipNest;
@@ -22,10 +22,10 @@ public class FatBirdPlatformer : FatBirdController
             if (collision.gameObject.tag == "Victory" && !LevelController.main.IsGameOver())
         {
             LevelController.main.EndTheGame(true);
-            FatBirdController.main.AudioSource.PlayOneShot(AudioClipVictory);
+            PlayerController.main.AudioSource.PlayOneShot(AudioClipVictory);
             PlayerPrefs.SetInt(LevelController.main.GetLevelName() + " Complete", 1);
             if (collision.gameObject.TryGetComponent<CheckPointController>(out CheckPointController chp))
-                chp.SetEmpty(true);
+                chp.SetActivated(true);
         }
     }
     public void SetCheckPoint(CheckPointController checkpoint)
@@ -33,7 +33,7 @@ public class FatBirdPlatformer : FatBirdController
         if (lastCheckPoint == checkpoint)
             return;
         lastCheckPoint = checkpoint;
-        checkpoint.SetEmpty(true);
+        checkpoint.SetActivated(true);
         start = lastCheckPoint.transform.position;
         string varName = LevelController.main.GetLevelName() + " CheckpointProgress";
         PlayerPrefs.SetInt(varName, Mathf.Max(PlayerPrefs.GetInt(varName), checkpoint.CheckPointID));
@@ -42,7 +42,7 @@ public class FatBirdPlatformer : FatBirdController
         {
             SpecialEffectPooler.main.CreateSpecialEffect("BugPickup", transform.position);
             SpecialEffectPooler.main.TextEffect("CHECKPOINT!", transform.position + Vector3.up * .33f);
-            FatBirdController.main.AudioSource.PlayOneShot(AudioClipNest);
+            PlayerController.main.AudioSource.PlayOneShot(AudioClipNest);
         }
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArcadeController : LevelController
+public class LevelController_Arcade : LevelController
 {
     GameObject[] Walls;
     List<IArcadeObstacle> Spikes = new List<IArcadeObstacle>();

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FruitFly : BugController
+public class FruitFly : ScoreBugController
 {
     public override void OnSpawn()
     {

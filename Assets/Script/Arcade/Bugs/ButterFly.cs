@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButterFly : BugController
+public class ButterFly : ScoreBugController
 {
     public float StopDistance = 5;
     public float HoverTime = 15;

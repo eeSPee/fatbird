@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TimeCounterPlatformerUI : MonoBehaviour
+public class PostGameTimeCounter : MonoBehaviour
 {
     bool awoken = false;
     Text text;
@@ -21,7 +21,7 @@ public class TimeCounterPlatformerUI : MonoBehaviour
     }
     public virtual void UpdateScore()
     {
-        PlatformerLevelController lc = LevelController.main as PlatformerLevelController;
+        LevelController_Platformer lc = LevelController.main as LevelController_Platformer;
         if (PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " Complete")==0)
         {
             text.text = "--M --S";

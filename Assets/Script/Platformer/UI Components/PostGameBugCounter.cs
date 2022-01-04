@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BugCounterPlatformerUI : MonoBehaviour
+public class PostGameBugCounter : MonoBehaviour
 {
     bool awoken = false;
     Text text;
@@ -21,8 +21,8 @@ public class BugCounterPlatformerUI : MonoBehaviour
     }
     public virtual void UpdateScore()
     {
-        PlatformerLevelController lc = LevelController.main as PlatformerLevelController;
-        float bugCount = ((PlatformerLevelController)LevelController.main).RecountBugsCollected();// PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " BugCount");
+        LevelController_Platformer lc = LevelController.main as LevelController_Platformer;
+        float bugCount = ((LevelController_Platformer)LevelController.main).RecountBugsCollected();// PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " BugCount");
         text.text = bugCount + " / " + lc.bugs.Count;
     }
 }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIControllerPlatformer : UIController
+public class UIController_Platformer : UIController
 {
-    TimerUI TimerDisplay;
+    OnScreenTimer TimerDisplay;
     GameObject WinScreen;
     GameObject LoseScreen;
     GameObject LevelSelScreen;
@@ -14,7 +14,7 @@ public class UIControllerPlatformer : UIController
     public override void Awake()
     {
         base.Awake();
-        TimerDisplay = GetComponentInChildren<TimerUI>();
+        TimerDisplay = GetComponentInChildren<OnScreenTimer>();
         TimerDisplay.gameObject.SetActive(false);
         WinScreen = transform.Find("Game Complete").gameObject;
         LoseScreen = transform.Find("Game Over").gameObject;
@@ -25,22 +25,22 @@ public class UIControllerPlatformer : UIController
     }
     public void EnableLevelSelect(bool value)
     {
-        BugCounter.main.SetEnabled(false);
+        OnScreenBugCounter.main.SetEnabled(false);
         EnableDisableTimer( false);
         LevelSelScreen.SetActive(value);
-        FatBirdController.main.enabled = !value;
+        PlayerController.main.enabled = !value;
         Tutorial.SetActive(!value);
         //SelectLevel( PlayerPrefs.GetInt(LevelController.main.GetLevelName() + " LastCheckPoint"));
     }
     public override void DisableTutorial()
     {
         base.DisableTutorial();
-        BugCounter.main.SetEnabled(true);
+        OnScreenBugCounter.main.SetEnabled(true);
         EnableDisableTimer(true);
     }
     public void HandlePlayerChoseCheckpoint(bool forward)
     {
-        PlatformerLevelController lvc = (PlatformerLevelController)LevelController.main;
+        LevelController_Platformer lvc = (LevelController_Platformer)LevelController.main;
         if (forward)
         {
             lvc. JumpToCheckpoint(lvc.currentCheckpoint + 1);
@@ -70,7 +70,7 @@ public class UIControllerPlatformer : UIController
         WinScreen.SetActive(victory);
         LoseScreen.SetActive(!victory);
         LevelSelScreen.SetActive(false);
-        BugCounter.main.SetEnabled( !victory);
+        OnScreenBugCounter.main.SetEnabled( !victory);
         EnableDisableTimer(!victory);
     }
     protected override void Start()

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlatformerBugController : MonoBehaviour
+public class BugCollectibleController : MonoBehaviour
 {
     float OrbitRandom = 0;
     Vector3 orbitCenter;
@@ -26,16 +26,16 @@ public class PlatformerBugController : MonoBehaviour
         {
             RemoveFromTheGame();
         }*/
-        audioSource_eat = FatBirdController.main.AudioSource;
-        audioClip_eat = FatBirdController.main.AudioClipEat;
+        audioSource_eat = PlayerController.main.AudioSource;
+        audioClip_eat = PlayerController.main.AudioClipEat;
         orbitCenter = transform.position;
         OrbitTime *= OrbitRange * Mathf.PI * 2;
+        OrbitRandom = Random.value * OrbitTime;
     }
     private void OnEnable()
     {
         wasEaten = false;
         //PlayerPrefs.SetInt(LevelController.main.GetLevelName() + " Bug" + transform.GetSiblingIndex(), 0);
-        OrbitRandom = Random.value * OrbitTime;
     }
     public bool WasCollected()
     {
@@ -56,12 +56,12 @@ public class PlatformerBugController : MonoBehaviour
 public void OnEaten()
     {
         SpecialEffectPooler.main.CreateSpecialEffect("BugPickup", transform.position);
-        FatBirdController.main.EatBug();
+        PlayerController.main.EatBug();
         audioSource_eat.PlayOneShot(audioClip_eat);
         gameObject.SetActive(false);
         
         SpecialEffectPooler.main.TextEffect("NOM!", transform.position);
-        BugCounter.main?.IncreaseScore();
+        OnScreenBugCounter.main?.IncreaseScore();
         wasEaten = true;// PlayerPrefs.SetInt(LevelController.main.GetLevelName() + " Bug" + transform.GetSiblingIndex(),1);
         RemoveFromTheGame();
     }

@@ -42,7 +42,7 @@ public class ScoreController : MonoBehaviour
         score_start:
         {
             yield return new WaitForSeconds(.1f);
-            if (!FatBirdController.main.IsGrounded())
+            if (!PlayerController.main.IsGrounded())
                 Score += ScorePerSecond * .1f;
             goto score_start;
         }

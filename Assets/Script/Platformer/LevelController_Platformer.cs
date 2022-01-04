@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlatformerLevelController : LevelController
+public class LevelController_Platformer : LevelController
 {
-    public List<PlatformerBugController> bugs;
+    public List<BugCollectibleController> bugs;
     protected override void Awake()
     {
         base.Awake();
-        bugs = new List<PlatformerBugController>();
+        bugs = new List<BugCollectibleController>();
         checkPoints = new List<CheckPointController>();
         checkPoints.AddRange(Object.FindObjectsOfType<CheckPointController>());
-        bugs = new List<PlatformerBugController>();
-        bugs.AddRange(Object.FindObjectsOfType<PlatformerBugController>());
+        bugs = new List<BugCollectibleController>();
+        bugs.AddRange(Object.FindObjectsOfType<BugCollectibleController>());
     }
     protected override void Start()
     {
@@ -22,7 +22,7 @@ public class PlatformerLevelController : LevelController
     public int RecountBugsCollected()
     {
         int bugsCollected = 0;
-        foreach (PlatformerBugController bug in bugs)
+        foreach (BugCollectibleController bug in bugs)
         {
             if (bug.WasCollected())
             {
@@ -38,15 +38,19 @@ public class PlatformerLevelController : LevelController
         if (hardReset)
         {
             JumpToCheckpoint(0);
-            foreach (PlatformerBugController bug in bugs)
+            foreach (BugCollectibleController bug in bugs)
             {
                 //if (!bug.wasRemoved)
                 {
                     bug.gameObject.SetActive(true);
                 }
             }
+            foreach (CheckPointController ch in checkPoints)
+            {
+                ch.SetActivated(false);
+            }
         }
-        BugCounter.main.ResetBugs();
+        OnScreenBugCounter.main.ResetBugs();
     }
     public override void EndTheGame(bool victory)
     {
@@ -79,13 +83,13 @@ public class PlatformerLevelController : LevelController
         int max = GetMaxCheckPoints();
         nLevel = Mathf.Clamp(nLevel, 0, max);
 
-        CheckPointController checkpoint = (LevelController.main as PlatformerLevelController).GetCheckpointByID(nLevel);
+        CheckPointController checkpoint = (LevelController.main as LevelController_Platformer).GetCheckpointByID(nLevel);
         if (checkpoint != null)
         {
             currentCheckpoint = nLevel;
             Camera.main.transform.position = new Vector3(checkpoint.transform.position.x, checkpoint.transform.position.y, Camera.main.transform.position.z);
-            FatBirdController.main.transform.position = checkpoint.transform.position;
-            (FatBirdController.main as FatBirdPlatformer).SetCheckPoint(checkpoint);
+            PlayerController.main.transform.position = checkpoint.transform.position;
+            (PlayerController.main as PlayerController_Platformer).SetCheckPoint(checkpoint);
 
         }
     }

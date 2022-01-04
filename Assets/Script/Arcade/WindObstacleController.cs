@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WindController : MonoBehaviour, IArcadeObstacle
+public class WindObstacleController : MonoBehaviour, IArcadeObstacle
 {
     public bool AlwaysBlows = false;
     public float WindAcceleration = 1f;

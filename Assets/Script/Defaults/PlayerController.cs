@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FatBirdController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     enum BirdState
     {
@@ -22,7 +22,7 @@ public class FatBirdController : MonoBehaviour
     public AudioClip AudioClipEat;
     public AudioClip AudioClipSpike;
     public AudioClip AudioClipBump;
-    public static FatBirdController main;
+    public static PlayerController main;
     private void Awake()
     {
         main = this;

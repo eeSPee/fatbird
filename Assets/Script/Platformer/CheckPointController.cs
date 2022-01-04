@@ -16,9 +16,9 @@ public class CheckPointController : MonoBehaviour
               ac.Play("activated");
               SetEmpty(true);
           }*/
-        SetEmpty(false);
+        SetActivated(false);
     }
-    public void SetEmpty(bool value)
+    public void SetActivated(bool value)
     {
         ac?.SetBool("activated", value);
     }

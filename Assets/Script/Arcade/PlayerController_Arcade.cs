@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FatBirdArcade : FatBirdController
+public class PlayerController_Arcade : PlayerController
 {
     public override void OnGrounded()
     {

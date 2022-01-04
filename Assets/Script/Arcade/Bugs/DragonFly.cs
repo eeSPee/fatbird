@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DragonFly : BugController
+public class DragonFly : ScoreBugController
 {
     public float SightRange = 2f;
     public float AweTime = 12f;
@@ -41,14 +41,14 @@ public class DragonFly : BugController
         switch (AiState)
         {
             case BugState.wander:
-                if ((FatBirdController.main.transform.position - transform.position).sqrMagnitude < SightRange * SightRange)
+                if ((PlayerController.main.transform.position - transform.position).sqrMagnitude < SightRange * SightRange)
                 {
                     AiState = BugState.curious;
                     LastAiThinkTime = Time.time + AweTime;
                 }
                 break;
             case BugState.curious:
-                moveRight = FatBirdController.main.transform.position.x > transform.position.x;
+                moveRight = PlayerController.main.transform.position.x > transform.position.x;
                 AiState = BugState.fleeing;
                 break;
             case BugState.fleeing:

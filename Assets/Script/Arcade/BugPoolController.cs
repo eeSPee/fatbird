@@ -53,27 +53,27 @@ public class BugPoolController : MonoBehaviour
         }
     }
 
-    public List<BugController> pickupList = new List<BugController>();
+    public List<ScoreBugController> pickupList = new List<ScoreBugController>();
 
-    public BugController PoolBug(string bugName)
+    public ScoreBugController PoolBug(string bugName)
     {
         for (int child = 0; child<transform.childCount; child++)
         {
             Transform childTransform = transform.GetChild(child);
             if (!childTransform.gameObject.activeInHierarchy && childTransform.name == bugName)
             {
-                return childTransform.GetComponent<BugController>();
+                return childTransform.GetComponent<ScoreBugController>();
             }
         }
         GameObject bug = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Arcade/Pickups/" + bugName));
         bug.name = bugName;
         bug.transform.SetParent(transform);
         bug.SetActive(false);
-        return bug.GetComponent<BugController>();
+        return bug.GetComponent<ScoreBugController>();
     }
     public void SpawnNewBug(string bug)
     {
-        BugController newBug = PoolBug(bug);
+        ScoreBugController newBug = PoolBug(bug);
         newBug.gameObject.SetActive(true);
     }
     public int MaxBugsOnScreen = 1;
@@ -83,7 +83,7 @@ public class BugPoolController : MonoBehaviour
         for (int child = 0; child < transform.childCount; child++)
         {
             Transform childTransform = transform.GetChild(child);
-            if (childTransform.gameObject.activeInHierarchy && childTransform.GetComponent<BugController>()!=null)
+            if (childTransform.gameObject.activeInHierarchy && childTransform.GetComponent<ScoreBugController>()!=null)
             {
                 nBugs++;
             }

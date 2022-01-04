@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BumperController : MonoBehaviour
+public class BumperObstacleController : MonoBehaviour
 {
     Animator BumperAnimator;
     protected AudioSource audioSource_bump;
@@ -13,8 +13,8 @@ public class BumperController : MonoBehaviour
     }
     private void Start()
     {
-        audioSource_bump = FatBirdController.main.AudioSource;
-        audioClip_bump = FatBirdController.main.AudioClipBump;
+        audioSource_bump = PlayerController.main.AudioSource;
+        audioClip_bump = PlayerController.main.AudioClipBump;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

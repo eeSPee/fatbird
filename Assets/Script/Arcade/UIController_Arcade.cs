@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIControllerArcade : UIController
+public class UIController_Arcade : UIController
 {
     UIScoreDisplay ScoreDisplay;
     UIGameOverScreen GameOverScreen;
