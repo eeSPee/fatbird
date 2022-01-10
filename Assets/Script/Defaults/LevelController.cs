@@ -12,6 +12,14 @@ public class LevelController : MonoBehaviour
     }
     protected virtual void Update()
     {
+#if UNITY_ANDROID
+
+        if (!GameOver && Input.GetKeyUp(KeyCode.Escape))
+        {
+            PauseUnpause(!GamePaused);
+        }
+
+#else
         if ( !GameOver && Input.GetKeyUp(KeyCode.P))
         {
             PauseUnpause(!GamePaused);
@@ -20,6 +28,7 @@ public class LevelController : MonoBehaviour
         {
             ResetGame(LevelComplete);
         }
+#endif
     }
     protected virtual void Start()
     {

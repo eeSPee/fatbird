@@ -35,6 +35,18 @@ public class PlayerController : MonoBehaviour
     {
         if (state!=BirdState.hurt)
         {
+#if UNITY_ANDROID
+
+            foreach (Touch touch in Input.touches)
+            {
+                if (touch.phase == TouchPhase.Began)
+                    FlapWing(touch.position.x > Screen.width / 2f);
+
+             
+            }
+
+#else
+
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.Mouse0))
             {
                 FlapWing(false);
@@ -43,7 +55,8 @@ public class PlayerController : MonoBehaviour
             {
                 FlapWing(true);
             }
-        }
+#endif
+            }
     }
     public float FlapSpeedInitial = 200;
     public float FlapSpeed = 50;
@@ -65,14 +78,17 @@ public class PlayerController : MonoBehaviour
         }
         else if (state == BirdState.flying)
         {
-            float fMult = ChargeStamina(FlapStamina) ? 1 : FlapWeak;
+            if (wingflap[right ? 0 : 1] > Time.time)
+                return;
+            wingflap[right ? 0 : 1] = Time.time + .1f;
+
             float tMult = 3;
             if (!IsGrounded() || transform.up.y > 0)
             {
-                rbody.AddForce(transform.up * FlapSpeed * fMult);
+                rbody.AddForce(transform.up * FlapSpeed * tMult);
                 tMult = 1;
             }
-            rbody.AddTorque(FlapTorque * fMult * (right ? -1 : 1) * tMult);
+            rbody.AddTorque(FlapTorque * tMult * (right ? -1 : 1) * tMult);
         }
 
         anim.SetTrigger("Flap" + (right ? "Right" : "Left"));
