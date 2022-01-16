@@ -16,15 +16,17 @@ public class UIGameOverScreen : MonoBehaviour
     }
     private void OnEnable()
     {
-        float MyScore = ScoreController.main == null ? 0 : ScoreController.main.Score;
-        float OldScore = PlayerPrefs.GetFloat(LevelController.main.GetLevelName() + " HighScore");
-        LastScoreCount.text = MyScore + "";
-        HighScoreCount.text = Mathf.Max(OldScore, MyScore) + "";
-        
-            HighScoreAlert.SetActive(MyScore > OldScore);
-        
+        if (ScoreController.main != null) {
+            float MyScore =  ScoreController.main.Score;
+            float OldScore = PlayerPrefs.GetFloat(LevelController.main.GetLevelName() + " HighScore");
+            LastScoreCount.text = MyScore + "";
+            HighScoreCount.text = Mathf.Max(OldScore, MyScore) + "";
 
-        SaveScores(MyScore, Mathf.Max(OldScore, MyScore));
+            HighScoreAlert.SetActive(MyScore > OldScore);
+
+
+            SaveScores(MyScore, Mathf.Max(OldScore, MyScore));
+        }
     }
 
     public void SaveScores(float s, float hs)
