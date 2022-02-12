@@ -51,6 +51,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -286,6 +287,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      dragonflyAnimated_0: 390177481000874177
+      dragonflyAnimated_5: 4128429201950649379
+      dragonflyAnimated_1: 1181362258637302214
+      dragonflyAnimated_6: -1229899049300461192
+      dragonflyAnimated_2: -260472511804931768
+      dragonflyAnimated_4: 908208576611279044
+      dragonflyAnimated_3: -6286491232645256823
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

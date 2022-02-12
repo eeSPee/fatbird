@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
                 return;
             wingflap[right ? 0 : 1] = Time.time + .1f;
 
-            float tMult = 3;
+            float tMult = 2;
             if (!IsGrounded() || transform.up.y > 0)
             {
                 rbody.AddForce(transform.up * FlapSpeed * tMult);

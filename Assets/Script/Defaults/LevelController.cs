@@ -9,9 +9,6 @@ public class LevelController : MonoBehaviour
     protected virtual void Awake()
     {
         main = this;
-#if UNITY_ANDROID
-        Application.targetFrameRate = 50;
-#endif
     }
     protected virtual void Update()
     {
