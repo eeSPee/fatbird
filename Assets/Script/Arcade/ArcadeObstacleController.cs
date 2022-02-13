@@ -9,7 +9,6 @@ public class ArcadeObstacleController : MonoBehaviour, IArcadeObstacle
     public Vector3 start = Vector3.zero;
     public float WaitForScore = 0;
     public float ComeInTime = 3;
-    public AudioSource AudioSourceLvlStep;
     public AudioClip AudioClipLvlStep;
 
     private void Awake()
@@ -35,7 +34,7 @@ public class ArcadeObstacleController : MonoBehaviour, IArcadeObstacle
         if (ComeInTime > 0)
         {
             mcollider.enabled = false;
-            AudioSourceLvlStep.PlayOneShot(AudioClipLvlStep);
+            AudioSourceControllerAndroid.current.Effects.PlayOneShot(AudioClipLvlStep);
             for (int I = 0; I < warningFrames; I++)
             {
                 transform.localPosition -= start / warningFrames;
@@ -49,7 +48,7 @@ public class ArcadeObstacleController : MonoBehaviour, IArcadeObstacle
             mcollider.enabled = true;
 
         }
-        AudioSourceLvlStep.PlayOneShot(AudioClipLvlStep);
+        AudioSourceControllerAndroid.current.Effects.PlayOneShot(AudioClipLvlStep);
         for (int I = 0; I < attackFrames; I++)
         {
             transform.localPosition -= start / attackFrames;

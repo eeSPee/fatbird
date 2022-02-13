@@ -67,13 +67,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platformer Fatbird
       objectReference: {fileID: 0}
-    - target: {fileID: 5686518098449362759, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
-      propertyPath: m_GravityScale
-      value: 0.75
-      objectReference: {fileID: 0}
     - target: {fileID: 5686518099628786619, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5686518099628786619, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
       propertyPath: m_SortingLayerID
@@ -81,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5686518100124582381, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5686518100124582381, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
       propertyPath: m_SortingLayerID
@@ -89,7 +85,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5686518100465713962, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5686518100465713962, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
       propertyPath: m_SortingLayerID
@@ -98,14 +94,14 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5433833233636151584, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
---- !u!1 &8580223942037504855 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5686518098449362757, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
-  m_PrefabInstance: {fileID: 4177517610429443090}
-  m_PrefabAsset: {fileID: 0}
 --- !u!82 &902361588138474645 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 3854046877941403783, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+  m_PrefabInstance: {fileID: 4177517610429443090}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &3349896991731756879 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1694690134760866653, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
   m_PrefabInstance: {fileID: 4177517610429443090}
   m_PrefabAsset: {fileID: 0}
 --- !u!82 &8174333446024426468 stripped
@@ -113,9 +109,9 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 5226593220702806006, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
   m_PrefabInstance: {fileID: 4177517610429443090}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &3349896991731756879 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1694690134760866653, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+--- !u!1 &8580223942037504855 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5686518098449362757, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
   m_PrefabInstance: {fileID: 4177517610429443090}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1017066890625368614
@@ -139,9 +135,9 @@ MonoBehaviour:
   AudioClipSpike: {fileID: 8300000, guid: 63c510e9bd7a9354c89ebc192618d694, type: 3}
   AudioClipBump: {fileID: 8300000, guid: cd448e3ba08067a4ebeabe19a37b535c, type: 3}
   FlapSpeedInitial: 200
-  FlapSpeed: 70
-  FlapTorque: 28
-  FlapStamina: 15
+  FlapSpeed: 40
+  FlapTorque: 18
+  FlapStamina: 18
   FlapWeak: 0.33
   Stamina: 100
   StaminaRegen: 90

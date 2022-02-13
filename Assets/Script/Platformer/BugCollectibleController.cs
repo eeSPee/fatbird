@@ -10,7 +10,6 @@ public class BugCollectibleController : MonoBehaviour
     public float OrbitTime = 2;
 
     SpriteRenderer renderer;
-    protected AudioSource audioSource_eat;
     protected AudioClip audioClip_eat;
     public bool wasEaten = false;
     public bool wasRemoved = false;
@@ -26,7 +25,6 @@ public class BugCollectibleController : MonoBehaviour
         {
             RemoveFromTheGame();
         }*/
-        audioSource_eat = PlayerController.main.AudioSource;
         audioClip_eat = PlayerController.main.AudioClipEat;
         orbitCenter = transform.position;
         OrbitTime *= OrbitRange * Mathf.PI * 2;
@@ -57,7 +55,7 @@ public void OnEaten()
     {
         SpecialEffectPooler.main.CreateSpecialEffect("BugPickup", transform.position);
         PlayerController.main.EatBug();
-        audioSource_eat.PlayOneShot(audioClip_eat);
+        AudioSourceControllerAndroid.current.Player.PlayOneShot(audioClip_eat);
         gameObject.SetActive(false);
         
         SpecialEffectPooler.main.TextEffect("NOM!", transform.position);

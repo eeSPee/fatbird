@@ -11,7 +11,7 @@ public class WindObstacleController : MonoBehaviour, IArcadeObstacle
     public float RepeatTime = 15f;
     public float UpTime = 3f;
 
-    public AudioSource AudioSourceWind;
+    public AudioClip AudioClipWind;
     Collider2D WindTrigger;
     List<ParticleSystem> particles;
     private void Awake()
@@ -74,7 +74,7 @@ public class WindObstacleController : MonoBehaviour, IArcadeObstacle
             blow_cycle:
             {
                 StartBlowing();
-                AudioSourceWind.Play();
+                AudioSourceControllerAndroid.current.Environment.Play();
                 yield return new WaitForSeconds(UpTime);
                 StopBlowing();
             }

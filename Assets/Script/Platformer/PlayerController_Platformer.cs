@@ -22,7 +22,7 @@ public class PlayerController_Platformer : PlayerController
             if (collision.gameObject.tag == "Victory" && !LevelController.main.IsGameOver())
         {
             LevelController.main.EndTheGame(true);
-            PlayerController.main.AudioSource.PlayOneShot(AudioClipVictory);
+            AudioSourceControllerAndroid.current.Player.PlayOneShot(AudioClipVictory);
             PlayerPrefs.SetInt(LevelController.main.GetLevelName() + " Complete", 1);
             if (collision.gameObject.TryGetComponent<CheckPointController>(out CheckPointController chp))
                 chp.SetActivated(true);
@@ -42,7 +42,7 @@ public class PlayerController_Platformer : PlayerController
         {
             SpecialEffectPooler.main.CreateSpecialEffect("BugPickup", transform.position);
             SpecialEffectPooler.main.TextEffect("CHECKPOINT!", transform.position + Vector3.up * .33f);
-            PlayerController.main.AudioSource.PlayOneShot(AudioClipNest);
+            AudioSourceControllerAndroid.current.Player.PlayOneShot(AudioClipNest);
         }
     }
 }

@@ -9,7 +9,6 @@ public abstract class ScoreBugController : MonoBehaviour
     public float OrbitRange = 1;
     public int ScoreValue = 100;
 
-    protected AudioSource audioSource_eat;
     protected AudioClip audioClip_eat;
 
     protected float Variation = 1f;
@@ -20,7 +19,6 @@ public abstract class ScoreBugController : MonoBehaviour
     }
     private void Start()
     {
-        audioSource_eat = PlayerController.main.AudioSource;
         audioClip_eat = PlayerController.main.AudioClipEat;
     }
     void OnEnable()
@@ -61,7 +59,7 @@ public abstract class ScoreBugController : MonoBehaviour
         {
             SpecialEffectPooler.main.CreateSpecialEffect("BugPickup", transform.position);
             PlayerController.main.EatBug();
-            audioSource_eat.PlayOneShot(audioClip_eat);
+            AudioSourceControllerAndroid.current.Player.PlayOneShot(audioClip_eat);
             Kill(true);
         }
     }

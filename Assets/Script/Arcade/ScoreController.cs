@@ -9,7 +9,6 @@ public class ScoreController : MonoBehaviour
     public int Combo = 0;
     public float ComboResetTime = 10;
     public static ScoreController main;
-    public AudioSource AudioSourceCombo;
     public AudioClip AudioClipCombo;
 
     private void Awake()
@@ -63,8 +62,8 @@ public class ScoreController : MonoBehaviour
             Combo++;
             comboResetTime = Time.time + ComboResetTime;
         }
-            AudioSourceCombo.pitch = 1f + (float)Combo * 0.25f;
-            AudioSourceCombo.PlayOneShot(AudioClipCombo);
+        AudioSourceControllerAndroid.current.Effects.pitch = 1f + (float)Combo * 0.25f;
+        AudioSourceControllerAndroid.current.Effects.PlayOneShot(AudioClipCombo);
         
         int nScore = points * Mathf.Max(1, Combo);
             Score += nScore;

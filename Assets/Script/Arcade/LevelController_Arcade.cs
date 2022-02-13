@@ -19,9 +19,10 @@ public class LevelController_Arcade : LevelController
     }
     protected override void Start()
     {
-        Walls[0].transform.position = Vector3.right * (Camera.main.orthographicSize * Camera.main.aspect + .5f);
-        Walls[1].transform.position = Vector3.left * (Camera.main.orthographicSize * Camera.main.aspect + .5f);
-        Walls[2].transform.localScale = new Vector3((Camera.main.orthographicSize * Camera.main.aspect) * 2, 1, 1);
+        float ScreenScale = Camera.main.orthographicSize * Camera.main.aspect;
+        Walls[0].transform.position = Vector3.right * (ScreenScale + .5f);
+        Walls[1].transform.position = Vector3.left * (ScreenScale + .5f);
+        Walls[2].transform.localScale = new Vector3(ScreenScale * 2, 1, 1);
         ResetSpikes();
     }
     public override void StartTheGame()

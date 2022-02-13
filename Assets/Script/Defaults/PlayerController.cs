@@ -14,9 +14,6 @@ public class PlayerController : MonoBehaviour
     protected Vector3 start;
     Animator anim;
     protected Rigidbody2D rbody;
-    public AudioSource AudioSource;
-    public AudioSource AudioSourceWingL;
-    public AudioSource AudioSourceWingR;
     public AudioClip AudioClipFlap;
     public AudioClip AudioClipWhistle;
     public AudioClip AudioClipEat;
@@ -28,7 +25,6 @@ public class PlayerController : MonoBehaviour
         main = this;
         start = transform.position;
         rbody = GetComponent<Rigidbody2D>();
-        AudioSource = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
     }
     public virtual void Update()
@@ -40,7 +36,7 @@ public class PlayerController : MonoBehaviour
             foreach (Touch touch in Input.touches)
             {
                 if (touch.phase == TouchPhase.Began)
-                    FlapWing(touch.position.x > Screen.width / 2f);
+                    FlapWing(touch.position.x < Screen.width / 2f);
 
              
             }
@@ -68,7 +64,7 @@ public class PlayerController : MonoBehaviour
         if (state == BirdState.takeoff)
         {
             wingflap[right ? 0 : 1] = Time.time;
-            if (Mathf.Abs(wingflap[0] - wingflap[1]) < .1f)
+            if (Mathf.Abs(wingflap[0] - wingflap[1]) < 11.1f)
             {
                 LevelController.main.StartTheGame();
                 rbody.AddForce(transform.up * FlapSpeedInitial);
@@ -88,33 +84,33 @@ public class PlayerController : MonoBehaviour
                 rbody.AddForce(transform.up * FlapSpeed * tMult);
                 tMult = 1;
             }
-            rbody.AddTorque(FlapTorque * tMult * (right ? -1 : 1) * tMult);
+            rbody.AddTorque(FlapTorque * tMult * (right ? 1 : -1) * tMult);
         }
 
         anim.SetTrigger("Flap" + (right ? "Right" : "Left"));
 
         if (right)
         {
-            AudioSourceWingR.pitch=(Random.Range(0.6f,1.2f));
+            AudioSourceControllerAndroid.current.Player.pitch=(Random.Range(0.6f,1.2f));
             if (Stamina < FlapStamina)
             {
-              AudioSourceWingR.PlayOneShot(AudioClipWhistle);
+              AudioSourceControllerAndroid.current.Player.PlayOneShot(AudioClipWhistle);
             }
             else
             {
-              AudioSourceWingR.PlayOneShot(AudioClipFlap);
+              AudioSourceControllerAndroid.current.Player.PlayOneShot(AudioClipFlap);
             }
         }
         else
         {
-            AudioSourceWingL.pitch=(Random.Range(0.6f,1.2f));
+            AudioSourceControllerAndroid.current.Player.pitch=(Random.Range(0.6f,1.2f));
             if (Stamina < FlapStamina)
             {
-              AudioSourceWingL.PlayOneShot(AudioClipWhistle);
+              AudioSourceControllerAndroid.current.Player.PlayOneShot(AudioClipWhistle);
             }
             else
             {
-              AudioSourceWingL.PlayOneShot(AudioClipFlap);
+              AudioSourceControllerAndroid.current.Player.PlayOneShot(AudioClipFlap);
             }
         }
     }
@@ -129,7 +125,7 @@ public class PlayerController : MonoBehaviour
     }
     public void Hurt()
     {
-        AudioSource.PlayOneShot(AudioClipSpike);
+        AudioSourceControllerAndroid.current.Player.PlayOneShot(AudioClipSpike);
         LevelController.main.EndTheGame(false);
         transform.Find("Hurt Particle").gameObject.SetActive(true);
         anim.SetBool("Hurt", true);
