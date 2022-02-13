@@ -74,7 +74,8 @@ public class WindObstacleController : MonoBehaviour, IArcadeObstacle
             blow_cycle:
             {
                 StartBlowing();
-                AudioSourceControllerAndroid.current.Environment.Play();
+                if (!AudioSourceControllerAndroid.current.Environment.isPlaying)
+                    AudioSourceControllerAndroid.current.Environment.PlayOneShot(AudioClipWind);
                 yield return new WaitForSeconds(UpTime);
                 StopBlowing();
             }
