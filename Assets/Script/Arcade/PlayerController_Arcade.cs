@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController_Arcade : PlayerController
@@ -43,7 +42,7 @@ public class PlayerController_Arcade : PlayerController
         LastRotation = rbody.rotation;
     }
 
-    public void ScoreFlip()
+    public virtual void ScoreFlip()
     {
         if (IsGrounded())
             return;

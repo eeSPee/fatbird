@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,7 +15,7 @@ public class UIScoreDisplay : MonoBehaviour
     }
     public void Update()
     {
-        ScoreCounter.text = ScoreController.main.Score.ToString();
+        ScoreCounter.text = ScoreController.main.GetTotalScore().ToString();
 
         ComboCounter.gameObject.SetActive(ScoreController.main.Combo > 0);
         ComboHelp.gameObject.SetActive(ScoreController.main.Combo > 0);

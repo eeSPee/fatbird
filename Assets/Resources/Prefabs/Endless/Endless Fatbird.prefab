@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &234167416038419224
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5686518098449362753, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686518098449362753, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686518098449362753, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686518098449362753, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686518098449362753, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686518098449362753, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686518098449362753, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686518098449362753, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686518098449362753, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686518098449362753, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686518098449362757, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      propertyPath: m_Name
+      value: Endless Fatbird
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5686518098449362757, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 4832626833709373347}
+  m_SourcePrefab: {fileID: 100100000, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+--- !u!82 &1493877538902452293 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1694690134760866653, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+  m_PrefabInstance: {fileID: 234167416038419224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &3910176921544457119 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3854046877941403783, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+  m_PrefabInstance: {fileID: 234167416038419224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &5455962314832639214 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5226593220702806006, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+  m_PrefabInstance: {fileID: 234167416038419224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5608525332812891229 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5686518098449362757, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
+  m_PrefabInstance: {fileID: 234167416038419224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4832626833709373347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608525332812891229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e881d0258cc0643aee510fab4a620e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioSource: {fileID: 3910176921544457119}
+  AudioSourceWingL: {fileID: 1493877538902452293}
+  AudioSourceWingR: {fileID: 5455962314832639214}
+  AudioClipFlap: {fileID: 8300000, guid: 23c3037f990ba5945bf5c8ee07958d5b, type: 3}
+  AudioClipWhistle: {fileID: 8300000, guid: b09b509a18e375240a52b1f7a9b63f7a, type: 3}
+  AudioClipEat: {fileID: 8300000, guid: 80096aba59dedcb43bca245d5708d1fa, type: 3}
+  AudioClipSpike: {fileID: 8300000, guid: 63c510e9bd7a9354c89ebc192618d694, type: 3}
+  AudioClipBump: {fileID: 8300000, guid: cd448e3ba08067a4ebeabe19a37b535c, type: 3}
+  FlapSpeedInitial: 200
+  FlapSpeed: 66
+  FlapTorque: 28
+  FlapStamina: 18
+  FlapWeak: 0.28
+  Stamina: 100
+  StaminaRegen: 125
+  RotationScore: 25
+  RotationAngle: 330

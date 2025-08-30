@@ -1,21 +1,24 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ScoreController : MonoBehaviour
 {
-    public float Score = 0;
-    public int ScorePerSecond = 100;
-    public int Combo = 0;
-    public float ComboResetTime = 10;
     public static ScoreController main;
-    public AudioSource AudioSourceCombo;
-    public AudioClip AudioClipCombo;
-
     private void Awake()
     {
         main = this;
     }
+    public virtual float GetTotalScore()
+    {
+        return Score;
+    }
+    public float Score = 0;
+    public int ScorePerSecond = 100;
+    public int Combo = 0;
+    public float ComboResetTime = 10;
+    public AudioSource AudioSourceCombo;
+    public AudioClip AudioClipCombo;
+
 
 
     Coroutine scoreCoroutine;
@@ -35,7 +38,7 @@ public class ScoreController : MonoBehaviour
         return (scoreCoroutine != null);
     }
     float comboResetTime = 0;
-    public IEnumerator RecordGameCoroutine()
+    public virtual IEnumerator RecordGameCoroutine()
     {
         Score = 0;
         Combo = 0;

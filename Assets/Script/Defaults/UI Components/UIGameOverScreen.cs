@@ -16,7 +16,7 @@ public class UIGameOverScreen : MonoBehaviour
     }
     private void OnEnable()
     {
-        float MyScore = ScoreController.main == null ? 0 : ScoreController.main.Score;
+        float MyScore = ScoreController.main == null ? 0 : ScoreController.main.GetTotalScore();
         float OldScore = PlayerPrefs.GetFloat(LevelController.main.GetLevelName() + " HighScore");
         LastScoreCount.text = MyScore + "";
         HighScoreCount.text = Mathf.Max(OldScore, MyScore) + "";

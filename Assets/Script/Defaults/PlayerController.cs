@@ -174,7 +174,7 @@ public class PlayerController : MonoBehaviour
             anim.SetTrigger("EatBug");
 
     }
-    public void OnLevelReset()
+    public virtual void OnLevelReset()
     {
         transform.position = start;
         transform.rotation = Quaternion.Euler(0, 0, 0);
