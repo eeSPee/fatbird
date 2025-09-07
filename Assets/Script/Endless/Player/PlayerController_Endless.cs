@@ -9,11 +9,11 @@ public class PlayerController_Endless : PlayerController_Arcade
     }
     public override void OnLevelReset()
     {
-        base.OnLevelReset();
         if (CameraController.main != null)
         {
             CameraController.main.transform.position = Vector3.zero;
         }
+        base.OnLevelReset();
     }
     void UpdateCamera()
     {
@@ -22,6 +22,7 @@ public class PlayerController_Endless : PlayerController_Arcade
             CameraController.main.transform.position = new Vector3(0, Mathf.Max(transform.position.y, CameraController.main.transform.position.y), 0);
         }
     }
+
     public override void Update()
     {
         base.Update();

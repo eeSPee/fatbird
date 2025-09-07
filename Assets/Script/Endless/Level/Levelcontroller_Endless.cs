@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Levelcontroller_Endless : LevelController
@@ -15,8 +16,8 @@ public class Levelcontroller_Endless : LevelController
     public override void StartTheGame()
     {
         base.StartTheGame();
-        activeSegments.Clear();
-        height = CameraController.main.camera.orthographicSize;
+        ClearAllSegments();
+        height = CameraController.main.camera.orthographicSize * 2;
     }
     protected override void Update()
     {
@@ -36,7 +37,7 @@ public class Levelcontroller_Endless : LevelController
             }
             else
             {
-                SpawnSegment(WeightList.PickWeight(validSegments));
+                SpawnSegment(WeightList.PickWeight(validSegments.Where((s) => s.segmentHeight <= height)));
             }
     }
     void DespawnUnusedSegments()
@@ -45,7 +46,7 @@ public class Levelcontroller_Endless : LevelController
 
         foreach (var segment in activeSegments.ToArray())
         {
-            if (segment.transform.position .y + segment.assignedSegment.segmentHeight / 2f < cameraUnder)
+            if (segment.transform.position .y + segment.segmentHeight / 2f < cameraUnder)
             {
                 DespawnSegment(segment);
             }
@@ -56,13 +57,18 @@ public class Levelcontroller_Endless : LevelController
         GameObject pooled = segmentPool.PoolItem(segmentData.segmentPrefab);
         if (pooled != null)
         {
-            pooled.transform.position = new Vector3(0, height + segmentData.segmentHeight / 2f, 0);
-            height += segmentData.segmentHeight;
-
             if (pooled.TryGetComponent(out EndlessSegmentComponent seg) )
             {
+                pooled.transform.position = new Vector3(0, height + seg.segmentHeight / 2f, 0);
+                height += seg.segmentHeight ;
+
                 activeSegments.Add(seg);
                 seg.assignedSegment = segmentData;
+
+                if (seg.leftSide != null)
+                    seg.leftSide.transform.localPosition = CameraController.main.camera.orthographicSize * CameraController.main.camera.aspect * Vector3.left;
+                if (seg.rightSide != null)
+                    seg.rightSide.transform.localPosition = CameraController.main.camera.orthographicSize * CameraController.main.camera.aspect * Vector3.right;
             }
             foreach (var spawn in pooled.GetComponentsInChildren<EndlessSegmentSpawnpoint>()) {
            //     spawn
@@ -71,7 +77,16 @@ public class Levelcontroller_Endless : LevelController
     }
     void DespawnSegment(EndlessSegmentComponent seg)
     {
-
+        segmentPool.DeactivateObject(seg.gameObject);
+        activeSegments.Remove(seg);
+    }
+    void ClearAllSegments()
+    {
+        foreach (var segment in activeSegments.ToArray())
+        {
+                DespawnSegment(segment);
+        }
+        activeSegments.Clear();
     }
 }
 

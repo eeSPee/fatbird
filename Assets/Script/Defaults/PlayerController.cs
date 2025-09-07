@@ -111,15 +111,18 @@ public class PlayerController : MonoBehaviour
     {
         return LevelController.main.IsGameRunning();
     }
-    public void Hurt()
+    public virtual void Hurt()
     {
-        AudioSource.PlayOneShot(AudioClipSpike);
-        LevelController.main.EndTheGame(false);
-        transform.Find("Hurt Particle").gameObject.SetActive(true);
-        anim.SetBool("Hurt", true);
-        state = BirdState.hurt;
+        if (state != BirdState.hurt)
+        {
+            AudioSource.PlayOneShot(AudioClipSpike);
+            LevelController.main.EndTheGame(false);
+            transform.Find("Hurt Particle").gameObject.SetActive(true);
+            anim.SetBool("Hurt", true);
+            state = BirdState.hurt;
+        }
     }
-    public void UnHurt()
+    public virtual void UnHurt()
     {
         anim.SetBool("Hurt", false);
         state = BirdState.takeoff;

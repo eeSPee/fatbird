@@ -429,7 +429,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segmentPool: {fileID: 5755300411289775091}
-  validSegments: []
+  powerupPool: {fileID: 0}
+  validSegments:
+  - Weight: 1
+    segmentPrefab: {fileID: 7928916003594512317, guid: 3b4902320fd59a94bbda87ddbc7a166e, type: 3}
+    segmentHeight: 4
+  height: 0
 --- !u!114 &5755300411289775091
 MonoBehaviour:
   m_ObjectHideFlags: 0
