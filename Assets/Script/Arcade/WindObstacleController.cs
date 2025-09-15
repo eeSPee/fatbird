@@ -5,6 +5,7 @@ using UnityEngine;
 public class WindObstacleController : MonoBehaviour, IArcadeObstacle
 {
     public bool AlwaysBlows = false;
+    public bool SoundAlwaysPlays = false;
     public float WindAcceleration = 1f;
 
     public float ComeInTime = 10f;
@@ -41,6 +42,22 @@ public class WindObstacleController : MonoBehaviour, IArcadeObstacle
             particle.Stop();
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+     if (collision.gameObject.tag == "Player" )
+        {
+            if (!SoundAlwaysPlays)
+                AudioSourceWind?.Play();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+     if (collision.gameObject.tag == "Player" )
+        {
+            if (!SoundAlwaysPlays)
+                AudioSourceWind?.Stop();
+        }
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
      if (collision.gameObject.tag == "Player")
@@ -74,6 +91,7 @@ public class WindObstacleController : MonoBehaviour, IArcadeObstacle
             blow_cycle:
             {
                 StartBlowing();
+                if ( SoundAlwaysPlays)
                 AudioSourceWind.Play();
                 yield return new WaitForSeconds(UpTime);
                 StopBlowing();

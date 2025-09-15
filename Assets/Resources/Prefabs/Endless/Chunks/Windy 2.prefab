@@ -17,6 +17,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2468373831369243918, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
+      propertyPath: SoundAlwaysPlays
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2468373831369243918, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
       propertyPath: WindAcceleration
       value: 3
       objectReference: {fileID: 0}
