@@ -62,7 +62,7 @@ public class WindObstacleController : MonoBehaviour, IArcadeObstacle
     {
      if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<Rigidbody2D>().velocity += (Vector2)transform.right * WindAcceleration * Time.deltaTime;
+            collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity += (Vector2)transform.right * WindAcceleration * Time.deltaTime;
         }
     }
     protected Coroutine spawnCoroutine;

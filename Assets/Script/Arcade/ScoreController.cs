@@ -13,7 +13,7 @@ public class ScoreController : MonoBehaviour
         return Score;
     }
     public float Score = 0;
-    public int ScorePerSecond = 100;
+    public float ScorePerSecond = 100;
     public int Combo = 0;
     public float ComboResetTime = 10;
     public AudioSource AudioSourceCombo;
@@ -77,4 +77,9 @@ public class ScoreController : MonoBehaviour
     {
         Combo = 0;
     }
+    public void ResetScore()
+    {
+        Score = 0;
+        Combo = 0;
+}
 }

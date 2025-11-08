@@ -1,19 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIGameOverScreen : MonoBehaviour
 {
-    GameObject HighScoreAlert;
-    Text LastScoreCount;
-    Text HighScoreCount;
-    private void Awake()
-    {
-        HighScoreAlert =  transform.Find("New High Score").gameObject;
-        LastScoreCount = transform.Find("Yourscore Counter").GetComponent<Text>();
-        HighScoreCount = transform.Find("Hiscore Counter").GetComponent<Text>();
-    }
+    public GameObject HighScoreAlert;
+    public Text LastScoreCount;
+    public Text HighScoreCount;
+  
     private void OnEnable()
     {
         float MyScore = ScoreController.main == null ? 0 : ScoreController.main.GetTotalScore();

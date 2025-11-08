@@ -12,7 +12,7 @@ public class LevelController : MonoBehaviour
     }
     protected virtual void Update()
     {
-        if ( !GameOver && Input.GetKeyUp(KeyCode.P))
+        if ( !GameOver && (Input.GetKeyUp(KeyCode.P) || Input.GetKeyUp(KeyCode.Escape)))
         {
             PauseUnpause(!GamePaused);
         }
@@ -21,16 +21,21 @@ public class LevelController : MonoBehaviour
             ResetGame(LevelComplete);
         }
     }
+    private void OnApplicationFocus(bool focus)
+    {
+        if (!GameOver)
+        PauseUnpause(true) ;
+    }
     protected virtual void Start()
     {
     }
     public virtual void StartTheGame()
     {
-        PauseUnpause(false);
         UIController.main.DisableTutorial();
         GameRunning = true;
         if (StartTime == 0)
         StartTime = Time.time;
+        PauseUnpause(false);
     }
     public virtual void EndTheGame(bool victory)
     {
@@ -44,7 +49,8 @@ public class LevelController : MonoBehaviour
     {
         EndTheGame(false);
         GameOver = false;
-        PlayerController.main.OnLevelReset();
+        ScoreController.main?.ResetScore();
+        PlayerController.main?.OnLevelReset();
         UIController.main.DisableGameOverScreen();
         PauseUnpause(false);
         if (hardReset)
@@ -60,6 +66,10 @@ public class LevelController : MonoBehaviour
     public bool IsGameRunning()
     {
         return GameRunning;
+    }
+    public bool IsGamePaused()
+    {
+        return GamePaused;
     }
     public bool IsLevelCompleted()
     {

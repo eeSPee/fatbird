@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5686518098449362753, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.15
       objectReference: {fileID: 0}
     - target: {fileID: 5686518098449362753, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -52,12 +52,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Endless Fatbird
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5433833233636151584, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5686518098449362757, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
-      insertIndex: 2
+      insertIndex: 1
       addedObject: {fileID: 4832626833709373347}
   m_SourcePrefab: {fileID: 100100000, guid: d945f41096d6f23438a65137ad9fc87f, type: 3}
 --- !u!82 &1493877538902452293 stripped
@@ -100,10 +101,10 @@ MonoBehaviour:
   AudioClipEat: {fileID: 8300000, guid: 80096aba59dedcb43bca245d5708d1fa, type: 3}
   AudioClipSpike: {fileID: 8300000, guid: 63c510e9bd7a9354c89ebc192618d694, type: 3}
   AudioClipBump: {fileID: 8300000, guid: cd448e3ba08067a4ebeabe19a37b535c, type: 3}
-  FlapSpeedInitial: 200
-  FlapSpeed: 66
-  FlapTorque: 28
-  FlapStamina: 18
+  FlapSpeedInitial: 160
+  FlapSpeed: 45
+  FlapTorque: 8
+  FlapStamina: 6
   FlapWeak: 0.28
   Stamina: 100
   StaminaRegen: 125

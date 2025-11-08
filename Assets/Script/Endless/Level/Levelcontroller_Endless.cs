@@ -4,11 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Levelcontroller_Endless : LevelController
 {
     public ObjectPool segmentPool;
     public ObjectPool powerupPool;
+    public float dividerHeight = 3;
     List<EndlessSegmentComponent> activeSegments = new();
     public WeightLevelSegment[] validSegments = new WeightLevelSegment[0];
 
@@ -18,6 +20,7 @@ public class Levelcontroller_Endless : LevelController
         base.StartTheGame();
         ClearAllSegments();
         height = CameraController.main.camera.orthographicSize * 2;
+        enabled = true;
     }
     protected override void Update()
     {
@@ -60,15 +63,15 @@ public class Levelcontroller_Endless : LevelController
             if (pooled.TryGetComponent(out EndlessSegmentComponent seg) )
             {
                 pooled.transform.position = new Vector3(0, height + seg.segmentHeight / 2f, 0);
-                height += seg.segmentHeight ;
+                height += seg.segmentHeight + dividerHeight * (Random.value  + 1)/ 2;
 
                 activeSegments.Add(seg);
                 seg.assignedSegment = segmentData;
 
                 if (seg.leftSide != null)
-                    seg.leftSide.transform.localPosition = CameraController.main.camera.orthographicSize * CameraController.main.camera.aspect * Vector3.left;
+                    seg.leftSide.transform.localPosition = Mathf.Max(CameraController.main.camera.orthographicSize * CameraController.main.camera.aspect, seg.requiredWidth) * Vector3.left;
                 if (seg.rightSide != null)
-                    seg.rightSide.transform.localPosition = CameraController.main.camera.orthographicSize * CameraController.main.camera.aspect * Vector3.right;
+                    seg.rightSide.transform.localPosition = Mathf.Max(CameraController.main.camera.orthographicSize * CameraController.main.camera.aspect, seg.requiredWidth) * Vector3.right;
             }
             foreach (var spawn in pooled.GetComponentsInChildren<EndlessSegmentSpawnpoint>()) {
            //     spawn

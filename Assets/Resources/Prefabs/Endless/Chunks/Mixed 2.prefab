@@ -50,11 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3815778844455048008, guid: 3b4902320fd59a94bbda87ddbc7a166e, type: 3}
       propertyPath: segmentHeight
-      value: 16
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 7928916003594512317, guid: 3b4902320fd59a94bbda87ddbc7a166e, type: 3}
       propertyPath: m_Name
-      value: Mixed 1
+      value: Mixed 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -102,7 +102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2468373831369243918, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
       propertyPath: WindAcceleration
-      value: 3
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 3775983481723824927, guid: ae9373a0f2ab55f4f96e9c2c9123d133, type: 3}
       propertyPath: m_LocalScale.x

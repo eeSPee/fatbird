@@ -49,8 +49,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3815778844455048008, guid: 3b4902320fd59a94bbda87ddbc7a166e, type: 3}
+      propertyPath: requiredWidth
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815778844455048008, guid: 3b4902320fd59a94bbda87ddbc7a166e, type: 3}
       propertyPath: segmentHeight
-      value: 16
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7928916003594512317, guid: 3b4902320fd59a94bbda87ddbc7a166e, type: 3}
       propertyPath: m_Name

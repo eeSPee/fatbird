@@ -3,12 +3,9 @@ using UnityEngine.UI;
 
 public class UnpauseGameButton : MonoBehaviour
 {
-    void Start()
+    public void Press()
     {
-        GetComponent<Button>().onClick.AddListener(() =>
-        {
             LevelController.main.PauseUnpause(false);
-        });
     }
 
 }

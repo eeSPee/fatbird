@@ -3,16 +3,10 @@ using UnityEngine.UI;
 
 public class UIScoreDisplay : MonoBehaviour
 {
-    Text ScoreCounter;
-    Text ComboCounter;
-    GameObject ComboHelp;
+    public Text ScoreCounter;
+    public Text ComboCounter;
+    public GameObject ComboHelp;
 
-    void Awake()
-    {
-        ScoreCounter = transform.Find("Score Counter").GetComponent<Text>();
-        ComboCounter = transform.Find("Combo Counter").GetComponent<Text>();
-        ComboHelp = transform.Find("ComboBG").gameObject;
-    }
     public void Update()
     {
         ScoreCounter.text = ScoreController.main.GetTotalScore().ToString();

@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    enum BirdState
+    protected enum BirdState
     {
         takeoff,
         flying,
         hurt,
     }
-    BirdState state = BirdState.takeoff;
+    protected BirdState state = BirdState.takeoff;
     protected Vector3 start;
     Animator anim;
     protected Rigidbody2D rbody;
@@ -33,8 +31,17 @@ public class PlayerController : MonoBehaviour
     }
     public virtual void Update()
     {
-        if (state!=BirdState.hurt)
+        if (state != BirdState.hurt)
         {
+#if UNITY_ANDROID
+            foreach (var touch in Input.touches)
+            {
+                if (touch.phase == TouchPhase.Began)
+                {
+                    FlapWing(touch.position.x > Screen.width/2);
+                }
+            }
+#else
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.Mouse0))
             {
                 FlapWing(false);
@@ -43,6 +50,7 @@ public class PlayerController : MonoBehaviour
             {
                 FlapWing(true);
             }
+#endif
         }
     }
     public float FlapSpeedInitial = 200;
@@ -52,53 +60,56 @@ public class PlayerController : MonoBehaviour
     public float FlapWeak = .33f;
     public virtual void FlapWing(bool right)
     {
-        if (state == BirdState.takeoff)
+        if (!LevelController.main.IsGamePaused())
         {
-            wingflap[right ? 0 : 1] = Time.time;
-            if (Mathf.Abs(wingflap[0] - wingflap[1]) < .1f)
+            if (state == BirdState.takeoff)
             {
-                LevelController.main.StartTheGame();
-                rbody.AddForce(transform.up * FlapSpeedInitial);
-                transform.Find("Launch Particle").gameObject.SetActive(true);
-                state = BirdState.flying;
+                wingflap[right ? 0 : 1] = Time.time;
+                if (Mathf.Abs(wingflap[0] - wingflap[1]) < .1f)
+                {
+                    LevelController.main.StartTheGame();
+                    rbody.AddForce(transform.up * FlapSpeedInitial);
+                    transform.Find("Launch Particle").gameObject.SetActive(true);
+                    state = BirdState.flying;
+                }
             }
-        }
-        else if (state == BirdState.flying)
-        {
-            float fMult = ChargeStamina(FlapStamina) ? 1 : FlapWeak;
-            float tMult = 3;
-            if (!IsGrounded() || transform.up.y > 0)
+            else if (state == BirdState.flying)
             {
-                rbody.AddForce(transform.up * FlapSpeed * fMult);
-                tMult = 1;
+                float fMult = ChargeStamina(FlapStamina) ? 1 : FlapWeak;
+                float tMult = 3;
+                if (!IsGrounded() || transform.up.y > 0)
+                {
+                    rbody.AddForce(transform.up * FlapSpeed * fMult);
+                    tMult = 1;
+                }
+                rbody.AddTorque(FlapTorque * fMult * (right ? -1 : 1) * tMult);
             }
-            rbody.AddTorque(FlapTorque * fMult * (right ? -1 : 1) * tMult);
-        }
 
-        anim.SetTrigger("Flap" + (right ? "Right" : "Left"));
+            anim.SetTrigger("Flap" + (right ? "Right" : "Left"));
 
-        if (right)
-        {
-            AudioSourceWingR.pitch=(Random.Range(0.6f,1.2f));
-            if (Stamina < FlapStamina)
+            if (right)
             {
-              AudioSourceWingR.PlayOneShot(AudioClipWhistle);
+                AudioSourceWingR.pitch = (Random.Range(0.6f, 1.2f));
+                if (Stamina < FlapStamina)
+                {
+                    AudioSourceWingR.PlayOneShot(AudioClipWhistle);
+                }
+                else
+                {
+                    AudioSourceWingR.PlayOneShot(AudioClipFlap);
+                }
             }
             else
             {
-              AudioSourceWingR.PlayOneShot(AudioClipFlap);
-            }
-        }
-        else
-        {
-            AudioSourceWingL.pitch=(Random.Range(0.6f,1.2f));
-            if (Stamina < FlapStamina)
-            {
-              AudioSourceWingL.PlayOneShot(AudioClipWhistle);
-            }
-            else
-            {
-              AudioSourceWingL.PlayOneShot(AudioClipFlap);
+                AudioSourceWingL.pitch = (Random.Range(0.6f, 1.2f));
+                if (Stamina < FlapStamina)
+                {
+                    AudioSourceWingL.PlayOneShot(AudioClipWhistle);
+                }
+                else
+                {
+                    AudioSourceWingL.PlayOneShot(AudioClipFlap);
+                }
             }
         }
     }
@@ -129,7 +140,7 @@ public class PlayerController : MonoBehaviour
     }
     public bool ChargeStamina(float amount)
     {
-        if (Stamina<amount)
+        if (Stamina < amount)
         {
             Stamina = 0;
             return false;
@@ -139,8 +150,8 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Stamina = Mathf.Min(Stamina + StaminaRegen * Time.deltaTime,100);
-        anim.SetBool("IsTired", Stamina< FlapStamina);
+        Stamina = Mathf.Min(Stamina + StaminaRegen * Time.deltaTime, 100);
+        anim.SetBool("IsTired", Stamina < FlapStamina);
     }
     public virtual void OnCollisionEnter2D(Collision2D collision)
     {
@@ -156,7 +167,7 @@ public class PlayerController : MonoBehaviour
         {
             foreach (ContactPoint2D contact in collision.contacts)
             {
-                if (contact.point.y<transform.position.y + 1)
+                if (contact.point.y < transform.position.y + 1)
                 {
                     lastGroundTime = Time.time + .1f;
                     OnGrounded();
@@ -174,17 +185,19 @@ public class PlayerController : MonoBehaviour
     }
     public void EatBug()
     {
-            anim.SetTrigger("EatBug");
+        anim.SetTrigger("EatBug");
 
     }
     public virtual void OnLevelReset()
     {
+        rbody.isKinematic = true;
+        rbody.linearVelocity = Vector2.zero;
+        rbody.angularVelocity = 0;
+
+        rbody.isKinematic = false;
         transform.position = start;
         transform.rotation = Quaternion.Euler(0, 0, 0);
-        rbody.isKinematic = true;
-        rbody.velocity = Vector2.zero;
-        rbody.angularVelocity = 0;
-        rbody.isKinematic = false;
+
         UnHurt();
     }
     private void OnDisable()
