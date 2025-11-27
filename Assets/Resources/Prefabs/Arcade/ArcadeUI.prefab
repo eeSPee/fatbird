@@ -969,6 +969,7 @@ GameObject:
   - component: {fileID: 2433179946974192809}
   - component: {fileID: 2433179946974192806}
   - component: {fileID: 6498452634419545009}
+  - component: {fileID: 1072033015475661236}
   m_Layer: 5
   m_Name: ArcadeUI
   m_TagString: Untagged
@@ -1074,6 +1075,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6f43e40c64c1384fbd00e8415d78856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1072033015475661236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2433179946974192807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 385896f9591b53c4588ac12290fcc4c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MobileAdjuster
+  mobileCameraOsize: 12
+  pcCameraOsize: 8
+  mobileGameObjects:
+  - {fileID: 0}
+  pcGameObjects:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &2433179947128368813
 GameObject:
   m_ObjectHideFlags: 0
